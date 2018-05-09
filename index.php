@@ -11,7 +11,7 @@
 
 include_once('curl_query.php');
 include_once('simple_html_dom.php');
-include_once('SQL.php');
+///include_once('SQL.php');
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 
 $sql=SQL::Instance();
@@ -28,6 +28,6 @@ $a=$table->find('a',0);
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
-$sql->Insert('Tables',$tobd);
+////$sql->Insert('Tables',$tobd);
 	
 }	
