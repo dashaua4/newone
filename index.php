@@ -1,3 +1,12 @@
+<html>
+	<head>
+	</head>
+	<boby>
+		<h1>HELLO WORLD</h1>
+	</body>	
+</html>	
+
+
 <?php
 
 include_once('curl_query.php');
