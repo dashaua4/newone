@@ -1,3 +1,4 @@
+<?php
 class SQL
 {
  private static $instance;
