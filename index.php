@@ -1,7 +1,7 @@
 
 <?php
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
-$username = "diplomadmin";
+$username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
 $dbname = "mysqldatabase44500";
 
