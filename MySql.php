@@ -48,6 +48,19 @@ $result= $this->db->lastInsertId();
  
  
 } 
+public function createTable($table,$object)
+{ $this->db=new PDO('mysql:host=localhost;dbname=mysqldatabase44500','diplomadmin','Alexandra11');
+ 
+  $sqlList = ['CREATE TABLE IF NOT EXISTS Table (
+                        id  PRIMARY KEY,
+                        name  varchar(64) NOT NULL UNIQUE,
+                        price  int(255) NOT NULL UNIQUE 
+                     );'];
+foreach ($sqlList as $sql) {
+            $this->db->exec($sql);
+        }
+        
+        return $this;
  
 }
       
