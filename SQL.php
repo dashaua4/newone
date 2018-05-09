@@ -52,7 +52,7 @@ $result= $this->db->lastInsertId();
 public function createTable()
 { $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin','Alexandra11');
  
-  $sqlList = ['CREATE TABLE IF NOT EXISTS Table (
+  $sqlList = ['CREATE TABLE IF NOT EXISTS Chair (
                         id  PRIMARY KEY,
                         name  varchar(64) NOT NULL UNIQUE,
                         price  int(255) NOT NULL UNIQUE 
