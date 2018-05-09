@@ -10,7 +10,7 @@ public static function Instance()
 
 private function _construct()
 { setlocale(LC_ALL,'ru_RU.UTF8');
- $this->db=new PDO('mysql:host=localhost;dbname=DiplomBD','root','');
+ $this->db=new PDO('mysql:host=localhost;dbname=mysqldatabase44500','diplomadmin','Alexandra11');
  $this->db->exec('SET NAMES UTF8');
  $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
  
@@ -23,7 +23,7 @@ public function Select($query)
 return $q->fetchAll();
 }
 public function Insert($table,$object)
-{ $this->db=new PDO('mysql:host=localhost;dbname=DiplomBD','root','');
+{ $this->db=new PDO('mysql:host=localhost;dbname=mysqldatabase44500','diplomadmin','Alexandra11');
  
 $columns =array();
 foreach($object as $key=>$value)
