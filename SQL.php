@@ -49,7 +49,7 @@ $result= $this->db->lastInsertId();
  
  
 } 
-public function createTable($table,$object)
+public function createTable()
 { $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin','Alexandra11');
  
   $sqlList = ['CREATE TABLE IF NOT EXISTS Table (
