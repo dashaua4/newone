@@ -1,4 +1,4 @@
-o<?php
+<?php
 if((include('curl_query.php'))==TRUE)
 {echo "O!K";}
 if((include('SQL.php'))==TRUE)
