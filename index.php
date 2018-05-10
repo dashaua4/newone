@@ -1,5 +1,5 @@
 <?php
-include_once('site\wwwrootnewone\SQL.php');
+include('site\wwwrootnewone\SQL.php');
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
