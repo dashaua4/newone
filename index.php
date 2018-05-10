@@ -25,9 +25,7 @@ if (mysqli_num_rows($result) > 0) {
 
 mysqli_close($conn);
 
-include 'curl_query.php';
-include 'simple_html_dom.php';
-include 'SQL.php';
+
 
 
 
