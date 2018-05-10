@@ -11,17 +11,27 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "CREATE TABLE Tables (
-id serial PRIMARY KEY, 
-name VARCHAR(50) ,
-price INTEGER
+include_once('curl_query.php');
+include_once('simple_html_dom.php');
+include_once('SQL.php');
+$html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 
-)";
+$sql=SQL::Instance();
+$dom=str_get_html($html);
+$tables=$dom->find('.name_product');
+foreach($tables as $table)
+{ 
 
-if ($conn->query($sql) === TRUE) {
-    echo "Table Table created successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
+$tobd=array();
+$a=$table->find('a',0);
+
+	$tobd['name']=$a->plaintext;
+	$one=curl_get('https://meblihit.com.ua'.$a->href);
+	$one_dom=str_get_html($one);
+	$cost=$one_dom->find('.item_current_price',0);
+	$tobd['price']=(int)$cost->plaintext;
+$sql->Insert('Tables',$tobd);
+	
 }
 
 
