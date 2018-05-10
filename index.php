@@ -1,7 +1,7 @@
 <?php
 
 
-if ((include 'SQL.php') == TRUE) {
+if ((include 'SQL.php')!= TRUE) {
     echo 'OK';
 
 ?>
