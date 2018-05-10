@@ -1,6 +1,5 @@
 <?php
-if ((include 'SQL.php') == TRUE) {
-    echo 'OK';
+
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
@@ -25,12 +24,7 @@ if (mysqli_num_rows($result) > 0) {
 
 mysqli_close($conn);
 
-
-
-
-
-
-
-
+if ((include 'SQL.php') == TRUE) {
+    echo 'OK';
 
 ?>
