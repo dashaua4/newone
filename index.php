@@ -1,7 +1,4 @@
 <?php
-include_once('curl_query.php');
-include_once('simple_html_dom.php');
-include_once('SQL.php');
 $sql11=SQL::Instance();
 
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
