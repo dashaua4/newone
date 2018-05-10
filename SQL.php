@@ -37,7 +37,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
  
- echo '<h1>wkjdfwjdwid</h1>';
+ echo "<h1>wkjdfwjdwid</h1>";
  //$this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
  
 $columns =array();
@@ -53,7 +53,7 @@ foreach($object as $key=>$value)
  
  $query="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
  $q=$this->conn->prepare($query);
- $q->execute($query);
+ $conn->execute($query);
  if($q->errorCode()!=PDO::ERR_NONE)
  {$info=$q->errorInfo();echo($info[2]);}
 
