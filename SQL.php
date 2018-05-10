@@ -37,7 +37,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
  
- 
+ echo '<h1>wkjdfwjdwid</h1>';
  //$this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
  
 $columns =array();
