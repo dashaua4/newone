@@ -53,12 +53,12 @@ foreach($object as $key=>$value)
  
  $query="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
  $q=$this->conn->prepare($query);
- $q->execute($object);
+ $q->execute($query);
  if($q->errorCode()!=PDO::ERR_NONE)
  {$info=$q->errorInfo();echo($info[2]);}
 
 
-$result= $this->db->lastInsertId();
+$result= $this->conn->lastInsertId();
  return $result;
  
  
