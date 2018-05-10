@@ -15,26 +15,20 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 
-$sql=SQL::Instance();
-$dom=str_get_html($html);
-$tables=$dom->find('.name_product');
-foreach($tables as $table)
-{ 
+$sql = "SELECT id, name, price FROM Locker";
+$result = mysqli_query($conn, $sql);
 
-$tobd=array();
-$a=$table->find('a',0);
-
-	$tobd['name']=$a->plaintext;
-	$one=curl_get('https://meblihit.com.ua'.$a->href);
-	$one_dom=str_get_html($one);
-	$cost=$one_dom->find('.item_current_price',0);
-	$tobd['price']=(int)$cost->plaintext;
-	echo "wefwef";
-$sql->Insert('Tables',$tobd);
-	
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "id: " . $row["id"]. " - name: " . $row["name"]. " " . $row["price"]. "<br>";
+    }
+} else {
+    echo "0 results";
 }
+
+mysqli_close($conn);
 
 
 
