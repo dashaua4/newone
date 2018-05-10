@@ -11,24 +11,6 @@ $data = curl_exec($ch);
 curl_close($ch);
 return($data);
 }
-?>
-<?php
-class SQL
-{ 
- private static $instance;
-private $db;
-public static function Instance()
-{if(self::$instance==null)
- {self::$instance=new SQL();}
- return self::$instance;
-} 
-private function _construct()
-{ setlocale(LC_ALL,'ru_RU.UTF8');
- $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
- $this->db->exec('SET NAMES UTF8');
- $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
- 
-}
 
 public function Insert($table,$object)
 { 
@@ -68,16 +50,10 @@ $result= $this->conn->lastInsertId();
  
 } 
 
- 
-}
-             
-?>
 
-
-<?php
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 
-$sql=Instance();
+
 $dom=str_get_html($html);
 $tables=$dom->find('.name_product');
 foreach($tables as $table)
@@ -92,7 +68,7 @@ $a=$table->find('a',0);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
     echo $tobd;
-$sql->Insert('Tables',$tobd);
+Insert('Tables',$tobd);
 	
 }	
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
@@ -106,7 +82,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT id, name, price FROM Tables";
+$sql = "SELECT id, name, price FROM Locker";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
