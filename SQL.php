@@ -1,6 +1,16 @@
 <?php
 class SQL
-{
+{$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
+$username = "diplomadmin@diplomdb-mysqldbserver";
+$password = "Alexandra11";
+$dbname = "mysqldatabase44500";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
  private static $instance;
 private $db;
 public static function Instance()
@@ -11,7 +21,7 @@ public static function Instance()
 
 private function _construct()
 { setlocale(LC_ALL,'ru_RU.UTF8');
- $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin','Alexandra11');
+ $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
  $this->db->exec('SET NAMES UTF8');
  $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
  
@@ -24,7 +34,7 @@ public function Select($query)
 return $q->fetchAll();
 }
 public function Insert($table,$object)
-{ $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin','Alexandra11');
+{ $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
  
 $columns =array();
 foreach($object as $key=>$value)
@@ -50,7 +60,7 @@ $result= $this->db->lastInsertId();
  
 } 
 public function createTable()
-{ $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin','Alexandra11');
+{ $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
  
   $sqlList = ['CREATE TABLE IF NOT EXISTS Chair (
                         id  PRIMARY KEY,
