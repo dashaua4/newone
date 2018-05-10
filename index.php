@@ -11,6 +11,23 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+$sql = "CREATE TABLE Tables (
+id INT() UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+name VARCHAR(30) NOT NULL,
+price INT NOT NULL,
+
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
+
 
 $sql = "SELECT id, name, price FROM Locker";
 $result = mysqli_query($conn, $sql);
