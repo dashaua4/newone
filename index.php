@@ -1,5 +1,5 @@
 <?php
-if((include('site\wwwrootnewone\SQL.php'))==TRUE)
+if((include('site\wwwrootnewone\SQL.php'))!=TRUE)
 {echo "OK";}
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
