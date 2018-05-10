@@ -1,8 +1,6 @@
 
 <?php
-include 'curl_query.php';
-include 'simple_html_dom.php';
-include 'SQL.php';
+
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
@@ -27,7 +25,9 @@ if (mysqli_num_rows($result) > 0) {
 
 mysqli_close($conn);
 
-
+include 'curl_query.php';
+include 'simple_html_dom.php';
+include 'SQL.php';
 
 
 
