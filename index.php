@@ -1,6 +1,8 @@
 
 <?php
-
+include 'curl_query.php';
+include 'simple_html_dom.php';
+include 'SQL.php';
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
@@ -11,6 +13,25 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
+}
+$html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
+
+$sql1=SQL::Instance();
+$dom=str_get_html($html);
+$tables=$dom->find('.name_product');
+foreach($tables as $table)
+{ 
+
+$tobd=array();
+$a=$table->find('a',0);
+
+	$tobd['name']=$a->plaintext;
+	$one=curl_get('https://meblihit.com.ua'.$a->href);
+	$one_dom=str_get_html($one);
+	$cost=$one_dom->find('.item_current_price',0);
+	$tobd['price']=(int)$cost->plaintext;
+$sql1->Insert('Tables',$tobd);
+	
 }
 
 $sql = "SELECT id, name, price FROM Locker";
