@@ -1,5 +1,6 @@
 <?php
-
+if ((include 'SQL.php') == TRUE) {
+    echo 'OK';
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
