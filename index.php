@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
-include 'SQL.php'
+include 'SQL.php';
 $sql11=SQL::Instance();
 
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
