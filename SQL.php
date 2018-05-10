@@ -1,4 +1,5 @@
 <?php
+echo "FGHJKL:JHG";
 class SQL
 { 
  private static $instance;
