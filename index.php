@@ -19,7 +19,7 @@ $a=$table->find('a',0);
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
-$sql->Insert('Tables',$tobd);
+//Insert('Tables',$tobd);
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
@@ -31,7 +31,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT id, name, price FROM Locker";
+$sql = "SELECT id, name, price FROM tables";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
