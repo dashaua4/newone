@@ -1,7 +1,7 @@
 <?php
 
 
-if ((require_once  'SQL.php')== TRUE) {
+if ((include  'SQL.php')!= TRUE) {
     echo 'OK';
 
 ?>
