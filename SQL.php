@@ -24,7 +24,21 @@ public function Select($query)
 return $q->fetchAll();
 }
 public function Insert($table,$object)
-{ $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
+{ 
+ $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
+$username = "diplomadmin@diplomdb-mysqldbserver";
+$password = "Alexandra11";
+$dbname = "mysqldatabase44500";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+ 
+ 
+ //$this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
  
 $columns =array();
 foreach($object as $key=>$value)
@@ -38,7 +52,7 @@ foreach($object as $key=>$value)
  $masks_s=implode(',',$masks);
  
  $query="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
- $q=$this->db->prepare($query);
+ $q=$this->conn->prepare($query);
  $q->execute($object);
  if($q->errorCode()!=PDO::ERR_NONE)
  {$info=$q->errorInfo();echo($info[2]);}
