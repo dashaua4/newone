@@ -12,7 +12,7 @@ curl_close($ch);
 return($data);
 }
 
-public function Insert($table,$object)
+function Insert($table,$object)
 { 
  $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
