@@ -1,5 +1,6 @@
 <?php
-
+if((include('curl_query.php'))==TRUE)
+{echo "OK";}
 if((include('SQL.php'))==TRUE)
 {echo "OK";}
 
