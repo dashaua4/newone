@@ -1,5 +1,8 @@
 
 <?php
+include_once('curl_query.php');
+include_once('simple_html_dom.php');
+include_once('SQL.php');
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
@@ -11,9 +14,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-include_once('curl_query.php');
-include_once('simple_html_dom.php');
-include_once('SQL.php');
+
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 
 $sql=SQL::Instance();
@@ -39,7 +40,7 @@ $sql->Insert('Tables',$tobd);
 
 
 
-$sql = "SELECT id, name, price FROM Locker";
+$sql = "SELECT id, name, price FROM Tables";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
