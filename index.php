@@ -31,7 +31,7 @@ $a=$table->find('a',0);
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
-//$sql->Insert('Tables',$tobd);
+$sql->Insert('Tables',$tobd);
 	
 }
 
