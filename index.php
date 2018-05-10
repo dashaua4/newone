@@ -1,55 +1,6 @@
 <?php
-function curl_get($url,$referer='http://www.google.com'){
-	
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_HEADER, 0);
-curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.2 (KHTML, like Gecko) Chrome/22.0.1216.0 Safari/537.2');
-curl_setopt($ch, CURLOPT_REFERER, $referer);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$data = curl_exec($ch);
-curl_close($ch);
-return($data);
-}
-
-function Insert($table,$object)
-{ 
- $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
-$username = "diplomadmin@diplomdb-mysqldbserver";
-$password = "Alexandra11";
-$dbname = "mysqldatabase44500";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
- 
- echo "GFGHJFGFHJK";
- //$this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
- 
-$columns =array();
-foreach($object as $key=>$value)
-{
- $columns[]=$key;
- $masks[]=":$key";
- if($value==null)
- {$object[$key]='NULL';}
-}
- $columns_s=implode(',',$columns);
- $masks_s=implode(',',$masks);
- 
- $query="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
- $q=$this->conn->prepare($query);
- $conn->execute($object);
- if($q->errorCode()!=PDO::ERR_NONE)
- {$info=$q->errorInfo();echo($info[2]);}
-$result= $this->conn->lastInsertId();
- return $result;
- 
- 
-} 
-
+include 'SQL.php'
+$sql=SQL::Instance();
 
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 
@@ -68,7 +19,7 @@ $a=$table->find('a',0);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
     echo $tobd;
-Insert('Tables',$tobd);
+$sql->Insert('Tables',$tobd);
 	
 }	
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
