@@ -12,9 +12,9 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $sql = "CREATE TABLE Tables (
-id INT() UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-name VARCHAR(30) NOT NULL,
-price INT NOT NULL,
+id serial PRIMARY KEY, 
+name VARCHAR(50) ,
+price INTEGER
 
 )";
 
