@@ -17,6 +17,7 @@ foreach($tables as $table)
 	$tobd=array();
 $a=$table->find('a',0);
 $tobd['name']=$a->plaintext;
+	echo $a->plaintext;
 	$one=curl_get('https://meblihit.com.ua'.$a->href);
 	$one_dom=str_get_html($one);
 	echo "NO";
