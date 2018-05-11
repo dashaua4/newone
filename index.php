@@ -4,7 +4,7 @@
 echo "lalala";
 include('curl_query.php');
 include('simple_html_dom.php');
-
+include('SQL.php');
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 echo "Cget";
 
@@ -22,6 +22,7 @@ $tobd['name']=$a->plaintext;
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
+	Insert('Tables',$tobd);
 	echo $a->plaintext.' '.$cost->plaintext.'<br>';
 
 	
