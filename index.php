@@ -16,7 +16,7 @@ $columns =array();
 foreach($object as $key=>$value)
 {
  $columns[]=$key;
- $masks[]=":$key";
+ $masks[]="$key";
  if($value==null)
  {$object[$key]='NULL';}
 }
