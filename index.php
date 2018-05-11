@@ -11,7 +11,7 @@ $dom=str_get_html($html);
 $tables=$dom->find('.name');
 foreach($tables as $table)
 { 
-echo $tables->plaintext.'<br>';
+echo $tables->plaintext;
 
 	
 }
