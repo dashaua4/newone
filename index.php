@@ -15,9 +15,27 @@ if (!$conn) {
 $columns =array();
 foreach($object as $key=>$value)
 {
- echo "{$key} => {$value} ";
-    print_r($object);
+	$columns[]=$key;
+	$masks[]=":$key";
+ //echo "{$key} => {$value} ";
+   // print_r($object);
 }
+	foreach($columns as $key=>$value)
+{
+	
+	
+ echo "{$key} => {$value} ";
+    print_r($columns);
+}
+
+	foreach($masks as $key=>$value)
+{
+	
+	echo "VALUE";
+ echo "{$key} => {$value} ";
+    print_r($masks);
+}	
+	
 
 mysqli_close($conn);
 
