@@ -24,13 +24,17 @@ if($value==null)
 }
  $columns_s=implode(',',$columns);
  $masks_s=implode(',',$masks);
- 
-$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
-if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+ foreach($masks_s as $key=>$value)
+{
+	
+print_r($masks_s);}
+
+//$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
+//if (mysqli_query($conn, $sql)) {
+  //  echo "New record created successfully";
+//} else {
+  //  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+//}
 	
 	
 	
