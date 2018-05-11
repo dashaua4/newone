@@ -15,21 +15,8 @@ if (!$conn) {
 $columns =array();
 foreach($object as $key=>$value)
 {
- $columns[]=$key;
- $masks[]=":$key";
- if($value==null)
- {$object[$key]='NULL';}
-}
- $columns_s=implode(',',$columns);
- $masks_s=implode(',',$masks);
- 
-
- 
- $sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
-	if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+ echo "{$key} => {$value} ";
+    print_r($arr);
 }
 
 mysqli_close($conn);
