@@ -23,11 +23,12 @@ foreach($object as $key=>$value)
  if($value==null)
  {$object[$key]='NULL';}
 }
-	foreach($masks as $val){
+	 $columns_s=implode(',',$columns);
+ $masks_s=implode(',',$masks);
+	foreach($masks_s as $val){
 echo $val.'<br>';}
 	
- $columns_s=implode(',',$columns);
- $masks_s=implode(',',$masks);
+
 	
 
 //$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
