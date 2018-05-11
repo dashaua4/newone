@@ -20,7 +20,7 @@ foreach($object as $key=>$value)
 {
 	
 	
- echo "{$key} => {$value} ";
+ //echo "{$key} => {$value} ";
     print_r($columns);
 }
 	//$masks[]=":$key";
