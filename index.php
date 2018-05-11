@@ -73,7 +73,7 @@ $tobd['name']=$a->plaintext;
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
 
-	//Insert('Tables',$tobd);
+	Insert('Tables',$tobd);
 }
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
