@@ -17,15 +17,14 @@ if (!$conn) {
  echo "GFGHJFGFHJK";
  //$this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
  
- $query="INSERT INTO Tables (id,name,price) VALUE (1,'Модульна система Офис (ofіs)',13991)";
- $q=$this->conn->prepare($query);
- $q->execute($query);
-$result= $this->conn->lastInsertId();
- if($result== true)
- {
-  echo "ales im ordnung";
- }
- return $result;
+ $sql="INSERT INTO Tables (id,name,price) VALUE (1,'Модульна система Офис (ofіs)',13991)";
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
  
  
 } 
@@ -55,7 +54,7 @@ $tobd['name']=$a->plaintext;
 	
 	
 }
-//echo (Insert());
+Insert();
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
