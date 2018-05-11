@@ -25,8 +25,8 @@ foreach($object as $key=>$value)
 }
 	 $columns_s=implode(',',$columns);
  $masks_s=implode(',',$masks);
-	foreach($masks_s as $value1)
-	{echo $masks_s;
+	foreach($masks as $value1)
+	{echo $masks;
 	}
 	
 
