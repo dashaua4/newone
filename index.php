@@ -12,7 +12,7 @@ $dom=str_get_html($html);
 echo "strgethtml";
 $tables=$dom->find('.name_product');
 echo "get table";
-include('SQL.php');
+
 foreach($tables as $table)
 { 
 	$tobd=array();
@@ -23,7 +23,7 @@ $tobd['name']=$a->plaintext;
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
-	Insert('Tables',$tobd);
+	//Insert('Tables',$tobd);
 	echo $a->plaintext.' '.$cost->plaintext.'<br>';
 
 	
