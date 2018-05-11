@@ -79,8 +79,9 @@ $tobd['name']="'".$a->plaintext."'";
 	$cost=$one_dom->find('.item_current_price',0);
 //echo $cost;
 	$tobd['price']=(int)$cost->plaintext;
+	Insert('Tables',$tobd);
 }
-	//Insert('Tables',$tobd);
+	//
 foreach($tobd as $value1)
 {
 //Insert('Tables',$tobd);
@@ -98,15 +99,15 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "CREATE TABLE Tables (
-id INTEGER  PRIMARY KEY AUTO_INCREMENT, 
-name VARCHAR(50) ,
-price INTEGER
-)";
-if ($conn->query($sql) === TRUE) {
-    echo "Table Table created successfully";
+$sql = "SELECT id, name, price FROM Tables";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "id: " . $row["id"]. " - name: " . $row["name"]. " " . $row["price"]. "<br>";
+    }
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "0 results";
 }
 
 mysqli_close($conn);
