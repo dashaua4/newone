@@ -26,10 +26,13 @@ foreach($object as $key=>$value)
 
  
  $sql="INSERT INTO $table (id,$columns_s) VALUE ($masks_s)";
-	 $q=$this->conn->prepare($sql);
- $conn->execute($sql);
-$result= $this->conn->lastInsertId();
- return $result;
+	if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
 
 
 
@@ -59,7 +62,7 @@ $tobd['name']=$a->plaintext;
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
 
-	echo(Insert('Tables',$tobd));
+	Insert('Tables',$tobd);
 }
 
 
