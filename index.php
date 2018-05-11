@@ -32,8 +32,8 @@ foreach($object as $key=>$value)
 {
 	
 	echo "VALUE";
- echo "{$key} => {$value} ";
-    print_r($masks);
+ //echo "{$key} => {$value} ";
+   // print_r($masks);
 }	
 	
 
