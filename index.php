@@ -98,11 +98,15 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "DROP TABLE Tables";
+$sql = "CREATE TABLE Tables (
+id INTEGER  PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR(50) ,
+price INTEGER
+)";
 if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+    echo "Table Table created successfully";
 } else {
-    echo "Error deleting record: " . $conn->error;
+    echo "Error creating table: " . $conn->error;
 }
 
 mysqli_close($conn);
