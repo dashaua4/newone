@@ -20,6 +20,7 @@ foreach($object as $key=>$value)
 {
  $columns[]=$key;
  $masks[]=$value;
+	$masks['name']="'".$masks['name']."'";
  if($value==null)
  {$object[$key]='NULL';}
 }
