@@ -11,6 +11,7 @@ $dom=str_get_html($html);
 $tables=$dom->find('.name');
 foreach($tables as $table)
 { 
+	echo "NO";
 echo $tables->plaintext;
 
 	
