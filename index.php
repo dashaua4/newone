@@ -67,9 +67,9 @@ $i=1;
 	$tobd=array();
 	$tobd['id']=$i;
 $a=$table->find('a',0);
-echo $a->plaintext.'<br>';	
-$tobd['name']="'".$a->plaintext."'";
 	
+$tobd['name']="'".$a->plaintext."'";
+	echo $a->plaintext.'<br>';
 	$one=curl_get('https://meblihit.com.ua'.$a->href);
 //echo $one;
 	$one_dom=str_get_html($one);
