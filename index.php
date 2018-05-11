@@ -76,9 +76,9 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $sql = "CREATE TABLE Tables (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-name VARCHAR(30) NOT NULL,
-price INT() NOT NULL
+id INTEGER  PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR(64) NOT NULL,
+price INTEGER NOT NULL
 )";
 
 if ($conn->query($sql) === TRUE) {
