@@ -16,10 +16,6 @@ $columns =array();
 foreach($object as $key=>$value)
 {
 	$columns[]=$key;
-	$masks[]=":$key";
- //echo "{$key} => {$value} ";
-   // print_r($object);
-}
 	foreach($columns as $key=>$value)
 {
 	
@@ -27,11 +23,16 @@ foreach($object as $key=>$value)
  echo "{$key} => {$value} ";
     print_r($columns);
 }
+	//$masks[]=":$key";
+ //echo "{$key} => {$value} ";
+   // print_r($object);
+}
+	
 
 	foreach($masks as $key=>$value)
 {
 	
-	echo "VALUE";
+	//echo "VALUE";
  //echo "{$key} => {$value} ";
    // print_r($masks);
 }	
