@@ -63,18 +63,18 @@ $dom=str_get_html($html);
 
 $tables=$dom->find('.name_product');
 $i=1;
-echo $tables;
+//echo $tables;
 	$tobd=array();
 	$tobd['id']=$i;
 $a=$table->find('a',0);
-echo $a;	
+echo $a->plaintext.'<br>';	
 $tobd['name']="'".$a->plaintext."'";
 	
 	$one=curl_get('https://meblihit.com.ua'.$a->href);
-echo $one;
+//echo $one;
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
-echo $cost;
+//echo $cost;
 	$tobd['price']=(int)$cost->plaintext;
 
 	//Insert('Tables',$tobd);
