@@ -25,7 +25,7 @@ if($value==null)
  $columns_s=implode(',',$columns);
  $masks_s=implode(',',$masks);
  
-
+$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
 } else {
