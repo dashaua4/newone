@@ -25,7 +25,7 @@ foreach($object as $key=>$value)
  {$object[$key]='NULL';}
 }
 	foreach($masks as $val){
-echo $val;}
+echo $masks;}
 	
  $columns_s=implode(',',$columns);
  $masks_s=implode(',',$masks);
