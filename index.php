@@ -16,12 +16,12 @@ $columns =array();
 foreach($object as $key=>$value)
 {
 	$columns[]=$key;
-	foreach($columns as $key=>$value)
+	foreach($masks as $key=>$value)
 {
 	
 	
  //echo "{$key} => {$value} ";
-    print_r($columns);
+    print_r($masks);
 }
 	//$masks[]=":$key";
  //echo "{$key} => {$value} ";
