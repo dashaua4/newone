@@ -32,12 +32,12 @@ foreach($object as $key=>$value)
 
 	
 
-//$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
-//if (mysqli_query($conn, $sql)) {
-  //echo "New record created successfully";
-//} else {
-  //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-//}
+$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
+if (mysqli_query($conn, $sql)) {
+echo "New record created successfully";
+} else {
+echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 	
 	
 	
