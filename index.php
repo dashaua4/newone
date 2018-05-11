@@ -80,7 +80,7 @@ $tobd['name']="'".$a->plaintext."'";
 	$tobd['price']=(int)$cost->plaintext;
 }
 	//Insert('Tables',$tobd);
-foreach($tobd as $key1->$value1)
+foreach($tobd as $value1)
 {
 	echo $value1.'<br>';
 }
