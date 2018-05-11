@@ -1,8 +1,5 @@
 <?php
-if((include('curl_query.php'))==TRUE)
-{echo "O!K";}
-if((include('SQL.php'))==TRUE)
-{echo "OK";}
+
 
 echo "lalala";
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
