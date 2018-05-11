@@ -25,7 +25,7 @@ foreach($object as $key=>$value)
  
 
  
- $sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
+ $sql="INSERT INTO $table (id,$columns_s) VALUE ($masks_s)";
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
