@@ -3,7 +3,7 @@ if((include('curl_query.php'))==TRUE)
 {echo "O!K";}
 if((include('SQL.php'))==TRUE)
 {echo "OK";}
-<?php
+
 
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 
@@ -20,7 +20,7 @@ $a=$table->find('a',0);
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
-//Insert('Tables',$tobd);
+Insert('Tables',$tobd);
 	
 }
 
