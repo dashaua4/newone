@@ -22,8 +22,8 @@ $columns[]=$key;
 if($value==null)
  {$object[$key]='NULL';}
 }
-	foreach($masks as $key1=>$val){
-echo $key1;}
+	foreach($masks as $val){
+echo $val.'<br>';}
 	
  $columns_s=implode(',',$columns);
  $masks_s=implode(',',$masks);
