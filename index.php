@@ -15,7 +15,7 @@ if (!$conn) {
 $columns =array();
 foreach($object as $key=>$value)
 {
-	$columns[]=$key;
+	$masks[]=":$key";
 	foreach($masks as $key=>$value)
 {
 	
