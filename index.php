@@ -4,7 +4,7 @@
 echo "lalala";
 include('curl_query.php');
 include('simple_html_dom.php');
-include('SQL.php');
+
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 echo "Cget";
 
@@ -12,6 +12,7 @@ $dom=str_get_html($html);
 echo "strgethtml";
 $tables=$dom->find('.name_product');
 echo "get table";
+include('SQL.php');
 foreach($tables as $table)
 { 
 	$tobd=array();
