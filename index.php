@@ -22,7 +22,7 @@ $columns[]=$key;
 if($value==null)
  {$object[$key]='NULL';}
 }
-	foreach($masks as $key1=>$val){
+	foreach($columns as $key1=>$val){
 echo $key1;}
 	
  $columns_s=implode(',',$columns);
