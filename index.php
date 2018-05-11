@@ -17,15 +17,17 @@ foreach($object as $key=>$value)
 {
 	
 $columns[]=$key;
-	$masks[]="$object";
+	$masks[]="$key";
 
 if($value==null)
  {$object[$key]='NULL';}
 }
- $columns_s=implode(',',$columns);
- $masks_s=implode(',',$masks);
 	foreach($masks as $val){
 echo $val;}
+	
+ $columns_s=implode(',',$columns);
+ $masks_s=implode(',',$masks);
+	
 
 //$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
 //if (mysqli_query($conn, $sql)) {
