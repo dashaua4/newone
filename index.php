@@ -24,7 +24,7 @@ if($value==null)
 }
  $columns_s=implode(',',$columns);
  $masks_s=implode(',',$masks);
-	foreach($masks_s as $val){
+	foreach($masks as $val){
 echo $val;}
 
 //$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
