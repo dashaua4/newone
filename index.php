@@ -80,9 +80,8 @@ $tobd['name']="'".$a->plaintext."'";
 	$tobd['price']=(int)$cost->plaintext;
 }
 	//Insert('Tables',$tobd);
-foreach ($tobd as $key => $value) {
-     echo "{$key} => {$value} ";
-    print_r($tobd[5]).'<br>';
+for($i = 1; $i <= 5; $i++) {
+     echo $tobd[$i].'<br>';
 }
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
