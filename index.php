@@ -16,20 +16,23 @@ $columns =array();
 foreach($object as $key=>$value)
 {
 	
+$columns[]=$key;
+	$masks[]="$object";
 
-	//$masks[]=":$key";
- //echo "{$key} => {$value} ";
-  print_r($object);
+if($value==null)
+ {$object[$key]='NULL';}
+}
+ $columns_s=implode(',',$columns);
+ $masks_s=implode(',',$masks);
+ 
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 	
-
-	foreach($masks as $key=>$value)
-{
 	
-	//echo "VALUE";
- //echo "{$key} => {$value} ";
-   // print_r($masks);
-}	
 	
 
 mysqli_close($conn);
