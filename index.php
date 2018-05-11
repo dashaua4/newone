@@ -23,8 +23,10 @@ $tobd['name']=$a->plaintext;
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
+	$first= array_shift($tobd);
+	
 	echo $a->plaintext.' '.$cost->plaintext.'<br>';
-
+	echo $first;
 	
 }
 
