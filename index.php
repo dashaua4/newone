@@ -16,7 +16,7 @@ $columns =array();
 foreach($object as $key=>$value)
 {
  echo "{$key} => {$value} ";
-    print_r($arr);
+    print_r($object);
 }
 
 mysqli_close($conn);
