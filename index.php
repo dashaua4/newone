@@ -25,18 +25,17 @@ foreach($object as $key=>$value)
 }
 	 $columns_s=implode(',',$columns);
  $masks_s=implode(',',$masks);
-	foreach($masks_s as $val){
-echo $val.'<br>';}
+	
 	
 
 	
 
-//$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
-//if (mysqli_query($conn, $sql)) {
-  //  echo "New record created successfully";
-//} else {
-  //  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-//}
+$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
+if (mysqli_query($conn, $sql)) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 	
 	
 	
