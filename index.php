@@ -77,8 +77,8 @@ if (!$conn) {
 }
 $sql = "CREATE TABLE Tables (
 id INTEGER  PRIMARY KEY AUTO_INCREMENT, 
-name VARCHAR(64) NOT NULL,
-price INTEGER NOT NULL
+name VARCHAR(64),
+price INTEGER 
 )";
 
 if ($conn->query($sql) === TRUE) {
