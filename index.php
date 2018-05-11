@@ -50,11 +50,11 @@ $tobd['name']=$a->plaintext;
 	$one=curl_get('https://meblihit.com.ua'.$a->href);
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
-	$tobd['price']=$cost->plaintext;
-	
+	$tobd['price']=(int)$cost->plaintext;
+	echo (int)$cost->plaintext;
 	
 }
-Insert();
+//Insert();
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
