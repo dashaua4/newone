@@ -25,7 +25,7 @@ foreach($object as $key=>$value)
  
 
  
- $sql="INSERT INTO $table (id,$columns_s) VALUE ($masks_s)";
+ $sql="INSERT INTO $table (id,$columns_s) VALUE (1,$masks_s)";
 	if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
 } else {
@@ -54,7 +54,7 @@ $i;
 foreach($tables as $table)
 { 
 	$tobd=array();
-	$tobd['id']=$i++;
+	
 $a=$table->find('a',0);
 	
 $tobd['name']=$a->plaintext;
@@ -64,7 +64,7 @@ $tobd['name']=$a->plaintext;
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
 
-	//Insert('Tables',$tobd);
+	Insert('Tables',$tobd);
 }
 
 
