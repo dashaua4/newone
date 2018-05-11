@@ -59,9 +59,29 @@ $tobd['name']=$a->plaintext;
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
 
-	echo(Insert('Tables',$tobd));
+	//echo(Insert('Tables',$tobd));
 }
 
 
+
+$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
+$username = "diplomadmin@diplomdb-mysqldbserver";
+$password = "Alexandra11";
+$dbname = "mysqldatabase44500";
+echo "GGGGGGGGGG";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql = "DROP TABLE Tables";
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn->error;
+}
+
+mysqli_close($conn);
 
 ?>
