@@ -1,8 +1,7 @@
  <?php
 function Insert($table,$object)
 { 
-	public function Insert($table,$object)
-{ 
+	
  $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
@@ -20,7 +19,7 @@ $columns =array();
 foreach($object as $key=>$value)
 {
  $columns[]=$key;
- $masks[]=":$key";
+ $masks[]=$value;
  if($value==null)
  {$object[$key]='NULL';}
 }
