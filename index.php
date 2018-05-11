@@ -20,7 +20,6 @@ foreach($object as $key=>$value)
 {
  $columns[]=$key;
  $masks[]=$value;
-	$masks['name']="'".$masks['name']."'";
  if($value==null)
  {$object[$key]='NULL';}
 }
@@ -70,7 +69,7 @@ foreach($tables as $table)
 	$tobd['id']=$i++;
 $a=$table->find('a',0);
 	
-$tobd['name']=$a->plaintext;
+$tobd['name']="'".$a->plaintext."'";
 	
 	$one=curl_get('https://meblihit.com.ua'.$a->href);
 	$one_dom=str_get_html($one);
