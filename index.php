@@ -1,25 +1,25 @@
 <?php
 function Insert()
 { 
- echo "GFGHJFGFHJK";
- $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
- 
-$columns =array();
-foreach($object as $key=>$value)
-{
- $columns[]=$key;
- $masks[]=":$key";
- if($value==null)
- {$object[$key]='NULL';}
+	$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
+$username = "diplomadmin@diplomdb-mysqldbserver";
+$password = "Alexandra11";
+$dbname = "mysqldatabase44500";
+echo "GGGGGGGGGG";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
- $columns_s=implode(',',$columns);
- $masks_s=implode(',',$masks);
+
+//mysqli_close($conn);
+ echo "GFGHJFGFHJK";
+ //$this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
  
  $query="INSERT INTO Tables (id,name,price) VALUE (1,'Модульна система Офис (ofіs)',13991)";
- $q=$this->db->prepare($query);
+ $q=$this->conn->prepare($query);
  $q->execute($query);
- if($q->errorCode()!=PDO::ERR_NONE)
- {$info=$q->errorInfo();echo($info[2]);}
 $result= $this->conn->lastInsertId();
  if($result== true)
  {
@@ -55,7 +55,7 @@ $tobd['name']=$a->plaintext;
 	
 	
 }
-echo Insert();
+echo (Insert());
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
