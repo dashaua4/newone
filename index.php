@@ -26,13 +26,13 @@ foreach($object as $key=>$value)
 
  
  $sql="INSERT INTO $table (id,$columns_s) VALUE ($masks_s)";
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+	 $q=$this->conn->prepare($sql);
+ $conn->execute($sql);
+$result= $this->conn->lastInsertId();
+ return $result;
 
-$conn->close();
+
+
  
  
 } 
