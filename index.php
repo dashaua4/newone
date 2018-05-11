@@ -81,9 +81,8 @@ $tobd['name']="'".$a->plaintext."'";
 }
 	//Insert('Tables',$tobd);
 foreach ($tobd as $key => $value) {
-    // $arr[3] будет перезаписываться значениями $arr при каждой итерации цикла
-    echo "{$key} => {$value} ";
-    print_r($tobd).'<br>';
+     echo "{$key} => {$value} ";
+    print_r($tobd[1]).'<br>';
 }
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
