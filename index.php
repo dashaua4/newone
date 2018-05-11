@@ -17,12 +17,12 @@ foreach($object as $key=>$value)
 {
 	
 $columns[]=$key;
-	$masks[]=:$object;
+	$masks[]=$value;
 
 if($value==null)
  {$object[$key]='NULL';}
 }
-	foreach($columns as $key1=>$val){
+	foreach($masks as $key1=>$val){
 echo $key1;}
 	
  $columns_s=implode(',',$columns);
