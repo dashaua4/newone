@@ -30,7 +30,7 @@ foreach($object as $key=>$value)
 
 	
 
-$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
+$sql="INSERT INTO $table ($columns_s) VALUE ('$masks_s')";
 if (mysqli_query($conn, $sql)) {
   echo "New record created successfully";
 } else {
@@ -60,7 +60,7 @@ $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 $dom=str_get_html($html);
 
 $tables=$dom->find('.name_product');
-$i=0;
+$i=1;
 foreach($tables as $table)
 { 
 	$tobd=array();
