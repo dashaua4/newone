@@ -1,5 +1,8 @@
 <?php
-
+function NEW()
+{
+  echo "nichts in ordnung";
+}
 function Insert($table,$object)
 { 
 // $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
