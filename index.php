@@ -79,7 +79,7 @@ $tobd['name']="'".$a->plaintext."'";
 //echo $cost;
 	$tobd['price']=(int)$cost->plaintext;
 }
-	//Insert('Tables',$tobd);
+	Insert('Tables',$tobd);
 
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
