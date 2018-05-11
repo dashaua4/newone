@@ -26,7 +26,7 @@ $tobd['name']=$a->plaintext;
 	$first= array_shift($tobd);
 	
 	//echo $a->plaintext.' '.$cost->plaintext.'<br>';
-	echo $first;
+	echo $first.'<br>';
 	
 }
 
