@@ -1,25 +1,27 @@
  <?php
 function Insert($table,$object)
 { 
-	$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
+	public function Insert($table,$object)
+{ 
+ $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
 $dbname = "mysqldatabase44500";
-echo "hjjnjnk";
+
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+ 
+
 $columns =array();
 foreach($object as $key=>$value)
 {
-	
-$columns[]=$key;
-	$masks[]=$value;
-
-if($value==null)
+ $columns[]=$key;
+ $masks[]=":$key";
+ if($value==null)
  {$object[$key]='NULL';}
 }
 	foreach($masks as $val){
