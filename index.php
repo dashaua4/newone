@@ -19,7 +19,7 @@ foreach($object as $key=>$value)
 
 	//$masks[]=":$key";
  echo "{$key} => {$value} ";
-  print_r($object);
+ // print_r($object);
 }
 	
 
