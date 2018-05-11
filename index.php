@@ -79,7 +79,7 @@ $tobd['name']="'".$a->plaintext."'";
 	$cost=$one_dom->find('.item_current_price',0);
 //echo $cost;
 	$tobd['price']=(int)$cost->plaintext;
-	Insert('Tables',$tobd);
+	//Insert('Tables',$tobd);
 }
 	//
 foreach($tobd as $value1)
