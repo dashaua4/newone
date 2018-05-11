@@ -23,7 +23,7 @@ if($value==null)
  {$object[$key]='NULL';}
 }
 	foreach($masks as $val){
-echo $val.'<br>';}
+echo "1111";}
 	
  $columns_s=implode(',',$columns);
  $masks_s=implode(',',$masks);
