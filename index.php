@@ -80,14 +80,10 @@ $tobd['name']="'".$a->plaintext."'";
 	$tobd['price']=(int)$cost->plaintext;
 }
 	//Insert('Tables',$tobd);
-for ($i = 0; $i < 5; $i++) 
-  { 
-    for ($j=0; $j <5; $j++) 
-    { 
-       echo ' | '.$tobd[$i][$j]; 
-    } 
-    echo '<br />'; 
-  } 
+foreach($tobd as $key1->$value1)
+{
+	echo $value1.'<br>';
+}
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
