@@ -64,8 +64,8 @@ $dom=str_get_html($html);
 $tables=$dom->find('.name_product');
 $i=1;
 //echo $tables;
-foreach($tables as $table)
-{$tobd=array();
+
+$tobd=array();
 	$tobd['id']=$i;
 $a=$table->find('a',0);
 	
@@ -79,7 +79,7 @@ echo $a->plaintext;
 	$tobd['price']=(int)$cost->plaintext;
 
 	//Insert('Tables',$tobd);
-}
+
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
