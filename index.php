@@ -1,4 +1,4 @@
-<?php
+ <?php
 function Insert($table,$object)
 { 
 	$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
@@ -27,7 +27,7 @@ if($value==null)
  foreach($masks_s as $key=>$value)
 {
 	
-print_r($masks_s);}
+echo $masks_s;}
 
 //$sql="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
 //if (mysqli_query($conn, $sql)) {
