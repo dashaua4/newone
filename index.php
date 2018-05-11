@@ -81,7 +81,7 @@ $tobd['name']="'".$a->plaintext."'";
 }
 	//Insert('Tables',$tobd);
 for($i = 0, $size = count($tobd); $i < $size; ++$i) {
-    echo $ytobd[$i]['$$price'] ;
+    echo $tobd[$i]['$$price'] ;
 }
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
