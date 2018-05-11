@@ -1,5 +1,5 @@
 <?php
-function Insert($table,$object)
+function Insert()
 { 
  echo "GFGHJFGFHJK";
  $this->db=new PDO('mysql:host=diplomdb-mysqldbserver.mysql.database.azure.com;port=3306;dbname=mysqldatabase44500','diplomadmin@diplomdb-mysqldbserver','Alexandra11');
@@ -15,7 +15,7 @@ foreach($object as $key=>$value)
  $columns_s=implode(',',$columns);
  $masks_s=implode(',',$masks);
  
- $query="INSERT INTO $table ($columns_s) VALUE ($masks_s)";
+ $query="INSERT INTO Tables (id,name,price) VALUE (1,'Модульна система Офис (ofіs)',13991)";
  $q=$this->db->prepare($query);
  $q->execute($query);
  if($q->errorCode()!=PDO::ERR_NONE)
@@ -53,9 +53,9 @@ $tobd['name']=$a->plaintext;
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=$cost->plaintext;
 	
-//echo Insert('Tables',$tobd);	
+	
 }
-
+echo Insert();
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
