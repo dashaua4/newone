@@ -5,10 +5,10 @@ echo "lalala";
 include('curl_query.php');
 
 
-$html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
+$html=curl_get('http://mebli-lviv.com.ua/ru/pysmovi-kompyuterni-stoly1/');
 $dom=str_get_html($html);
 
-$tables=$dom->find('.name_product');
+$tables=$dom->find('.name');
 foreach($tables as $table)
 { 
 echo $tables->plaintext.'<br>';
