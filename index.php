@@ -82,7 +82,7 @@ $tobd['name']="'".$a->plaintext."'";
 	//Insert('Tables',$tobd);
 foreach ($tobd as $key => $value) {
      echo "{$key} => {$value} ";
-    print_r($tobd[1]).'<br>';
+    print_r($tobd[5]).'<br>';
 }
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
