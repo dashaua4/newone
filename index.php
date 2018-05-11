@@ -62,12 +62,12 @@ $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 $dom=str_get_html($html);
 
 $tables=$dom->find('.name_product');
-$i=1;
+$i=2;
 //echo $tables;
 foreach($tables as $table)
 {
 $tobd=array();
-	$tobd['id']=$i;
+	$tobd['id']=$i++;
 $a=$table->find('a',0);
 	
 $tobd['name']="'".$a->plaintext."'";
