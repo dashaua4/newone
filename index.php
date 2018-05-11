@@ -2,7 +2,7 @@
 
 
 echo "lalala";
-include('curl_query.php')
+include('curl_query.php');
 
 
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
