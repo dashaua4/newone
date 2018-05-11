@@ -55,7 +55,7 @@ $tobd['name']=$a->plaintext;
 	
 	
 }
-echo (Insert());
+//echo (Insert());
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
