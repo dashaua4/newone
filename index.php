@@ -91,15 +91,18 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "DROP TABLE IF EXISTS Locker";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+$sql = "SELECT id, name, price FROM Locker";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "id: " . $row["id"]. " - name: " . $row["name"]. " " . $row["price"]. "<br>";
+    }
 } else {
-    echo "Error deleting record: " . $conn->error;
+    echo "0 results";
 }
 
-$conn->close();
+mysqli_close($conn);
 
 
 
