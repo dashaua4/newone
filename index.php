@@ -16,16 +16,18 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 	
-  $sqlList = ['CREATE TABLE IF NOT EXISTS Tables (
+  $sql = ['CREATE TABLE IF NOT EXISTS Tables (
                         id INTEGER AUTO_INCREMENT PRIMARY KEY,
                         name  VARCHAR(64),
                         price  INTEGER 
                      );'];
-foreach ($sqlList as $sql) {
-            $this->conn->exec($sql);
-        }
-        
-        return $this;
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn->error;
+}
+
+$conn->close();
  
     
 }
