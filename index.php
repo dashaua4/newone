@@ -69,15 +69,15 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT id, name, price FROM Tables";
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "id: " . $row["id"]. " - name: " . $row["name"]. " " . $row["price"]. "<br>";
-    }
+$sql = "CREATE TABLE Tables (
+id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+name VARCHAR(64) ,
+price INTEGER
+)";
+if ($conn->query($sql) === TRUE) {
+    echo "Table Table created successfully";
 } else {
-    echo "0 results";
+    echo "Error creating table: " . $conn->error;
 }
 
 mysqli_close($conn);
