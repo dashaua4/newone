@@ -1,4 +1,34 @@
  <?php
+
+
+
+function CR_Table();
+{
+	 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
+$username = "diplomadmin@diplomdb-mysqldbserver";
+$password = "Alexandra11";
+$dbname = "mysqldatabase44500";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+	
+  $sqlList = ['CREATE TABLE IF NOT EXISTS Tables (
+                        id INTEGER AUTO_INCREMENT PRIMARY KEY,
+                        name  VARCHAR(64),
+                        price  INTEGER 
+                     );'];
+foreach ($sqlList as $sql) {
+            $this->conn->exec($sql);
+        }
+        
+        return $this;
+ 
+    
+}
 function Insert($table,$object)
 { 
 	
@@ -13,9 +43,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
- 
-
-$columns =array();
+ $columns =array();
 foreach($object as $key=>$value)
 {
  $columns[]=$key;
@@ -48,7 +76,7 @@ mysqli_close($conn);
 echo "lalala";
 include('curl_query.php');
 include('simple_html_dom.php');
-
+echo  CR_Table();
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 
 
