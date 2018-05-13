@@ -55,7 +55,7 @@ $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 $dom=str_get_html($html);
 
 $tables=$dom->find('.name_product');
-$i=2;
+$i=1;
 //echo $tables;
 foreach($tables as $table)
 {
@@ -71,7 +71,7 @@ $tobd['name']="'".$a->plaintext."'";
 	$cost=$one_dom->find('.item_current_price',0);
 //echo $cost;
 	$tobd['price']=(int)$cost->plaintext;
-	//Insert('Tables',$tobd);
+	Insert('Tables',$tobd);
 }
 	//
 foreach($tobd as $value1)
