@@ -2,35 +2,7 @@
 
 
 
-function CR_Table();
-{
-	 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
-$username = "diplomadmin@diplomdb-mysqldbserver";
-$password = "Alexandra11";
-$dbname = "mysqldatabase44500";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-	
-  $sql = ['CREATE TABLE IF NOT EXISTS Tables (
-                        id INTEGER AUTO_INCREMENT PRIMARY KEY,
-                        name  VARCHAR(64),
-                        price  INTEGER 
-                     );'];
-if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . $conn->error;
-}
-
-$conn->close();
- 
-    
-}
 function Insert($table,$object)
 { 
 	
@@ -78,7 +50,7 @@ mysqli_close($conn);
 echo "lalala";
 include('curl_query.php');
 include('simple_html_dom.php');
-echo  CR_Table();
+
 $html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
 
 
@@ -101,7 +73,7 @@ $tobd['name']="'".$a->plaintext."'";
 	$cost=$one_dom->find('.item_current_price',0);
 //echo $cost;
 	$tobd['price']=(int)$cost->plaintext;
-	Insert('Tables',$tobd);
+	//Insert('Tables',$tobd);
 }
 	//
 foreach($tobd as $value1)
@@ -121,16 +93,18 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT id, name, price FROM Tables";
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "id: " . $row["id"]. " - name: " . $row["name"]. " " . $row["price"]. "<br>";
-    }
+ $sql = ['CREATE TABLE IF NOT EXISTS Tables (
+                        id INTEGER AUTO_INCREMENT PRIMARY KEY,
+                        name  VARCHAR(64),
+                        price  INTEGER 
+                     );'];
+if ($conn->query($sql) === TRUE) {
+    echo "Record create successfully";
 } else {
-    echo "0 results";
+    echo "Error deleting record: " . $conn->error;
 }
+
+$conn->close();
 
 mysqli_close($conn);
 
