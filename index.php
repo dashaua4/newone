@@ -71,15 +71,15 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
- $sql = ['CREATE TABLE  Tables (
-                        id INTEGER AUTO_INCREMENT PRIMARY KEY,
-                        name  VARCHAR(64),
-                        price  INTEGER 
-                     );'];
+$sql = "CREATE TABLE Tables (
+id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+name VARCHAR(64),
+price INTEGER
+)";
 if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+    echo "Record create successfully";
 } else {
-    echo "Error deleting record: " . $conn->error;
+    echo "Error create record: " . $conn->error;
 }
 
 $conn->close();
