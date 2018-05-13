@@ -70,22 +70,20 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
- $sql = "SHOW TABLES FROM mysqldatabase44500";
-$result = mysql_query($sql);
 
-if (!$result) {
-    echo "Ошибка базы, не удалось получить список таблиц\n";
-    echo 'Ошибка MySQL: ' . mysql_error();
-    exit;
+ $sql = ['CREATE TABLE  Tables (
+                        id INTEGER AUTO_INCREMENT PRIMARY KEY,
+                        name  VARCHAR(64),
+                        price  INTEGER 
+                     );'];
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn->error;
 }
 
-while ($row = mysql_fetch_row($result)) {
-    echo "Таблица: {$row[0]}\n";
-}
+$conn->close();
 
-mysql_free_result($result);
-
-mysqli_close($conn);
 
 
 
