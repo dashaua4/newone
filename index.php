@@ -1,29 +1,5 @@
  <?php
-function CR_Table()
-{$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
-$username = "diplomadmin@diplomdb-mysqldbserver";
-$password = "Alexandra11";
-$dbname = "mysqldatabase44500";
-echo "GGGGGGGGGG";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-$sql = "CREATE TABLE Tables (
-id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-name VARCHAR(64) ,
-price INTEGER
-)";
-if ($conn->query($sql) === TRUE) {
-    echo "Table Table created successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
 
-mysqli_close($conn);
-}
 function Insert($table,$object)
 { 
 	
@@ -61,9 +37,29 @@ if ($conn->multi_query($sql) === TRUE) {
 mysqli_close($conn);
 
 } 
-function Select()
+
+
+echo "lalala";
+include('curl_query.php');
+include('simple_html_dom.php');
+
+$html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
+$dom=str_get_html($html);
+$tables=$dom->find('.name_product');
+$i=1;
+foreach($tables as $table)
 {
-	$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
+$tobd=array();
+	$tobd['id']=$i++;
+	$a=$table->find('a',0);
+	$tobd['name']="'".$a->plaintext."'";
+	$one=curl_get('https://meblihit.com.ua'.$a->href);
+	$one_dom=str_get_html($one);
+	$cost=$one_dom->find('.item_current_price',0);
+	$tobd['price']=(int)$cost->plaintext;
+	Insert('Tables',$tobd);
+}
+$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
 $dbname = "mysqldatabase44500";
@@ -86,27 +82,5 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
-}
 
-echo "lalala";
-include('curl_query.php');
-include('simple_html_dom.php');
-
-$html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
-$dom=str_get_html($html);
-$tables=$dom->find('.name_product');
-$i=1;
-foreach($tables as $table)
-{
-$tobd=array();
-	$tobd['id']=$i++;
-	$a=$table->find('a',0);
-	$tobd['name']="'".$a->plaintext."'";
-	$one=curl_get('https://meblihit.com.ua'.$a->href);
-	$one_dom=str_get_html($one);
-	$cost=$one_dom->find('.item_current_price',0);
-	$tobd['price']=(int)$cost->plaintext;
-	Insert('Tables',$tobd);
-}
-Select();
 ?>
