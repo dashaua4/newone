@@ -39,16 +39,8 @@ if ($conn->multi_query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-	
-	
-	
-
 mysqli_close($conn);
 
-
-
- 
- 
 } 
 
 
@@ -103,7 +95,7 @@ $sql = "DROP TABLE Tables";
 if (mysql_query($sql, $link)) {
     echo "База данных my_db была успешно удалена\n";
 } else {
-    echo 'Ошибка при удалении базы данных: ' . mysql_error() . "\n";
+    echo 'Ошибка при удалении базы данных: ' . mysql_error() . "\n";}
 
 
 ?>
