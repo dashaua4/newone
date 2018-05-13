@@ -1,5 +1,32 @@
  <?php
+function Cr_table()
+{ 
+	
+ $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
+$username = "diplomadmin@diplomdb-mysqldbserver";
+$password = "Alexandra11";
+$dbname = "mysqldatabase44500";
 
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql = "CREATE TABLE Chairs (
+id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+name VARCHAR(64) ,
+price INTEGER
+)";
+if ($conn->query($sql) === TRUE) {
+    echo "Table Table created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+mysqli_close($conn);
+
+}
 function Insert($table,$object)
 { 
 	
@@ -57,7 +84,7 @@ $tobd=array();
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
-	Insert('Tables',$tobd);
+	//Insert('Tables',$tobd);
 }
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
@@ -82,5 +109,6 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
+Cr_table();
 
 ?>
