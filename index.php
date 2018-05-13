@@ -64,25 +64,24 @@ $password = "Alexandra11";
 $dbname = "mysqldatabase44500";
 echo "GGGGGGGGGG";
 // Create connection
-
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-$sql = "CREATE TABLE Tables (
-id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-name VARCHAR(64),
-price INTEGER
-)";
-if ($conn->query($sql) === TRUE) {
-    echo "Record create successfully";
+$sql = "SELECT id, name, price FROM Tables";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "id: " . $row["id"]. " - name: " . $row["name"]. " " . $row["price"]. "<br>";
+    }
 } else {
-    echo "Error create record: " . $conn->error;
+    echo "0 results";
 }
 
-$conn->close();
+mysqli_close($conn);
+
 
 
 
