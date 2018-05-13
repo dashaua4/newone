@@ -91,18 +91,15 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT id, name, price FROM Tables";
-$result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "id: " . $row["id"]. " - name: " . $row["name"]. " " . $row["price"]. "<br>";
-    }
+$sql = "DELETE FROM TAbles WHERE id=2";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
 } else {
-    echo "0 results";
+    echo "Error deleting record: " . $conn->error;
 }
 
-mysqli_close($conn);
+$conn->close();
 
 
 
