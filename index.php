@@ -100,12 +100,10 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $sql = "DROP TABLE Tables";
- $retval = mysql_query( $sql, $conn );
-         if(! $retval ) {
-            die('Could not delete table: ' . mysql_error());
-         }
-         echo "Table deleted successfully\n";
-         mysql_close($conn);
+if (mysql_query($sql, $link)) {
+    echo "База данных my_db была успешно удалена\n";
+} else {
+    echo 'Ошибка при удалении базы данных: ' . mysql_error() . "\n";
 
 
 ?>
