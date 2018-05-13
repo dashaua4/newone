@@ -91,11 +91,19 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "DROP TABLE Tables";
-if (mysql_query($sql, $link)) {
-    echo "База данных my_db была успешно удалена\n";
+$sql = "SELECT id, name, price FROM Tables";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "id: " . $row["id"]. " - name: " . $row["name"]. " " . $row["price"]. "<br>";
+    }
 } else {
-    echo 'Ошибка при удалении базы данных: ' . mysql_error() . "\n";}
+    echo "0 results";
+}
+
+mysqli_close($conn);
+
 
 
 ?>
