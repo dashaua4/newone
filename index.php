@@ -91,7 +91,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "DROP TABLE Tables";
+$sql = "DROP TABLE Locker";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
