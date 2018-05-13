@@ -91,7 +91,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "DELETE FROM TAbles WHERE id>4";
+$sql = "DROP TABLE Tables";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
