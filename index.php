@@ -84,7 +84,7 @@ $tobd=array();
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.price-wrapper',0);
 	$tobd['price']=(int)$cost->plaintext;
-	//Insert('Tables',$tobd);
+	Insert('Chairs',$tobd);
 }
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
@@ -109,6 +109,6 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
-Cr_table();
+//Cr_table();
 
 ?>
