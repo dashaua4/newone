@@ -81,10 +81,11 @@ $tobd=array();
 	$a=$table->find('a',0);
 	$tobd['name']="'".$a->plaintext."'";
 	$one=curl_get('https://meblihit.com.ua'.$a->href);
+	echo $one;
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
-	Insert('Chairs',$tobd);
+	//Insert('Chairs',$tobd);
 }
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
