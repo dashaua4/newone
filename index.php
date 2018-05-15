@@ -67,7 +67,25 @@ mysqli_close($conn);
 
 
 echo "lalala";
+include('curl_query.php');
+include('simple_html_dom.php');
 
+$html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
+$dom=str_get_html($html);
+$tables=$dom->find('.name_product');
+$i=1;
+foreach($tables as $table)
+{
+$tobd=array();
+	$tobd['id']=$i++;
+	$a=$table->find('a',0);
+	$tobd['name']="'".$a->plaintext."'";
+	$one=curl_get('https://meblihit.com.ua'.$a->href);
+	$one_dom=str_get_html($one);
+	$cost=$one_dom->find('.item_current_price',0);
+	$tobd['price']=(int)$cost->plaintext;
+	//Insert('Tables',$tobd);
+}
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
@@ -84,7 +102,7 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        echo "id: " . $row["id"]. " - name: " . $row["name"];
+        echo "id: " . $row["id"]. " - name: " . $row["name"]. $row["price"];
     }
 } else {
     echo "0 results";
