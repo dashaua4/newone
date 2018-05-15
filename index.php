@@ -109,6 +109,11 @@ $tobd=array();
 	$tobd['price']=(int)$cost->plaintext;
 	//Insert('Chairs',$tobd);
 }
+foreach($tobd as $key->$value)
+{
+	echo $key;
+}
+
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
 $password = "Alexandra11";
