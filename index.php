@@ -109,7 +109,7 @@ $tobd=array();
 	$tobd['price']=(int)$cost->plaintext;
 	//Insert('Chairs',$tobd);
 }
-foreach($tobd as $key->$value)
+foreach($tobd as $value)
 {
 	echo $value;
 }
