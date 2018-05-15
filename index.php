@@ -92,7 +92,7 @@ echo "lalala";
 include('curl_query.php');
 include('simple_html_dom.php');
 //Drop_table();
-Cr_table();
+//Cr_table();
 $html=curl_get('https://meblihit.com.ua/ua/catalog/heads_of_chairs/');
 $dom=str_get_html($html);
 $tables=$dom->find('.name_product');
@@ -108,7 +108,7 @@ $tobd=array();
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
-	//Insert('Chairs',$tobd);
+	Insert('Chairs',$tobd);
 }
 foreach($tobd as $value)
 {
@@ -126,7 +126,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT id, name, price FROM Tables ";
+$sql = "SELECT id, name, price FROM Chairs ";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
