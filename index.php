@@ -70,9 +70,9 @@ echo "lalala";
 include('curl_query.php');
 include('simple_html_dom.php');
 
-$html=curl_get('https://meblihit.com.ua/catalog/modul%60na_systema_ofys/');
+$html=curl_get('https://27.ua/ua/shop/ofisnye-stulya/');
 $dom=str_get_html($html);
-$tables=$dom->find('.name_product');
+$tables=$dom->find('.name-product');
 $i=1;
 foreach($tables as $table)
 {
@@ -80,9 +80,9 @@ $tobd=array();
 	$tobd['id']=$i++;
 	$a=$table->find('a',0);
 	$tobd['name']="'".$a->plaintext."'";
-	$one=curl_get('https://meblihit.com.ua'.$a->href);
+	$one=curl_get('https://27.ua/'.$a->href);
 	$one_dom=str_get_html($one);
-	$cost=$one_dom->find('.item_current_price',0);
+	$cost=$one_dom->find('.price-wrapper',0);
 	$tobd['price']=(int)$cost->plaintext;
 	//Insert('Tables',$tobd);
 }
@@ -109,6 +109,6 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
-//Cr_table();
+Cr_table();
 
 ?>
