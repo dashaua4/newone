@@ -13,9 +13,9 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 	 $sql = "DROP TABLE Chairs";
-         mysql_select_db( 'TUTORIALS' );
-         $retval = mysql_query( $sql, $conn );
-         if(! $retval ) {
+       
+         
+         if($conn->query($sql) === TRUE ) {
             die('Could not delete table: ' . mysql_error());
          }
          echo "Table deleted successfully\n";
