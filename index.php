@@ -91,7 +91,8 @@ mysqli_close($conn);
 echo "lalala";
 include('curl_query.php');
 include('simple_html_dom.php');
-Drop_table();
+//Drop_table();
+Cr_table();
 $html=curl_get('https://meblihit.com.ua/ua/catalog/heads_of_chairs/');
 $dom=str_get_html($html);
 $tables=$dom->find('.name_product');
@@ -137,6 +138,6 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($conn);
-//Cr_table();
+
 
 ?>
