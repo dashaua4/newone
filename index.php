@@ -110,10 +110,7 @@ $tobd=array();
 	$tobd['price']=(int)$cost->plaintext;
 	Insert('Chairs',$tobd);
 }
-foreach($tobd as $value)
-{
-	echo $value;
-}
+
 
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
