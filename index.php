@@ -122,8 +122,8 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Table 'Tables'";
-$sql = "SELECT id, name, price FROM Tables ";
+echo "Table 'Chairs'"."<br>";
+$sql = "SELECT id, name, price FROM Chairs ";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
