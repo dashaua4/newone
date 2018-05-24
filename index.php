@@ -91,6 +91,7 @@ mysqli_close($conn);
 
 include('curl_query.php');
 include('simple_html_dom.php');
+include('main.html');
 //Drop_table();
 //Cr_table();
 $html=curl_get('https://meblihit.com.ua/ua/catalog/heads_of_chairs/');
