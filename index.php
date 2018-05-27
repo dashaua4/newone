@@ -92,6 +92,7 @@ mysqli_close($conn);
 include('curl_query.php');
 include('simple_html_dom.php');
 include('main.html');
+include('function.php');
 //Drop_table();
 //Cr_table();
 $html=curl_get('https://meblihit.com.ua/ua/catalog/heads_of_chairs/');
@@ -110,6 +111,7 @@ $tobd=array();
 	$cost=$one_dom->find('.item_current_price',0);
 	$tobd['price']=(int)$cost->plaintext;
 	//Insert('Chairs',$tobd);
+	SelectT();
 }
 
 
