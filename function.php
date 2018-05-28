@@ -14,16 +14,12 @@ if (!$conn) {
 echo "Table 'Tables'"."<br>";
 $sql ="SELECT MAX(price) as max FROM Tables";
 $result = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-         echo $row["price"]. "<br>";
-    }
-} else {
-    echo "0 results";
+if (!$result) {
+    die('Ошибка выполнения запроса:' . mysql_error());
 }
+echo mysql_result($result, 2); // выведет имя третьего сотрудника
 
-mysqli_close($conn);
+mysql_close($conn);
 }
 
 
