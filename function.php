@@ -15,7 +15,7 @@ echo "Table 'Tables'"."<br>";
 $sql ="SELECT MAX(price) as max FROM Tables";
 $result = mysqli_query($conn, $sql);
 
-         echo $result."<br>";
+         echo  mysql_result($result);
 
 
 mysqli_close($conn);
