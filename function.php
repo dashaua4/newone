@@ -12,10 +12,11 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 echo "Table 'Tables'"."<br>";
-$sql ="SELECT MAX(price) as max FROM Tables";
+$sql ="SELECT MAX(price) as price FROM Tables";
 $result = mysqli_query($conn, $sql);
-
-         echo  mysql_result($result);
+$date=mysqli_fetch_array($result);
+	echo $date["price"];
+         
 
 
 mysqli_close($conn);
