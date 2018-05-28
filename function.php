@@ -1,5 +1,5 @@
 <?php
-function SelectT()
+function SelectT($table)
 {
 $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
 $username = "diplomadmin@diplomdb-mysqldbserver";
@@ -11,7 +11,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql ="SELECT MAX(price) as price,MIN(price) as price FROM Tables";
+$sql ="SELECT MIN(price) as price FROM $table";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
 	echo $date["price"];
