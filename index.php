@@ -5,7 +5,7 @@
 
 include('curl_query.php');
 include('simple_html_dom.php');
-include('main.html');
+//include('main.html');
 include('function.php');
 //Drop_table();
 //Cr_table();
@@ -29,7 +29,7 @@ $tobd=array();
 }
 
 
-
+SelectT('Tables');
 
 
 ?>
