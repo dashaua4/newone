@@ -12,12 +12,16 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 echo "Table 'Tables'"."<br>";
-$sql = mysql_query("SELECT MAX(price) as max FROM Tables");
-if (!$sql) {
-    die('Ошибка выполнения запроса:' . mysql_error());
+$sql ="SELECT MAX(price) as max FROM Tables";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+         echo $row["price"]. "<br>";
+    }
+} else {
+    echo "0 results";
 }
-echo mysql_result($sql); // выведет имя третьего сотрудника
-
 
 mysqli_close($conn);
 }
