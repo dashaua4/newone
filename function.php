@@ -12,7 +12,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 echo "Table 'Tables'"."<br>";
-$sql = "SELECT id, name, price FROM Tables ";
+$sql = "SELECT id, name, price FROM Tables WHERE MAX(price) ";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
