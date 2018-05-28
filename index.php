@@ -28,7 +28,7 @@ $tobd=array();
 	
 }
 
-echo "pkpkpokpkpokpokpk";
+
 
 
 
