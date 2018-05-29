@@ -29,5 +29,5 @@ $tobd=array();
 }
 $name=SelectT('Tables');
 
-echo $name;
+echo 'sfsdfasd'.$name;
 ?>
