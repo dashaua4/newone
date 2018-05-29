@@ -21,7 +21,28 @@ $date=mysqli_fetch_array($result);
 mysqli_close($conn);
 
 }
+function SelectTMAX($table)
+{
+$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
+$username = "diplomadmin@diplomdb-mysqldbserver";
+$password = "Alexandra11";
+$dbname = "mysqldatabase44500";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql ="SELECT MAX(price) as price FROM $table";
+$result = mysqli_query($conn, $sql);
+$date=mysqli_fetch_array($result);
+	echo $date["price"];
+         
 
+
+mysqli_close($conn);
+
+}
 
 function Drop_table()
 {
