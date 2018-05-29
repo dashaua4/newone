@@ -55,7 +55,7 @@ include('function.php');
                     <h3>Обладнання</h3>
 					 <tr>
                 <td>
-                    Комп\'ютери <span class="currency"></span>
+                    Комп'ютери <span class="currency"></span>
                 </td>
                 <td>
                     <input class="min" name="data[comp]" value="" type="text">
@@ -100,7 +100,7 @@ include('function.php');
                      Стіл <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[furniture]" value="" type="text">
+                    <input class="min" name="data[furniture]" value="<? SelectT('Tables');?>" type="text">
                 </td>
              <td>
                     <input class="max" name="data[furniture]" type="text">
