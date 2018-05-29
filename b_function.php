@@ -103,7 +103,7 @@ include('function.php');
                     <input class="min" name="data[furniture]" value="<? SelectT('Tables');?>" type="text">
                 </td>
              <td>
-                    <input class="max" name="data[furniture]" type="text">
+                    <input class="max" name="data[furniture]" value="<? SelectTMAX('Tables');?>" type="text">
                 </td>
             </tr> 
 					<tr>
@@ -114,7 +114,7 @@ include('function.php');
                     <input class="min" name="data[furniture]" value="<? SelectT('Chairs');?>" type="text">
                 </td>
              <td>
-                    <input class="max" name="data[furniture]" type="text">
+                    <input class="max" name="data[furniture]" value="<? SelectTMAX('Chairs');?>" type="text">
                 </td>
             </tr>
 					<tr>
