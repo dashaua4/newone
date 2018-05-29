@@ -98,7 +98,7 @@ echo('<html>
                      Стіл <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[furniture]" value="<?php SelectT('Tables');?>" type="text">
+                    <input class="min" name="data[furniture]" value="" type="text">
                 </td>
              <td>
                     <input class="max" name="data[furniture]" type="text">
@@ -109,7 +109,7 @@ echo('<html>
                      Стілець <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[furniture]" value="<?php SelectT('Chairs');?>" type="text">
+                    <input class="min" name="data[furniture]" value="" type="text">
                 </td>
              <td>
                     <input class="max" name="data[furniture]" type="text">
