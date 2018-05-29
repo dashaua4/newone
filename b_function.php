@@ -1,8 +1,8 @@
   <?php 
 
 include('function.php');
-$name="Chairs";
-echo('<html>
+?>
+<html>
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Farfalla</title>
@@ -111,7 +111,7 @@ echo('<html>
                      Стілець <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[furniture]" value="'.SelectT($name).'" type="text">
+                    <input class="min" name="data[furniture]" value="<? SelectT('Chairs');?>" type="text">
                 </td>
              <td>
                     <input class="max" name="data[furniture]" type="text">
@@ -137,5 +137,4 @@ echo('<html>
 </table>
 </div>
  </body>
-</html>');
-?>
+</html>
