@@ -111,7 +111,7 @@ echo('<html>
                      Стілець <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[furniture]" value="'<?php echo $name;?>'" type="text">
+                    <input class="min" name="data[furniture]" value="'.$name.'" type="text">
                 </td>
              <td>
                     <input class="max" name="data[furniture]" type="text">
