@@ -8,7 +8,7 @@
    
 <body>
      <?php 
-include("function.php");
+include('function.php');
 SelectT('Tables');
 ?>
  </body>
