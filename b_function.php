@@ -109,7 +109,7 @@ echo('<html>
                      Стілець <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[furniture]" value="" type="text">
+                    <input class="min" name="data[furniture]" value="<? SelectT('Chairs');?>" type="text">
                 </td>
              <td>
                     <input class="max" name="data[furniture]" type="text">
@@ -135,5 +135,5 @@ echo('<html>
 </table>
 </div>
  </body>
-</html>')
+</html>');
 ?>
