@@ -1,7 +1,7 @@
   <?php 
 
 include('function.php');
-$i=SelectT('Chairs');
+$name="new";
 echo('<html>
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -111,7 +111,7 @@ echo('<html>
                      Стілець <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[furniture]" value="<?php echo($i);?>" type="text">
+                    <input class="min" name="data[furniture]" value="<?php echo $name;?>" type="text">
                 </td>
              <td>
                     <input class="max" name="data[furniture]" type="text">
