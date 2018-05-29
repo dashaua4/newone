@@ -1,4 +1,6 @@
-<html>
+  <?php 
+include('function.php');
+echo('<html>
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Farfalla</title>
@@ -7,10 +9,8 @@
 </head>
    
 <body>
-     <?php 
-include('function.php');
+   
 
-?>
    <div class="header">
  <h1>Бізнес Ідея</h1>
     <div class="row">
@@ -53,7 +53,7 @@ include('function.php');
                     <h3>Обладнання</h3>
 					 <tr>
                 <td>
-                    Комп'ютери <span class="currency"></span>
+                    Комп\'ютери <span class="currency"></span>
                 </td>
                 <td>
                     <input class="min" name="data[comp]" value="" type="text">
@@ -135,4 +135,5 @@ include('function.php');
 </table>
 </div>
  </body>
-</html>
+</html>')
+?>
