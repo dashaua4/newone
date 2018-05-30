@@ -1,7 +1,7 @@
   <?php 
 
 include('function.php');
-$name=SelectT('Tables');
+$name='SelectT';
 ?>
 <html>
 <head>
@@ -101,7 +101,7 @@ $name=SelectT('Tables');
                      Стіл <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[furniture]" value="<? echo $name;?>" type="text">
+                    <input class="min" name="data[furniture]" value="<? $name('Tables');?>" type="text">
                 </td>
              <td>
                     <input class="max" name="data[furniture]" value="<? SelectTMAX('Tables');?>" type="text">
