@@ -13,7 +13,10 @@ $html=curl_get('https://f.ua/shop/kompyutery/17447-klass-pk_dlya-raboty-i-ucheby
 $dom=str_get_html($html);
 
 $tables=$dom->find('.title');
- 
+foreach($tables as $table)
+{
+	echo $table;
+}
 
 $i=0;
 foreach($tables as $table)
