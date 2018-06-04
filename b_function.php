@@ -59,10 +59,10 @@ $name='SelectT';
                     Комп'ютери <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[comp]" value="" type="text">
+                    <input class="min" name="data[comp]" value="<? $name('WG_system');?>" type="text">
                 </td>
                  <td>
-                    <input class="max" name="data[comp]" type="text">
+                    <input class="max" name="data[comp]" value=""<? SelectTMAX('WG_system');?>"" type="text">
                 </td>
             </tr>
 					
