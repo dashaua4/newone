@@ -29,7 +29,7 @@ $n=$tobd['name'];
 		
 
 	$one_dom=str_get_html($one);
-	echo $one;
+	
 	$cost=$one_dom->find('#price_label',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
