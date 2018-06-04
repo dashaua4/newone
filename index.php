@@ -14,7 +14,7 @@ $dom=str_get_html($html);
 
 $tables=$dom->find('.product_title');
 
-
+SelectT('Office_comp');
 $i=0;
 foreach($tables as $table)
 {
@@ -37,7 +37,7 @@ $n=$tobd['name'];
 	//Insert('Office_comp',$tobd);
 	
 }
-SelectT('Office_comp');
+
 
 echo 'GGG';
 ?>
