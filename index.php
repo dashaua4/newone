@@ -2,7 +2,6 @@
 
 
 
-
 include('curl_query.php');
 include('simple_html_dom.php');
 //include('main.php');
@@ -26,7 +25,7 @@ $tobd=array();
 echo $one;
 
 	$one_dom=str_get_html($one);
-	$cost=$one_dom->find('.product__price_old',0);
+	$cost=$one_dom->find('.product__price_current',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
 	echo $p;
