@@ -15,7 +15,7 @@ $dom=str_get_html($html);
 $tables=$dom->find('.product_title');
 
 echo 'GGG0';
-SelectT('Tables');
+//SelectT('Tables');
 $i=0;
 foreach($tables as $table)
 {
