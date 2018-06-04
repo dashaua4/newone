@@ -38,5 +38,5 @@ $n=$tobd['name'];
 	
 }
 SelectT('WG_system');
-
+echo 'GGG';
 ?>
