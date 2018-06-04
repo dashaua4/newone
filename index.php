@@ -16,14 +16,15 @@ echo $dom;
 $tables=$dom->find('.product_title');
 foreach($tables as $table)
 {
-	echo $table;
+	echo $table.'<br>';
 }
-$i=1;
+$i=0;
 foreach($tables as $table)
 {
 $tobd=array();
 	$tobd['id']=$i++;
 	$a=$table->find('a',0);
+	echo $a;
 	$tobd['name']="'".$a->plaintext."'";
 	$one=curl_get('https://deshevshe.net.ua'.$a->href);
 
