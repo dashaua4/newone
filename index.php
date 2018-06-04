@@ -26,7 +26,7 @@ $tobd=array();
 $n=$tobd['name'];
 
 	$one_dom=str_get_html($one);
-	$cost=$one_dom->find('.product__price_new',0);
+	$cost=$one_dom->find('.product_price',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
 	echo $cost;
