@@ -43,8 +43,8 @@ include('function.php');
 
 $value=3;
 $name='SelectT';
-	if(isset($_POST['button_name'])){
-$value = $_POST['taskOption']
+	if(isset($_POST['exampl'])){
+$value = $_POST['exampl'];
 
 	if($value==1){$wg='WG_system';}
 	else if($value==2){$wg='WG_system';}
