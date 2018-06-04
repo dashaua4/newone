@@ -38,6 +38,6 @@ $tobd=array();
 }
 foreach($tobd as $value)
 {
-	echo $tobd['price'];
+	echo $value;
 }
 ?>
