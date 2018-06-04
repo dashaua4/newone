@@ -31,7 +31,7 @@ $n=$tobd['name'];
 		
 
 	$one_dom=str_get_html($one);
-	echo $one;
+	
 	$cost=$one_dom->find('.product__price_current',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
