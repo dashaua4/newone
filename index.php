@@ -9,11 +9,11 @@ include('function.php');
 //Drop_table();
 //Cr_table();
 echo 'GGGGGGGG';
-$html=curl_get('https://hard.rozetka.com.ua/computers/c80095/filter/preset=workteaching;70553=286391/');
+$html=curl_get('https://f.ua/shop/kompyutery/17447-klass-pk_dlya-raboty-i-ucheby/');
 $dom=str_get_html($html);
 
-$tables=$dom->find('.g-i-tile-i-title');
-
+$tables=$dom->find('.title');
+ 
 
 $i=0;
 foreach($tables as $table)
@@ -23,12 +23,13 @@ $tobd=array();
 	$a=$table->find('a',0);
 	
 	$tobd['name']="'".$a->plaintext."'";
-	$one=curl_get('https://hard.rozetka.com.ua'.$a->href);
+	$one=curl_get('https://f.ua'.$a->href);
 
 $n=$tobd['name'];
 		
 
 	$one_dom=str_get_html($one);
+	echo $one;
 	$cost=$one_dom->find('#price_label',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
