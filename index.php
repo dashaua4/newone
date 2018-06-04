@@ -14,8 +14,6 @@ $dom=str_get_html($html);
 
 $tables=$dom->find('.product_title');
 
-foreach($tables as $table)
-{echo $table;}
 
 $i=0;
 foreach($tables as $table)
