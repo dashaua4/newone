@@ -12,7 +12,10 @@ echo 'GGGGGGGG';
 $html=curl_get('https://hard.rozetka.com.ua/computers/c80095/filter/preset=workteaching;70553=286391/');
 $dom=str_get_html($html);
 $tables=$dom->find('.g-i-tile-i-title clearfix');
-
+foreach($tables as $table)
+{
+	echo $table;
+}
 
 $i=0;
 foreach($tables as $table)
