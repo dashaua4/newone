@@ -9,13 +9,13 @@ include('function.php');
 //Drop_table();
 //Cr_table();
 //echo 'GGGGGGGG';
-$html=curl_get('https://deshevshe.net.ua/desktop/');
+$html=curl_get('http://www.mobilluck.com.ua/katalog/system-unit/');
 $dom=str_get_html($html);
 //echo $dom.'lala';
-$tables=$dom->find('.product_title');
+$tables=$dom->find('.cci2_mdl');
 
-echo 'GGG0';
-SelectT('WG_system');
+
+//SelectT('WG_system');
 $i=0;
 foreach($tables as $table)
 {
@@ -24,17 +24,17 @@ $tobd=array();
 	$a=$table->find('a',0);
 	
 	$tobd['name']="'".$a->plaintext."'";
-	$one=curl_get('https://deshevshe.net.ua'.$a->href);
+	$one=curl_get('http://www.mobilluck.com.ua'.$a->href);
 
 $n=$tobd['name'];
 		
 
 	$one_dom=str_get_html($one);
 	
-	$cost=$one_dom->find('.product__price_current',0);
+	$cost=$one_dom->find('.price itemprice',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
-//echo $n.'-'.$p.'<br>';
+echo $n.'-'.$p.'<br>';
 	//Insert('WG_system',$tobd);
 	
 }
