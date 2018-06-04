@@ -14,7 +14,7 @@ $dom=str_get_html($html);
 //echo $dom.'lala';
 $tables=$dom->find('.product_title');
 
-
+echo 'GGG0';
 $i=0;
 foreach($tables as $table)
 {
@@ -36,7 +36,7 @@ $n=$tobd['name'];
 //echo $n.'-'.$p.'<br>';
 	//Insert('WG_system',$tobd);
 	
-}
+}echo 'GGG1';
 SelectT('WG_system');
 echo 'GGG';
 ?>
