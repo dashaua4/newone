@@ -13,10 +13,7 @@ echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/desktop/');
 $dom=str_get_html($html);
 $tables=$dom->find('.product_title');
-foreach($tables as $table)
-{
-	echo $table.'<br>';
-}
+
 $i=0;
 foreach($tables as $table)
 {
@@ -32,7 +29,7 @@ $n=$tobd['name'];
 	$cost=$one_dom->find('.product__price_new',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
-	echo $n.'-'.$p;
+	echo $cost;
 	//Insert('Chairs',$tobd);
 	
 }
