@@ -11,12 +11,9 @@ include('function.php');
 echo 'GGGGGGGG';
 $html=curl_get('https://hard.rozetka.com.ua/computers/c80095/filter/preset=workteaching;70553=286391/');
 $dom=str_get_html($html);
-echo $dom;
+
 $tables=$dom->find('.g-i-tile-i-title');
-foreach($tables as $table)
-{
-	echo $table;
-}
+
 
 $i=0;
 foreach($tables as $table)
@@ -27,7 +24,7 @@ $tobd=array();
 	
 	$tobd['name']="'".$a->plaintext."'";
 	$one=curl_get('https://hard.rozetka.com.ua'.$a->href);
-
+echo $one;
 $n=$tobd['name'];
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('#price_label',0);
