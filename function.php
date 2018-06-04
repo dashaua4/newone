@@ -15,7 +15,7 @@ if (!$conn) {
 $sql ="SELECT id,name,price FROM $table";	
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
-	echo $date['name'].'-'.$date["price"].'<br>';
+	echo $date["name"].'-'.$date["price"].'<br>';
          
 
 
