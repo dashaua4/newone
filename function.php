@@ -17,16 +17,10 @@ $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
 	
 
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["price"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}
-
-	
+$sql ="SELECT MIN(price) as price FROM $table";
+$result = mysqli_query($conn, $sql);
+$date=mysqli_fetch_array($result);
+	echo $date["price"];
          
 
 
