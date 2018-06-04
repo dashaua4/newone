@@ -11,7 +11,7 @@ include('function.php');
 echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/desktop/filters/presence=1;videokarta=integrirovannaya_3470;max=7000');
 $dom=str_get_html($html);
-echo $dom;
+echo $dom.'lala';
 $tables=$dom->find('.product_title');
 foreach($tables as $table)
 {
