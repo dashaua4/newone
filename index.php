@@ -9,10 +9,10 @@ include('function.php');
 //Drop_table();
 //Cr_table();
 //echo 'GGGGGGGG';
-$html=curl_get('http://www.mobilluck.com.ua/katalog/system-uni');
+$html=curl_get('https://deshevshe.net.ua/desktop/filters/max=7000');
 $dom=str_get_html($html);
 echo $dom;
-$tables=$dom->find('.cci2_mdl');
+$tables=$dom->find('.product_title');
 
 foreach($tables as $table)
 {echo $table;}
