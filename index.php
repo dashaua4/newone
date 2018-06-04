@@ -7,7 +7,7 @@ include('simple_html_dom.php');
 //include('main.php');
 include('function.php');
 //Drop_table();
-Cr_table();
+//Cr_table();
 //echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/desktop/?sort=price');
 $dom=str_get_html($html);
@@ -34,7 +34,7 @@ $n=$tobd['name'];
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
 //echo $i.'-'.$n.'-'.$p.'<br>';
-	Insert('Office_comp',$tobd);
+	//Insert('Office_comp',$tobd);
 	
 }
 SelectT('Office_comp');
