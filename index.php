@@ -22,10 +22,12 @@ $tobd=array();
 	$tobd['id']=$i++;
 	$a=$table->find('a',0);
 	
-	$tobd['name']="'".$a->plaintext."'";
+	$tobd['name']="'".$a->innertext."'";
 	$one=curl_get('https://hard.rozetka.com.ua'.$a->href);
-echo $one;
+
 $n=$tobd['name'];
+		
+echo $n;
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('#price_label',0);
 	$tobd['price']=(int)$cost->plaintext;
