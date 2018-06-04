@@ -22,8 +22,8 @@ include('function.php');
             <label  >
                 Шаблони (3)
             </label>
-
-            <select >
+<form method="post" action="b_function.php">
+            <select name="exampl"  onchange="this.form.submit()" >
                 <option value="-1">—</option>
                                    <option value="1">
                         Дизайн та Реклама 
@@ -35,7 +35,7 @@ include('function.php');
                        Офіс
                     </option>
                     </select>
-     
+     </form>
     </div>
 	
 </div>
@@ -43,9 +43,13 @@ include('function.php');
 
 $value=3;
 $name='SelectT';
+	if(isset($_POST['button_name'])){
+$value = $_POST['taskOption']
+
 	if($value==1){$wg='WG_system';}
 	else if($value==2){$wg='WG_system';}
 else{$wg='Office_comp';	}
+	}
 ?>
 <div class="main">
 <table>
@@ -63,7 +67,7 @@ else{$wg='Office_comp';	}
                     Комп'ютери <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[comp]" value="<? $name('WG_system');?>" type="text">
+                    <input class="min" name="data[comp]" value="<? $name($wg);?>" type="text">
                 </td>
                  <td>
                     <input class="max" name="data[comp]" value="<? SelectTMAX($wg);?>" type="text">
