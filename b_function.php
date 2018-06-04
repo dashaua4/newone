@@ -62,7 +62,7 @@ $name='SelectT';
                     <input class="min" name="data[comp]" value="<? $name('WG_system');?>" type="text">
                 </td>
                  <td>
-                    <input class="max" name="data[comp]" value=""<? SelectTMAX('WG_system');?>"" type="text">
+                    <input class="max" name="data[comp]" value="<? SelectTMAX('WG_system');?>" type="text">
                 </td>
             </tr>
 					
