@@ -36,8 +36,5 @@ $tobd=array();
 	//Insert('Chairs',$tobd);
 	
 }
-foreach($tobd as $value)
-{
-	echo $value;
-}
+
 ?>
