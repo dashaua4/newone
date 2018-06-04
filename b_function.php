@@ -18,7 +18,7 @@ include('function.php');
  <h1>Бізнес Ідея</h1>
     <div class="row">
 	
-		<img class="header-img" src="idea.jpg" >
+		
             <label  >
                 Шаблони (3)
             </label>
