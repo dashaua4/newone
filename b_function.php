@@ -1,7 +1,7 @@
   <?php 
 
 include('function.php');
-$name='SelectT';
+
 ?>
 <html>
 <head>
@@ -18,31 +18,33 @@ $name='SelectT';
  <h1>Бізнес Ідея</h1>
     <div class="row">
 	
-      
-
-        <div class="large-3 columns">
 		<img class="header-img" src="idea.jpg" >
-            <label for="data-name" class="middle">
-                Шаблони (5)
+            <label  >
+                Шаблони (3)
             </label>
 
-            <select name="data[activity_id]">
+            <select >
                 <option value="-1">—</option>
-                                    <option value="2">
-                        IT Академія
+                                   <option value="1">
+                        Дизайн & Реклама 
                     </option>
-                                    <option value="5">
+                                    <option value="2">
                        IT Компанія
                     </option>
-                                    <option value="8">
+                                    <option value="3">
                        Офіс
                     </option>
                     </select>
-        </div>
+     
     </div>
 	
 </div>
+ <?php 
 
+
+$name='SelectT';
+$wg="WG_system";	
+?>
 <div class="main">
 <table>
 <tr>
@@ -62,7 +64,7 @@ $name='SelectT';
                     <input class="min" name="data[comp]" value="<? $name('WG_system');?>" type="text">
                 </td>
                  <td>
-                    <input class="max" name="data[comp]" value="<? SelectTMAX('WG_system');?>" type="text">
+                    <input class="max" name="data[comp]" value="<? SelectTMAX('$wg');?>" type="text">
                 </td>
             </tr>
 					
