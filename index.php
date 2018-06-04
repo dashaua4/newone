@@ -22,7 +22,7 @@ $tobd=array();
 	
 	$tobd['name']="'".$a->plaintext."'";
 	$one=curl_get('https://deshevshe.net.ua'.$a->href);
-echo $one;
+
 
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.product__price_current',0);
