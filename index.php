@@ -9,10 +9,10 @@ include('function.php');
 //Drop_table();
 //Cr_table();
 echo 'GGGGGGGG';
-$html=curl_get('https://f.ua/shop/kompyutery/17447-klass-pk_dlya-raboty-i-ucheby/');
+$html=curl_get('https://deshevshe.net.ua/desktop/filters/presence=1;videokarta=integrirovannaya_3470;max=7000');
 $dom=str_get_html($html);
 
-$tables=$dom->find('.title');
+$tables=$dom->find('.product_title');
 foreach($tables as $table)
 {
 	echo $table;
@@ -26,13 +26,13 @@ $tobd=array();
 	$a=$table->find('a',0);
 	
 	$tobd['name']="'".$a->plaintext."'";
-	$one=curl_get('https://f.ua'.$a->href);
+	$one=curl_get('https://deshevshe.net.ua'.$a->href);
 
 $n=$tobd['name'];
 		
 
 	$one_dom=str_get_html($one);
-	
+	echo $one;
 	$cost=$one_dom->find('#price_label',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
