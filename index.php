@@ -23,12 +23,12 @@ $tobd=array();
 	$tobd['name']="'".$a->plaintext."'";
 	$one=curl_get('https://deshevshe.net.ua'.$a->href);
 
-
+$n=$tobd['name'];
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.product__price_current',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
-	echo $p;
+	echo $n.'-'.$p;
 	//Insert('Chairs',$tobd);
 	
 }echo $p.'<br>';
