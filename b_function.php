@@ -43,7 +43,7 @@ include('function.php');
 
 
 $name='SelectT';
-$wg="WG_system";	
+$wg='WG_system';	
 ?>
 <div class="main">
 <table>
@@ -64,7 +64,7 @@ $wg="WG_system";
                     <input class="min" name="data[comp]" value="<? $name('WG_system');?>" type="text">
                 </td>
                  <td>
-                    <input class="max" name="data[comp]" value="<? SelectTMAX('$wg');?>" type="text">
+                    <input class="max" name="data[comp]" value="<? SelectTMAX($wg);?>" type="text">
                 </td>
             </tr>
 					
