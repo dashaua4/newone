@@ -11,6 +11,7 @@ include('function.php');
 echo 'GGGGGGGG';
 $html=curl_get('https://hard.rozetka.com.ua/computers/c80095/filter/preset=workteaching;70553=286391/');
 $dom=str_get_html($html);
+echo $dom;
 $tables=$dom->find('.g-i-tile-i-title');
 foreach($tables as $table)
 {
