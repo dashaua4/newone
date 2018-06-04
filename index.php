@@ -7,7 +7,7 @@ include('simple_html_dom.php');
 //include('main.php');
 include('function.php');
 //Drop_table();
-Cr_table();
+//Cr_table();
 echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/desktop/');
 $dom=str_get_html($html);
@@ -29,7 +29,7 @@ $n=$tobd['name'];
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
 	echo $n.'-'.$p;
-	//Insert('Chairs',$tobd);
+	Insert('WG_system',$tobd);
 	
 }echo $p.'<br>';
 
