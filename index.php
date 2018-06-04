@@ -7,9 +7,9 @@ include('simple_html_dom.php');
 //include('main.php');
 include('function.php');
 //Drop_table();
-Cr_table();
+//Cr_table();
 //echo 'GGGGGGGG';
-$html=curl_get('https://deshevshe.net.ua/desktop/filters/presence=1;videokarta=integrirovannaya_3470;max=7000');
+$html=curl_get('https://deshevshe.net.ua/desktop/');
 $dom=str_get_html($html);
 //echo $dom.'lala';
 $tables=$dom->find('.product_title');
@@ -34,9 +34,9 @@ $n=$tobd['name'];
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
 //	echo $n.'-'.$p.'<br>';
-	//Insert('WG_system',$tobd);
+	Insert('WG_system',$tobd);
 	
 }
-//SelectT('WG_system');
+SelectT('WG_system');
 
 ?>
