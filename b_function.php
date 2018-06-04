@@ -26,7 +26,7 @@ include('function.php');
             <select >
                 <option value="-1">—</option>
                                    <option value="1">
-                        Дизайн & Реклама 
+                        Дизайн та Реклама 
                     </option>
                                     <option value="2">
                        IT Компанія
