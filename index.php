@@ -9,9 +9,9 @@ include('function.php');
 //Drop_table();
 //Cr_table();
 //echo 'GGGGGGGG';
-$html=curl_get('http://www.mobilluck.com.ua/katalog/system-unit/');
+$html=curl_get('http://www.mobilluck.com.ua/katalog/system-uni');
 $dom=str_get_html($html);
-
+echo $dom;
 $tables=$dom->find('.cci2_mdl');
 
 foreach($tables as $table)
