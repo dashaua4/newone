@@ -35,7 +35,7 @@ $n=$tobd['name'];
 	$cost=$one_dom->find('.product__price_current',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
-echo $n.'-'.$p.'<br>';
+echo $i.'-'.$n.'-'.$p.'<br>';
 	//Insert('WG_system',$tobd);
 	
 }
