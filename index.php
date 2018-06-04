@@ -11,7 +11,7 @@ include('function.php');
 //echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/desktop/?sort=price');
 $dom=str_get_html($html);
-echo $dom;
+
 $tables=$dom->find('.product_title');
 
 foreach($tables as $table)
@@ -32,7 +32,7 @@ $n=$tobd['name'];
 
 	$one_dom=str_get_html($one);
 	
-	$cost=$one_dom->find('.price itemprice',0);
+	$cost=$one_dom->find('.product__price_current',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
 echo $n.'-'.$p.'<br>';
