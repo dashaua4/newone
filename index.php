@@ -11,10 +11,11 @@ include('function.php');
 //echo 'GGGGGGGG';
 $html=curl_get('http://www.mobilluck.com.ua/katalog/system-unit/');
 $dom=str_get_html($html);
-echo $dom.'lala';
+
 $tables=$dom->find('.cci2_mdl');
 
-
+foreach($tables as $table)
+{echo $table;}
 //SelectT('WG_system');
 $i=0;
 foreach($tables as $table)
