@@ -32,7 +32,7 @@ $n=$tobd['name'];
 	echo $cost;
 	//Insert('Chairs',$tobd);
 	
-}
+}echo 'la'.$cost;
 
 
 ?>
