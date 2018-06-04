@@ -80,13 +80,13 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "CREATE TABLE Chairs (
+$sql = "CREATE TABLE WG_system (
 id INTEGER AUTO_INCREMENT PRIMARY KEY, 
 name VARCHAR(64) ,
 price INTEGER
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table Table created successfully";
+    echo "Table  created successfully";
 } else {
     echo "Error creating table: " . $conn->error;
 }
