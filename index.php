@@ -24,11 +24,11 @@ foreach($tables as $table)
 $tobd=array();
 	$tobd['id']=$i++;
 	$a=$table->find('a',0);
-	echo $a;
+	
 	$tobd['name']="'".$a->plaintext."'";
 	$one=curl_get('https://deshevshe.net.ua'.$a->href);
 
-
+echo $one;
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.product_price_new',0);
 	$tobd['price']=(int)$cost->plaintext;
