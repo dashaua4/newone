@@ -37,6 +37,6 @@ $n=$tobd['name'];
 	//Insert('WG_system',$tobd);
 	
 }echo 'GGG1';
-SelectT('WG_system');
+//SelectT('WG_system');
 echo 'GGG';
 ?>
