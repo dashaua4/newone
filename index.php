@@ -7,7 +7,7 @@ include('simple_html_dom.php');
 //include('main.php');
 include('function.php');
 //Drop_table();
-//Cr_table();
+Cr_table();
 echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/desktop/');
 $dom=str_get_html($html);
