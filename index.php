@@ -12,7 +12,12 @@ include('function.php');
 echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/desktop/');
 $dom=str_get_html($html);
+echo $dom;
 $tables=$dom->find('.product_title');
+foreach($tables as $table)
+{
+	echo $table;
+}
 $i=1;
 foreach($tables as $table)
 {
