@@ -27,15 +27,15 @@ $tobd=array();
 
 $n=$tobd['name'];
 		
-echo $n;
+
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('#price_label',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
-	echo $n.'-'.$p;
+	echo $n.'-'.$p.'<br>';
 	//Insert('WG_system',$tobd);
 	
-}echo $p.'<br>';
+}
 
 
 ?>
