@@ -9,7 +9,7 @@ include('function.php');
 //Drop_table();
 //Cr_table();
 //echo 'GGGGGGGG';
-$html=curl_get('https://deshevshe.net.ua/desktop/filters/max=7000');
+$html=curl_get('https://deshevshe.net.ua/desktop/?sort=price');
 $dom=str_get_html($html);
 echo $dom;
 $tables=$dom->find('.product_title');
