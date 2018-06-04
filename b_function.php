@@ -41,9 +41,11 @@ include('function.php');
 </div>
  <?php 
 
-
+$value=3;
 $name='SelectT';
-$wg='WG_system';	
+	if($value==1){$wg='WG_system';}
+	else if($value==2){$wg='WG_system';}
+else{$wg='Office_comp';	}
 ?>
 <div class="main">
 <table>
