@@ -11,10 +11,11 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql ="SELECT MIN(price) as price FROM $table";
+//$sql ="SELECT MIN(price) as price FROM $table";
+$sql ="SELECT id,name,price FROM $table";	
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
-	echo $date["price"];
+	echo $date['name'].'-'.$date["price"].'<br>';
          
 
 
