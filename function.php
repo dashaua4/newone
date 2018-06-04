@@ -92,7 +92,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "CREATE TABLE WG_system (
+$sql = "CREATE TABLE Office_comp (
 id INTEGER AUTO_INCREMENT PRIMARY KEY, 
 name VARCHAR(64) ,
 price INTEGER
