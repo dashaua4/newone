@@ -26,7 +26,7 @@ $tobd=array();
 	$one_dom=str_get_html($one);
 	$cost=$one_dom->find('.product_price_new',0);
 	$tobd['price']=(int)$cost->plaintext;
-	
+	echo $tobd['name'];
 	//Insert('Chairs',$tobd);
 	
 }
