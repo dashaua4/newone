@@ -12,7 +12,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 //$sql ="SELECT MIN(price) as price FROM $table";
-$sql ="SELECT id,name,price FROM $table WHERE id=1";	
+$sql ="SELECT id,name,price FROM $table";	
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
 	
