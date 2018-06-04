@@ -25,7 +25,7 @@ $tobd=array();
 	$a=$table->find('a',0);
 	
 	$tobd['name']="'".$a->plaintext."'";
-	$one=curl_get('http://www.mobilluck.com.ua'.$a->href);
+	$one=curl_get('https://deshevshe.net.ua'.$a->href);
 
 $n=$tobd['name'];
 		
