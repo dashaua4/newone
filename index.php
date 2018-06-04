@@ -29,10 +29,10 @@ $n=$tobd['name'];
 	$cost=$one_dom->find('.product_price',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
-	echo $cost;
+	echo $p;
 	//Insert('Chairs',$tobd);
 	
-}echo 'la'.$cost;
+}echo $p.'<br>';
 
 
 ?>
