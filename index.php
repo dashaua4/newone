@@ -34,7 +34,7 @@ $n=$tobd['name'];
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
 //echo $n.'-'.$p.'<br>';
-	Insert('WG_system',$tobd);
+	//Insert('WG_system',$tobd);
 	
 }
 SelectT('WG_system');
