@@ -33,7 +33,7 @@ $n=$tobd['adress'];
 
 	$one_dom=str_get_html($one);
 	//echo $one;
-	$b='Галицький'
+	$b='Галицький';
 	//$area=$one_dom->find('.text-muted',0);
 	$tobd['area']="'".$b."'";
 	$cost=$one_dom->find('.h1-under-main-menu',0);
