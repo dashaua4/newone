@@ -147,10 +147,10 @@ else{$wg='Office_comp';	}
 					<tr>
 <form method="post" action="b_function.php">
                 <td>
-                  <input onchange="this.form.submit()" >  <a href="#" value="1">Своє</a></input>
+                  <input type="button" class="action-btn" onchange="this.form.submit()" >  <a href="#" class="action-btn" value="1">Своє</a></input>
                 </td>
                 <td>
-                   <input onchange="this.form.submit()"> <a href="#" value="2">Оренда</a></input>
+                   <input type="button" class="" onchange="this.form.submit()"> <a class="action-btn" href="#" value="2">Оренда</a></input>
                 </td>
             
               </tr>
