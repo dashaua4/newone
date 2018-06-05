@@ -7,7 +7,7 @@ include('simple_html_dom.php');
 //include('main.php');
 include('function.php');
 //Drop_table();
-Cr_table('Chairs');
+Cr_table('WG_system');
 //echo 'GGGGGGGG';
 $html=curl_get('https://sofino.ua/stoly-ofisnie');
 $dom=str_get_html($html);
