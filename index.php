@@ -6,7 +6,7 @@
 include('curl_query.php');
 include('simple_html_dom.php');
 
-//include('main.php');
+include('main.php');
 include('function.php');
 //Drop_table();
 
@@ -42,8 +42,7 @@ $n=$tobd['adress'];
 	$tobd['size']=(int)$size->plaintext;
 	$tobd['id_site']=3;
 echo $tobd[adress].'-'.$tobd[area].'-'.$tobd[price].'='.$tobd[size].'<br>';
-	
-Insert('Workplace',$tobd);
+	//Insert('Workplace',$tobd);
 //echo $tobd['id'][5];
 }
 
