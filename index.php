@@ -9,10 +9,10 @@ include('function.php');
 //Drop_table();
 Cr_table('Chairs');
 //echo 'GGGGGGGG';
-$html=curl_get('https://deshevshe.net.ua/desktop/?sort=price');
+$html=curl_get('https://sofino.ua/stoly-ofisnie');
 $dom=str_get_html($html);
 
-$tables=$dom->find('.product_title');
+$tables=$dom->find('.product-name');
 
 //SelectT('WG_system');
 $i=0;
@@ -23,17 +23,17 @@ $tobd=array();
 	$a=$table->find('a',0);
 	
 	$tobd['name']="'".$a->plaintext."'";
-	$one=curl_get('https://deshevshe.net.ua'.$a->href);
+	$one=curl_get('https://sofino.ua'.$a->href);
 
 $n=$tobd['name'];
 		
 
 	$one_dom=str_get_html($one);
 	
-	$cost=$one_dom->find('.product__price_current',0);
+	$cost=$one_dom->find('.product-price',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
-//echo $i.'-'.$n.'-'.$p.'<br>';
+echo $i.'-'.$n.'-'.$p.'<br>';
 	//Insert('Office_comp',$tobd);
 	
 }
