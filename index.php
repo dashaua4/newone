@@ -12,7 +12,7 @@ include('function.php');
 
 //Cr_table('Workplace');
 //echo 'GGGGGGGG';
-$html=curl_get('https://www.real-estate.lviv.ua/orenda-commercialproperty-office/Lviv-Galickiy');
+$html=curl_get('https://www.real-estate.lviv.ua/orenda-commercialproperty-office/Lviv-Zaliznichniy');
 
 $dom=str_get_html($html);
 
@@ -43,7 +43,7 @@ $n=$tobd['adress'];
 	$tobd['id_site']=3;
 echo $tobd[adress].'-'.$tobd[area].'-'.$tobd[price].'='.$tobd[size].'<br>';
 	
-Insert('Workplace',$tobd);
+//Insert('Workplace',$tobd);
 //echo $tobd['id'][5];
 }
 
