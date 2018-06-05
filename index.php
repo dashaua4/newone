@@ -37,7 +37,7 @@ $cost=preg_replace("/[^x\d|*\.]/","",$cost);
 	$p=$tobd['price'];
 	$tobd['id_site']=1;
 echo $n.' '.$p.'<br>';
-	Insert('Chairs',$tobd);
+	//Insert('Chairs',$tobd);
 	
 }
 //echo $tobd['id'][5];
