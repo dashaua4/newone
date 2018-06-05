@@ -153,7 +153,8 @@ else{$wg='Office_comp';	}
                     <a href="" class="action-btn">Оренда</a>
                 </td>
             
-              
+              </tr>
+			</td>
         </tr>
           
 </table>
