@@ -33,11 +33,11 @@ $n=$tobd['adress'];
 
 	$one_dom=str_get_html($one);
 	//echo $one;
-	$area=$one_dom->find('.text-muted',0);
+	//$area=$one_dom->find('.text-muted',0);
 	$tobd['area']='Галицький';
 	$cost=$one_dom->find('.h1-under-main-menu',0);
 	$tobd['price']=(int)$cost->plaintext;
-	$size=$one_dom->find('.col-xs-12 col-sm-8',0);
+	$size=$one_dom->find('.row row-dense',0);
 	$tobd['size']=(int)$size->plaintext;
 	$tobd['id_site']=3;
 echo $tobd[adress].'-'.$tobd[area].'-'.$tobd[price].'='.$tobd[size].'<br>';
