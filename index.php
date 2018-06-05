@@ -36,7 +36,7 @@ $cost=preg_replace("/[^x\d|*\.]/","",$cost);
 	$tobd['price']=(int)$pr->plaintext;
 	$p=$tobd['price'];
 	$tobd['id_site']=1;
-echo $cost.'<br>';
+echo $n.' '.$p.'<br>';
 	//Insert('Tables',$tobd);
 	
 }
