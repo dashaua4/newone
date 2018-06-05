@@ -10,7 +10,7 @@ include('simple_html_dom.php');
 include('function.php');
 //Drop_table();
 
-Cr_table('Workplace');
+//Cr_table('Workplace');
 //echo 'GGGGGGGG';
 $html=curl_get('https://www.real-estate.lviv.ua/orenda-commercialproperty-office/Lviv-Galickiy');
 
@@ -36,7 +36,7 @@ $n=$tobd['adress'];
 	$area=$one_dom->find('.text-muted',0);
 	$tobd['area']=$area->plaintext;
 	$cost=$one_dom->find('.h1-under-main-menu',0);
-	$tobd['price']=(int)$cost->plaintext;
+	$tobd['price']=$cost->plaintext;
 	$size=$one_dom->find('.col-sm-6 col-dense-left',0);
 	$tobd['size']=(int)$size->plaintext;
 	$tobd['id_site']=3;
