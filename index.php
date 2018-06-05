@@ -32,12 +32,12 @@ $n=$tobd['adress'];
 		
 
 	$one_dom=str_get_html($one);
-	echo $one;
+	//echo $one;
 	$area=$one_dom->find('.text-muted',0);
 	$tobd['area']=$area->plaintext;
 	$cost=$one_dom->find('.h1-under-main-menu',0);
-	$tobd['price']=$cost->plaintext;
-	$size=$one_dom->find('.col-sm-6',0);
+	$tobd['price']=(int)$cost->plaintext;
+	$size=$one_dom->find('.col-xs-12',0);
 	$tobd['size']=(int)$size->plaintext;
 	$tobd['id_site']=3;
 echo $tobd[adress].'-'.$tobd[area].'-'.$tobd[price].'='.$tobd[size].'<br>';
