@@ -17,7 +17,7 @@ $html=curl_get('https://www.real-estate.lviv.ua/orenda-commercialproperty-office
 $dom=str_get_html($html);
 
 $tables=$dom->find('.col-sm-12');
-$i=0;
+$i=26;
 foreach($tables as $table)
 {
 $tobd=array();
@@ -43,7 +43,7 @@ $n=$tobd['adress'];
 	$tobd['id_site']=3;
 echo $tobd[adress].'-'.$tobd[area].'-'.$tobd[price].'='.$tobd[size].'<br>';
 	
-//Insert('Workplace',$tobd);
+Insert('Workplace',$tobd);
 //echo $tobd['id'][5];
 }
 
