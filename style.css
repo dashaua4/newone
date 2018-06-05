@@ -87,8 +87,8 @@ nav li:hover > .submenu {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: bold;
-  color: #112D52;
-  background: #FF5438;
+  color: #ddbe86;
+  background: #413F3C;
   border: 2px solid #112D52;
   transition: .4s linear;       
 }
@@ -105,5 +105,5 @@ nav li:hover > .submenu {
 }
 .action-btn:hover {
   background: #112D52;
-  color: #FF5438;
+  color: white;
 }
