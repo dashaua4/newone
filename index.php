@@ -33,11 +33,11 @@ $n=$tobd['name'];
 	$cost=$one_dom->find('#mi-price',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
-echo $i.'-'.$n.'-'.$p.'<br>';
+//echo $i.'-'.$n.'-'.$p.'<br>';
 	//Insert('Office_comp',$tobd);
 	
 }
-
+echo $tobd['id'][5];
 
 echo 'GGG';
 ?>
