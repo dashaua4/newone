@@ -89,8 +89,8 @@ if (!$conn) {
 }
 $sql = "CREATE TABLE $table (
 id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-area VARCHAR(64),
 adress VARCHAR(64),
+area VARCHAR(64),
 price INTEGER,
 size INTEGER,
 id_site INTEGER
