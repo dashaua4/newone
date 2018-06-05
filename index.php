@@ -33,9 +33,9 @@ $n=$tobd['adress'];
 
 	$one_dom=str_get_html($one);
 	//echo $one;
-	
+	$b='Галицький'
 	//$area=$one_dom->find('.text-muted',0);
-	$tobd['area']="Галицький";
+	$tobd['area']="'".$b."'";
 	$cost=$one_dom->find('.h1-under-main-menu',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$size=$one_dom->find('.row row-dense',0);
