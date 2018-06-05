@@ -4,7 +4,7 @@ function SelectT($table)
 $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";
 	
-$password = "Alexandra11";
+$password = "Alexandr11";
 $dbname = "mysqldatabase";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -32,7 +32,7 @@ function SelectTMAX($table)
 {
 $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";
-$password = "Alexandra11";
+$password = "Alexandr11";
 $dbname = "mysqldatabase";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -55,7 +55,7 @@ function Drop_table()
 {
 	$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";
-$password = "Alexandra11";
+$password = "Alexandr11";
 $dbname = "mysqldatabase";
 
 // Create connection
@@ -78,7 +78,7 @@ function Cr_table($table)
 	
  $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";
-$password = "Alexandra11";
+$password = "Alexandr11";
 $dbname = "mysqldatabase";
 
 // Create connection
@@ -107,7 +107,7 @@ function Insert($table,$object)
 	
  $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";
-$password = "Alexandra11";
+$password = "Alexandr11";
 $dbname = "mysqldatabase";;
 
 // Create connection
