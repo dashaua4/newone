@@ -7,9 +7,9 @@ include('simple_html_dom.php');
 //include('main.php');
 include('function.php');
 //Drop_table();
-Cr_table('Office_comp');
+//Cr_table('Office_comp');
 //echo 'GGGGGGGG';
-$html=curl_get('https://sofino.ua/stoly-ofisnie');
+$html=curl_get('https://sofino.ua/ofisnie-kresla-i-stulia');
 $dom=str_get_html($html);
 
 $tables=$dom->find('.product-name');
@@ -34,8 +34,8 @@ $n=$tobd['name'];
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
 	$tobd['id_site']=1;
-//echo $i.'-'.$n.'-'.$p.'<br>';
-	Insert('Tables',$tobd);
+echo $i.'-'.$n.'-'.$p.'<br>';
+	//Insert('Tables',$tobd);
 	
 }
 //echo $tobd['id'][5];
