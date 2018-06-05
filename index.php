@@ -33,7 +33,7 @@ $n=$tobd['name'];
 	$cost=$one_dom->find('#mi-price',0);
 	$cost=str_replace(",",'.',$cost);
 $cost=preg_replace("/[^x\d|*\.]/","",$cost);
-	$tobd['price']=(int)$pr->plaintext;
+	$tobd['price']=$pr->plaintext;
 	$p=$tobd['price'];
 	$tobd['id_site']=1;
 echo $n.' '.$p.'<br>';
