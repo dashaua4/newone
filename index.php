@@ -12,12 +12,8 @@ include('function.php');
 $html=curl_get('https://deshevshe.net.ua/desktop/');
 
 $dom=str_get_html($html);
-//echo $dom.'lala';
 $tables=$dom->find('.product_title');
 
-
-/
-/SelectT('WG_system');
 $i=0;
 foreach($tables as $table)
 {
@@ -30,10 +26,7 @@ $a=$table->find('a',0);
 	
 $one=curl_get('https://deshevshe.net.ua'.$a->href);
 
-$n=$tobd['name'];
-		
-
-	
+$n=$tobd['name'];	
 $one_dom=str_get_html($one);
 	
 	$cost=$one_dom->find('.product__price_current',0);
