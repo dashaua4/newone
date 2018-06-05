@@ -7,7 +7,7 @@ include('simple_html_dom.php');
 //include('main.php');
 include('function.php');
 //Drop_table();
-Cr_table('WG_system');
+Cr_table('Office_comp');
 //echo 'GGGGGGGG';
 $html=curl_get('https://sofino.ua/stoly-ofisnie');
 $dom=str_get_html($html);
@@ -33,11 +33,12 @@ $n=$tobd['name'];
 	$cost=$one_dom->find('#mi-price',0);
 	$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
+	$tobd['id_site']=1;
 //echo $i.'-'.$n.'-'.$p.'<br>';
-	//Insert('Office_comp',$tobd);
+	Insert('Tables',$tobd);
 	
 }
-echo $tobd['id'][5];
+//echo $tobd['id'][5];
 
 echo 'GGG';
 ?>
