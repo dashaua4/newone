@@ -32,7 +32,7 @@ $n=$tobd['adress'];
 		
 
 	$one_dom=str_get_html($one);
-	
+	echo $one;
 	$area=$one_dom->find('.text-muted',0);
 	$tobd['area']=$area->plaintext;
 	$cost=$one_dom->find('.h1-under-main-menu',0);
