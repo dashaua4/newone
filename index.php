@@ -4,10 +4,10 @@
 
 include('curl_query.php');
 include('simple_html_dom.php');
-include('main.php');
+//include('main.php');
 include('function.php');
 //Drop_table();
-//Cr_table();
+Cr_table('Tables');
 //echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/desktop/?sort=price');
 $dom=str_get_html($html);
