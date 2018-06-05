@@ -42,7 +42,7 @@ $n=$tobd['adress'];
 	$tobd['id_site']=3;
 echo $tobd[adress].'-'.$tobd[area].'-'.$tobd[price].'='.$tobd[size].'<br>';
 	
-Insert('Office_comp',$tobd);
+Insert('Workplace',$tobd);
 //echo $tobd['id'][5];
 }
 
