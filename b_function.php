@@ -145,7 +145,7 @@ else{$wg='Office_comp';	}
                 <td>
                     <h3> Приміщення </h3>
 					<tr>
-<form method="post" action="b_function.php">
+<form method="post" name="place" action="b_function.php">
                 <td>
                   <input type="button" class="action-btn" value="Своє" onchange="this.form.submit()" >  </input>
                 </td>
@@ -156,6 +156,26 @@ else{$wg='Office_comp';	}
               </tr>
 			</td>
         </tr>
+ <?php 
+
+$value=3;
+$name='SelectT';
+	if(isset($_POST['exampl'])){
+$value = $_POST['exampl'];
+
+	if($value==1){$wg='WG_system';}
+	else if($value==2){$wg='WG_system';}
+else{$wg='Office_comp';	}
+	}
+?>
+		<tr>
+			  <td>
+                    <input class="min" name="data[furniture]" value="<? SelectT('Chairs');?>" type="text">
+                </td>
+             <td>
+                    <input class="max" name="data[furniture]" value="<? SelectTMAX('Chairs');?>" type="text">
+                </td>
+			</tr>
          </form> 
 </table>
 </div>
