@@ -31,10 +31,11 @@ $n=$tobd['name'];
 	$one_dom=str_get_html($one);
 	
 	$cost=$one_dom->find('#mi-price',0);
-	$tobd['price']=(int)$cost->plaintext;
+	$pr=str_replace(" ","",$cost);
+	$tobd['price']=(int)$pr->plaintext;
 	$p=$tobd['price'];
 	$tobd['id_site']=1;
-echo $cost;
+echo $p.'<br>';
 	//Insert('Tables',$tobd);
 	
 }
