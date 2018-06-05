@@ -6,17 +6,17 @@
 include('curl_query.php');
 include('simple_html_dom.php');
 
-include('main.php');
+//include('main.php');
 include('function.php');
 //Drop_table();
 
-//Cr_table('Chairs');
+Cr_table('Workplace');
 //echo 'GGGGGGGG';
-$html=curl_get('https://deshevshe.net.ua/desktop/?sort=price');
+$html=curl_get('https://www.real-estate.lviv.ua/orenda-commercialproperty-office/Lviv-Galickiy');
 
 $dom=str_get_html($html);
 
-$tables=$dom->find('.product_title');
+$tables=$dom->find('.col-sm-12');
 $i=0;
 foreach($tables as $table)
 {
@@ -25,19 +25,22 @@ $tobd=array();
 	$a=$table->find('a',0);
 	
 	
-$tobd['name']="'".$a->plaintext."'";
+$tobd['adress']="'".$a->plaintext."'";
 	$one=curl_get('https://deshevshe.net.ua'.$a->href);
 
-$n=$tobd['name'];
+$n=$tobd['adress'];
 		
 
 	$one_dom=str_get_html($one);
 	
-	$cost=$one_dom->find('.product__price_current',0);
+	$area=$one_dom->find('.text-muted',0);
+	$tobd['area']=$area->plaintext;
+	$cost=$one_dom->find('.h1-under-main-menu',0);
 	$tobd['price']=(int)$cost->plaintext;
-	$p=$tobd['price'];
-	$tobd['id_site']=2;
-//echo $i.'-'.$n.'-'.$p.'<br>';
+	$size=$one_dom->find('.col-sm-6 col-dense-left',0);
+	$tobd['size']=(int)$size->plaintext;
+	$tobd['id_site']=3;
+echo $tobd[adress].'-'.$tobd[area].'-'.$tobd[price].'='.$tobd[size].'<br>';
 	
 //Insert('Office_comp',$tobd);
 //echo $tobd['id'][5];
