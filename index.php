@@ -35,7 +35,7 @@ $n=$tobd['name'];
 	$tobd['price']=(int)$pr->plaintext;
 	$p=$tobd['price'];
 	$tobd['id_site']=1;
-echo $p.'<br>';
+echo $pr.'<br>';
 	//Insert('Tables',$tobd);
 	
 }
