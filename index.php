@@ -9,34 +9,40 @@ include('function.php');
 //Drop_table();
 //Cr_table('Office_comp');
 //echo 'GGGGGGGG';
-$html=curl_get('https://sofino.ua/ofisnie-kresla-i-stulia');
+$html=curl_get('https://deshevshe.net.ua/desktop/');
+
 $dom=str_get_html($html);
+//echo $dom.'lala';
+$tables=$dom->find('.product_title');
 
-$tables=$dom->find('.product-name');
 
-//SelectT('WG_system');
+/
+/SelectT('WG_system');
 $i=0;
 foreach($tables as $table)
 {
 $tobd=array();
 	$tobd['id']=$i++;
-	$a=$table->find('a',0);
+	
+$a=$table->find('a',0);
 	
 	$tobd['name']="'".$a->plaintext."'";
-	$one=curl_get('https://sofino.ua'.$a->href);
+	
+$one=curl_get('https://deshevshe.net.ua'.$a->href);
 
 $n=$tobd['name'];
 		
 
-	$one_dom=str_get_html($one);
 	
-	$cost=$one_dom->find('#mi-price',0);
+$one_dom=str_get_html($one);
 	
-	$tobd['price']=(int)$cost->plaintext;
+	$cost=$one_dom->find('.product__price_current',0);
+	
+$tobd['price']=(int)$cost->plaintext;
 	$p=$tobd['price'];
 	$tobd['id_site']=1;
 echo $n.' '.$p.'<br>';
-	Insert('Chairs',$tobd);
+	Insert('WG_system',$tobd);
 	
 }
 //echo $tobd['id'][5];
