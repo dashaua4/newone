@@ -1,10 +1,11 @@
 <?php
 function SelectT($table)
 {
-$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
-$username = "diplomadmin@diplomdb-mysqldbserver";
+$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
+$username = "mysqldbuser@diplomwork-mysqldbserver";
+	
 $password = "Alexandra11";
-$dbname = "mysqldatabase44500";
+$dbname = "mysqldatabase";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
@@ -29,10 +30,10 @@ mysqli_close($conn);
 }
 function SelectTMAX($table)
 {
-$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
-$username = "diplomadmin@diplomdb-mysqldbserver";
+$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
+$username = "mysqldbuser@diplomwork-mysqldbserver";
 $password = "Alexandra11";
-$dbname = "mysqldatabase44500";
+$dbname = "mysqldatabase";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
@@ -52,10 +53,10 @@ mysqli_close($conn);
 
 function Drop_table()
 {
-	$servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
-$username = "diplomadmin@diplomdb-mysqldbserver";
+	$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
+$username = "mysqldbuser@diplomwork-mysqldbserver";
 $password = "Alexandra11";
-$dbname = "mysqldatabase44500";
+$dbname = "mysqldatabase";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -72,13 +73,13 @@ if (!$conn) {
          echo "Table deleted successfully\n";
          mysql_close($conn);
 }
-function Cr_table()
+function Cr_table($table)
 { 
 	
- $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
-$username = "diplomadmin@diplomdb-mysqldbserver";
+ $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
+$username = "mysqldbuser@diplomwork-mysqldbserver";
 $password = "Alexandra11";
-$dbname = "mysqldatabase44500";
+$dbname = "mysqldatabase";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -86,10 +87,11 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "CREATE TABLE Office_comp (
+$sql = "CREATE TABLE $table (
 id INTEGER AUTO_INCREMENT PRIMARY KEY, 
 name VARCHAR(64) ,
-price INTEGER
+price INTEGER,
+id_site INTEGER
 )";
 if ($conn->query($sql) === TRUE) {
     echo "Table  created successfully";
@@ -103,10 +105,10 @@ mysqli_close($conn);
 function Insert($table,$object)
 { 
 	
- $servername = "diplomdb-mysqldbserver.mysql.database.azure.com";
-$username = "diplomadmin@diplomdb-mysqldbserver";
+ $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
+$username = "mysqldbuser@diplomwork-mysqldbserver";
 $password = "Alexandra11";
-$dbname = "mysqldatabase44500";
+$dbname = "mysqldatabase";;
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
