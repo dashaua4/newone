@@ -17,7 +17,7 @@ $html=curl_get('https://www.real-estate.lviv.ua/orenda-commercialproperty-office
 $dom=str_get_html($html);
 
 $tables=$dom->find('.col-sm-12');
-$i=1;
+$i=0;
 foreach($tables as $table)
 {
 $tobd=array();
