@@ -141,7 +141,20 @@ else{$wg='Office_comp';	}
               
         </tr>
            
-           
+            <tr>
+                <td>
+                    <h3> Приміщення </h3>
+					<tr>
+
+                <td>
+                    <a href="" class="action-btn">Своє</a>
+                </td>
+                <td>
+                    <a href="" class="action-btn">Оренда</a>
+                </td>
+            
+              
+        </tr>
           
 </table>
 </div>
