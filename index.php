@@ -6,7 +6,7 @@
 include('curl_query.php');
 include('simple_html_dom.php');
 
-//include('main.php');
+include('main.php');
 include('function.php');
 //Drop_table();
 
@@ -39,7 +39,7 @@ $n=$tobd['name'];
 	$tobd['id_site']=2;
 //echo $i.'-'.$n.'-'.$p.'<br>';
 	
-Insert('Office_comp',$tobd);
+//Insert('Office_comp',$tobd);
 //echo $tobd['id'][5];
 }
 
