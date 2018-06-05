@@ -26,7 +26,7 @@ $tobd=array();
 	
 	
 $tobd['adress']="'".$a->plaintext."'";
-	$one=curl_get('https://deshevshe.net.ua'.$a->href);
+	$one=curl_get('https://www.real-estate.lviv.ua'.$a->href);
 
 $n=$tobd['adress'];
 		
