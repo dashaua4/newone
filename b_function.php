@@ -71,7 +71,7 @@ else{$wg='Office_comp';	}
 		    		<option value="23">23</option>
 		    		
                     </select>
-    		
+    		 </form>
 <?php 
 	 $mon='Monitor';
 $SMT='SMT';
@@ -89,7 +89,7 @@ $SMTM='SMTM';
                 <td>Монітори <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]" value="<? $SMT($mon,$diagonal);?>"  type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? $SMTM($mon,$diagonal);?>" type="text"></td>
-            </tr> </form>
+            </tr>
 		 <tr>
                 <td>Переферія <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]" value="" type="text"></td>
