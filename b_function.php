@@ -9,15 +9,25 @@ include('function.php');
   <title>!</title>
    <link href="style.css" rel="stylesheet" />         
  <style>
-	 fieldset{display: none;}
+	 .place{display: none;}
 </style>
+	<style type="text/css">
+
+        .vis0 {visibility: hidden}
+
+        .vis1 {visibility: visible}
+
+    </style>
+
 <script type="text/javascript">
-function toggleSet(rad)
+function ilkHomTh(stayType)
 {
-var type = rad.value;
-for(var k=0,elm;elm=rad.form.elements[k];k++)
-if(elm.className=='item')
-elm.style.display = elm.id==type? 'inline':'';
+var e1 = document.getElementById("are_usure");
+13
+            if (stayType=='Власне') {e1.className='vis1';}
+14
+            if (stayType=='Оренда') {e1.className='vis0';}
+
 }
 </script>
 </head>
@@ -129,11 +139,11 @@ $SMTM='SMTM';
         </tr>
 	<form>
    	 <tr>
-		 <td><input type="radio" name="place" value="my">Власне</td>
-		 <td><input type="radio" name="itemtype" value="vehicle" onclick="toggleSet(this)">Оренда</td>
+		 <td><input type="radio" name="place" value="Власне">Власне</td>
+		 <td><input type="radio" name="itemtype" value="Оренда" onclick="ilkHomTh(this.value);">Оренда</td>
 	</tr>
 	
-	<fieldset id="vehicle" class="item">
+	<div class="place">
 	<tr>
                 <td><h3> Приміщення </h3>
 	<tr>
@@ -164,7 +174,7 @@ $SMTM='SMTM';
 	
 	</td>   
         </tr>
-	</fieldset>
+	</div>
 	</form>
 	
 </table>
