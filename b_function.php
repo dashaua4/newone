@@ -125,7 +125,7 @@ $SMTM='SMTM';
 	</tr>
 	<script> 
 function foo(id) { 
-document.getElementByClassName("place").disabled = id=='r1' ? false : true; 
+document.getElementById("txt").disabled = id=='r2' ? false : true; 
 } 
  
 </script>
@@ -156,8 +156,8 @@ document.getElementByClassName("place").disabled = id=='r1' ? false : true;
 	 </td>
             </tr> 
  	<tr>
-	      <td><input class="place" name="txt" id="txt" value="" type="text" ></td>
-             <td><input class="place" name="txt2" id="txt" value="" type="text" ></td>
+	      <td><input type='text' name='txt' id='txt' disabled value='disabled'></td>
+             <td><input type='text' name='txt' id='txt' disabled value='disabled'></td>
             </tr>
 	
 	 </td>   
