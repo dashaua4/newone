@@ -17,7 +17,7 @@ $html=curl_get('https://deshevshe.net.ua/monitors/');
 $dom=str_get_html($html);
 
 $tables=$dom->find('.product_title');
-$i=51;
+$i=1;
 foreach($tables as $table)
 {
 
@@ -37,8 +37,7 @@ $n=$tobd['name'];
 	$tobd['diagonal']=(int)$diagonal->plaintext;
 	$tobd['id_site']=1;
 echo $tobd[name].'-'.$tobd[price].'-'.$tobd[diagonal].'='.$tobd[id_site].'<br>';
-	//Insert('Workplace',$tobd);
-//echo $tobd['id'][5];
+	//Insert('Monitor',$tobd);
 }
 
 echo 'GGG';
