@@ -76,8 +76,8 @@ else{$wg='Office_comp';	}
 	    </tr>
 	     <tr>
                 <td>Монітори <span class="currency"></span></td>
-                <td><input class="min" name="data[comp]" value="<? $SMT($mon,$diagonal);?>" type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? $SMTM($mon,$diagonal);?>" type="text"></td>
+                <td><input class="min" name="data[comp]" value="" type="text"></td>
+                 <td><input class="max" name="data[comp]" value="" type="text"></td>
             </tr>
 		 <tr>
                 <td>Переферія <span class="currency"></span></td>
