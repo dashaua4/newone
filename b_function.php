@@ -131,7 +131,7 @@ $SMTM='SMTM';
 		 <td><input id="myRadioButton1" type="radio" name="place" value="Власне" onChange="hide()">Власне</td>
 		 <td><input id="myRadioButton2" type="radio" name="itemtype" value="Оренда" onChange="show()">Оренда</td>
 	</tr>
-	
+	<tr>
 	<div id="info" style="display:none">
 	
               
@@ -139,6 +139,7 @@ $SMTM='SMTM';
             <input class="max" name="data[furniture]" value="" type="text">
          
 	</div>
+		</tr>
 	</form>
 	
 </table>
