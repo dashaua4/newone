@@ -1,11 +1,11 @@
  <?php
 include('curl_query.php');
 include('simple_html_dom.php');
-include('main.php');
+//include('main.php');
 include('function.php');
 //Drop_table();
 
-Cr_table('Monitor');
+//Cr_table('Monitor');
 echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/monitors/');
 $dom=str_get_html($html);
@@ -28,7 +28,7 @@ $n=$tobd['name'];
 	$tobd['diagonal']=(int)$diagonal->plaintext;
 	$tobd['id_site']=1;
 echo $tobd[name].'-'.$tobd[price].'-'.$tobd[diagonal].'='.$tobd[id_site].'<br>';
-	//Insert('Monitor',$tobd);
+	Insert('Monitor',$tobd);
 }
 
 echo 'GGG';
