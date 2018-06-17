@@ -127,6 +127,7 @@ $SMTM='SMTM';
             </tr>
 	</td>   
         </tr>
+	<form>
    	 <tr>
 		 <td><input type="radio" name="place" value="my">Власне</td>
 		 <td><input type="radio" name="place" value="or" onclick="toggleSet(this)">Оренда</td>
@@ -164,7 +165,7 @@ $SMTM='SMTM';
 	</td>   
         </tr>
 	</fieldset>
-	
+	</form>
 	
 </table>
 </div>
