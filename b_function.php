@@ -135,7 +135,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
                 <td><h3> Приміщення </h3>
  <tr>
              <td> <form method="post"> 
-            <select name="area" id="txt"  onchange="this.form.submit()"  >
+            <select name="area"  onchange="this.form.submit()"  >
                 <option value="-1">—</option>
                                 <option value="1">Галицький</option>
                            <option value="2">Залізничний</option>
@@ -144,7 +144,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
    </form></td>
   <td>  
 	  <form method="post">
-            <select name="size" id="txt" onchange="this.form.submit()" >
+            <select name="size"  onchange="this.form.submit()" >
                 <option value="-1">—</option>
                                 <option value="0">0-50</option>
                            <option value="50">50-100</option>
@@ -157,7 +157,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
             </tr> 
  	<tr>
 	      <td><input class="min" name="txt" id="txt" value="" type="text" ></td>
-             <td><input class="max" name="txt" id="txt" value="" type="text" ></td>
+             <td><input class="max" name="txt2" id="txt" value="" type="text" ></td>
             </tr>
 	
 	 </td>   
