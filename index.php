@@ -6,7 +6,7 @@ include('function.php');
 //Drop_table();
 
 //Cr_table('Monitor');
-echo 'GGGGGGGG';
+//echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/monitors/2/');
 $dom=str_get_html($html);
 $tables=$dom->find('.product_title');
@@ -31,5 +31,5 @@ echo $tobd[name].'-'.$tobd[price].'-'.$tobd[diagonal].'='.$tobd[id_site].'<br>';
 	//Insert('Monitor',$tobd);
 }
 
-echo 'GGG';
+//echo 'GGG';
 ?>
