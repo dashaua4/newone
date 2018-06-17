@@ -41,8 +41,6 @@ $value = $_POST['exampl'];
 	else if($value==2){$wg='WG_system';}
 else{$wg='Office_comp';	}
 	}
-	
-	$t= $SLT($wg);
 ?>
 <div class="main">
 <table>
@@ -56,7 +54,7 @@ else{$wg='Office_comp';	}
                     <h3>Обладнання</h3>
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="data[comp]" value="<?=$t?>" type="text"></td>
+                <td><input class="min" name="data[comp]" value="<? $SLT($wg);?>" type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? $SLTM($wg);?>" type="text"></td>
             </tr>
 	    <tr>
