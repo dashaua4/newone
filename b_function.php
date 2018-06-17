@@ -73,8 +73,7 @@ else{$wg='Office_comp';	}
                     </select>
     		 </form>
 <?php 
-	 $mon='Monitor'
-	 $value=3;
+	 $mon='Monitor';
 $SMT='SMT';
 $SMTM='SMTM';
 	if(isset($_POST['monitor']))
