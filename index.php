@@ -1,26 +1,17 @@
  <?php
-
-
-
-
 include('curl_query.php');
 include('simple_html_dom.php');
-
 include('main.php');
 include('function.php');
 //Drop_table();
 
 Cr_table('Monitor');
-//echo 'GGGGGGGG';
+echo 'GGGGGGGG';
 $html=curl_get('https://deshevshe.net.ua/monitors/');
-
 $dom=str_get_html($html);
-
 $tables=$dom->find('.product_title');
 $i=1;
 foreach($tables as $table)
-{
-
 {
 $tobd=array();
 	$tobd['id']=$i++;
