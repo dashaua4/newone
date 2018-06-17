@@ -12,21 +12,11 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-//$sql ="SELECT MIN(price) as price FROM $table";
-$sql ="SELECT id,name,price FROM $table";	
-$result = mysqli_query($conn, $sql);
-$date=mysqli_fetch_array($result);
-	
-
 $sql ="SELECT MIN(price) as price FROM $table";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
-	echo $date["price"];
-         
-
-
+	echo $date["price"];    
 mysqli_close($conn);
-
 }
 function SelectTMAX($table)
 {
@@ -44,16 +34,49 @@ $sql ="SELECT MAX(price) as price FROM $table";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
 	echo $date["price"];
-         
-
-
 mysqli_close($conn);
-
 }
-
+function SMT($table,$diagonal)
+{
+$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
+$username = "mysqldbuser@diplomwork-mysqldbserver";
+	
+$password = "Alexandr11";
+$dbname = "mysqldatabase";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql ="SELECT MIN(price) as price FROM $table WHERE diagonal=$diagonal";
+$result = mysqli_query($conn, $sql);
+$date=mysqli_fetch_array($result);
+	echo $date["price"];    
+mysqli_close($conn);
+}
+function SMTM($table,$diagonal)
+{
+$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
+$username = "mysqldbuser@diplomwork-mysqldbserver";
+	
+$password = "Alexandr11";
+$dbname = "mysqldatabase";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql ="SELECT MAX(price) as price FROM $table WHERE diagonal=$diagonal";
+$result = mysqli_query($conn, $sql);
+$date=mysqli_fetch_array($result);
+	echo $date["price"];    
+mysqli_close($conn);
+}
 function Drop_table()
 {
-	$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
+$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";
 $password = "Alexandr11";
 $dbname = "mysqldatabase";
@@ -74,8 +97,7 @@ if (!$conn) {
          mysql_close($conn);
 }
 function Cr_table($table)
-{ 
-	
+{ 	
  $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";
 $password = "Alexandr11";
@@ -104,8 +126,7 @@ mysqli_close($conn);
 
 }
 function Insert($table,$object)
-{ 
-	
+{ 	
  $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";
 $password = "Alexandr11";
