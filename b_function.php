@@ -126,6 +126,9 @@ $SMTM='SMTM';
 	<script> 
 function foo(id) { 
 document.getElementById("txt").disabled = id=='r2' ? false : true; 
+	document.getElementById("txt1").disabled = id=='r2' ? false : true;
+	document.getElementById("txt2").disabled = id=='r2' ? false : true;
+	
 } 
  
 </script>
@@ -144,7 +147,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
    </form></td>
   <td>  
 	  <form method="post">
-            <select name="size"  onchange="this.form.submit()" >
+            <select name="size"  disabled id="txt2" onchange="this.form.submit()" >
                 <option value="-1">—</option>
                                 <option value="0">0-50</option>
                            <option value="50">50-100</option>
