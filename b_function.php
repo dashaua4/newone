@@ -156,7 +156,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
 	 </td>
             </tr> 
  	<tr>
-	      <td><input type='text' name='txt' id='txt' disabled value='disabled'></td>
+	      <td><input type='text' name='txt' id='txt1' disabled value='disabled'></td>
              <td><input type='text' name='txt' id='txt' disabled value='disabled'></td>
             </tr>
 	
