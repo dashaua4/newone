@@ -19,7 +19,7 @@ include('function.php');
             <label  >
                 Шаблони (3)
             </label>
-   <form method="post" action="b_function.php">
+   <form method="post" action="#">
             <select name="exampl"  onchange="this.form.submit()" >
                 		<option value="-1">—</option>
                                    <option value="1">Дизайн та Реклама  </option>
@@ -128,8 +128,8 @@ function foo(id) {
 document.getElementById("txt").disabled = id=='r2' ? false : true; 
 	document.getElementById("txt1").disabled = id=='r2' ? false : true;
 	document.getElementById("txt2").disabled = id=='r2' ? false : true;
-	
-} 
+	document.getElementById("txt3").disabled = id=='r2' ? false : true;
+	} 
  
 </script>
 	<tr>
@@ -138,7 +138,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
                 <td><h3> Приміщення </h3>
  <tr>
              <td> <form method="post"> 
-            <select name="area"  onchange="this.form.submit()"  >
+            <select name="area" disabled id="txt3" onchange="this.form.submit()"  >
                 <option value="-1">—</option>
                                 <option value="1">Галицький</option>
                            <option value="2">Залізничний</option>
@@ -165,8 +165,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
 	
 	 </td>   
         </tr>
- 
-		</tr>
+ 	</tr>
 
 	
 </table>
