@@ -137,15 +137,15 @@ $SMTM='SMTM';
 	<tr>
                 <td><h3> Приміщення </h3>
 	<tr>
-              <form method="post">
+             <td> <form method="post">
             <select name="area"  onchange="this.form.submit()" >
                 <option value="-1">—</option>
                                 <option value="1">Галицький</option>
                           	<option value="2">Залізничний</option>
 		    		<option value="3">Личаківський</option>
                     </select>
-		 </form>
-		  <form method="post">
+		 </form></td>
+		<td>  <form method="post">
             <select name="size"  onchange="this.form.submit()" >
                 <option value="-1">—</option>
                                 <option value="0">0-50</option>
@@ -154,10 +154,10 @@ $SMTM='SMTM';
 		    		<option value="200">200-300</option>
 		    		<option value="300">>300</option>
                     </select>
-		 </form>
+		 </form></td>
             </tr> 
 	<tr>
-                <td> <span class="currency"></span></td>
+              
                 <td><input class="min" name="data[furniture]" value="" type="text"></td>
              <td><input class="max" name="data[furniture]" value="" type="text"></td>
             </tr>
