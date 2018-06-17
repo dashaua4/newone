@@ -28,7 +28,7 @@ $n=$tobd['name'];
 	$tobd['diagonal']=(int)$diagonal->plaintext;
 	$tobd['id_site']=1;
 echo $tobd[name].'-'.$tobd[price].'-'.$tobd[diagonal].'='.$tobd[id_site].'<br>';
-	Insert('Monitor',$tobd);
+	//Insert('Monitor',$tobd);
 }
 
 echo 'GGG';
