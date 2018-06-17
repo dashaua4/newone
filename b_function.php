@@ -42,7 +42,8 @@ include('function.php');
  <?php 
 
 $value=3;
-$name='SelectT';
+$SLT='SelectT';
+$SLTM='SelectTMAX';
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 
@@ -67,10 +68,10 @@ else{$wg='Office_comp';	}
                     Комп'ютери <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[comp]" value="<? $name($wg);?>" type="text">
+                    <input class="min" name="data[comp]" value="<? $SLT($wg);?>" type="text">
                 </td>
                  <td>
-                    <input class="max" name="data[comp]" value="<? SelectTMAX($wg);?>" type="text">
+                    <input class="max" name="data[comp]" value="<? $SLTM($wg);?>" type="text">
                 </td>
             </tr>
 					
@@ -109,10 +110,10 @@ else{$wg='Office_comp';	}
                      Стіл <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[furniture]" value="<? $name('Tables');?>" type="text">
+                    <input class="min" name="data[furniture]" value="<? $SLT('Tables');?>" type="text">
                 </td>
              <td>
-                    <input class="max" name="data[furniture]" value="<? SelectTMAX('Tables');?>" type="text">
+                    <input class="max" name="data[furniture]" value="<? $SLTM('Tables');?>" type="text">
                 </td>
             </tr> 
 					<tr>
@@ -120,10 +121,10 @@ else{$wg='Office_comp';	}
                      Стілець <span class="currency"></span>
                 </td>
                 <td>
-                    <input class="min" name="data[furniture]" value="<? SelectT('Chairs');?>" type="text">
+                    <input class="min" name="data[furniture]" value="<? $SLT('Chairs');?>" type="text">
                 </td>
              <td>
-                    <input class="max" name="data[furniture]" value="<? SelectTMAX('Chairs');?>" type="text">
+                    <input class="max" name="data[furniture]" value="<? $SLTM('Chairs');?>" type="text">
                 </td>
             </tr>
 					<tr>
