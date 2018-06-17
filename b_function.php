@@ -129,7 +129,7 @@ $SMTM='SMTM';
                 <td><h3> Приміщення </h3>
  <tr>
              <td> <form method="post"> 
-            <select name="area"  onchange="this.form.submit()" disabled >
+            <select name="area"  onchange="this.form.submit()" disabled="true" >
                 <option value="-1">—</option>
                                 <option value="1">Галицький</option>
                            <option value="2">Залізничний</option>
