@@ -125,7 +125,7 @@ $SMTM='SMTM';
 	</tr>
 	<script> 
 function foo(id) { 
-document.getElementById("txt").disabled = id=='r2' ? false : true; 
+document.getElementById("txt2").disabled = id=='r1' ? false : true; 
 } 
  
 </script>
