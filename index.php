@@ -12,7 +12,7 @@ include('function.php');
 
 Cr_table('Monitor');
 //echo 'GGGGGGGG';
-$html=curl_get('https://www.real-estate.lviv.ua/orenda-commercialproperty-office/Lviv-Lichakivskiy');
+$html=curl_get('https://deshevshe.net.ua/monitors/');
 
 $dom=str_get_html($html);
 
