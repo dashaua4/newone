@@ -72,6 +72,40 @@ else{$wg='Office_comp';	}
 		    		
                     </select>
     		 </form>
+			     <?php 
+			 $mon='Monitor'
+			 $value=3;
+$SMT='SNT';
+$SMTM='SMTM';
+	if(isset($_POST['monitor']))
+	{
+	$value = $_POST['monitor'];
+	switch($value){
+		case 15:
+		$diagonal=15;
+		break;
+		case 17:
+		$diagonal=17;
+		break;
+		case 18:
+		$diagonal=18;
+		break;
+		case 19:
+		$diagonal=19;
+		break;
+		case 20:
+		$diagonal=20;
+		break;
+		case 21:
+		$diagonal=21;
+		break;
+		case 23:
+		$diagonal=23;
+		break;
+	}
+	}
+			 ?>
+
 			                </td>
 	    </tr>
 	     <tr>
