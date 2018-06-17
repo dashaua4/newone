@@ -1,7 +1,7 @@
  <?php
 include('curl_query.php');
 include('simple_html_dom.php');
-//include('main.php');
+include('main.php');
 include('function.php');
 //Drop_table();
 
