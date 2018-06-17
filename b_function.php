@@ -83,76 +83,65 @@ $SMTM='SMTM';
 	if(isset($_POST['monitor']))
 	{
 	$value = $_POST['monitor'];
-	switch($value)
+	switch($value){
 		case 15:
 		$diagonal=15;
 		break;
+		case 17:
+		$diagonal=17;
+		break;
+		case 18:
+		$diagonal=18;
+		break;
+		case 19:
+		$diagonal=19;
+		break;
+		case 20:
+		$diagonal=20;
+		break;
+		case 21:
+		$diagonal=21;
+		break;
+		case 23:
+		$diagonal=23;
+		break;
+	}
 	
 	}
 			 ?>
                 </td>
             </tr>
-					 <tr>
-                <td>
-                    Переферія <span class="currency"></span>
-                </td>
-                <td>
-                    <input class="min" name="data[comp]" value="" type="text">
-                </td>
-                 <td>
-                    <input class="max" name="data[comp]" type="text">
-                </td>
+		 <tr>
+                <td>Переферія <span class="currency"></span></td>
+                <td><input class="min" name="data[comp]" value="" type="text"></td>
+                 <td><input class="max" name="data[comp]" type="text"></td>
             </tr>
-                </td>
-                
-                
+           </td>
         </tr>
         <tr>
-                <td>
-                    <h3> Меблі </h3>
-					<tr>
-
-                <td>
-                     Стіл <span class="currency"></span>
-                </td>
-                <td>
-                    <input class="min" name="data[furniture]" value="<? $SLT('Tables');?>" type="text">
-                </td>
-             <td>
-                    <input class="max" name="data[furniture]" value="<? $SLTM('Tables');?>" type="text">
-                </td>
+                <td><h3> Меблі </h3>
+	<tr>
+                <td>Стіл <span class="currency"></span></td>
+                <td><input class="min" name="data[furniture]" value="<? $SLT('Tables');?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" value="<? $SLTM('Tables');?>" type="text"></td>
             </tr> 
-					<tr>
-                <td>
-                     Стілець <span class="currency"></span>
-                </td>
-                <td>
-                    <input class="min" name="data[furniture]" value="<? $SLT('Chairs');?>" type="text">
-                </td>
-             <td>
-                    <input class="max" name="data[furniture]" value="<? $SLTM('Chairs');?>" type="text">
-                </td>
+	<tr>
+                <td>Стілець <span class="currency"></span></td>
+                <td><input class="min" name="data[furniture]" value="<? $SLT('Chairs');?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" value="<? $SLTM('Chairs');?>" type="text"></td>
             </tr>
-					<tr>
-                <td>
-                     Шафи <span class="currency"></span>
-                </td>
-                <td>
-                    <input class="min" name="data[furniture]" value="" type="text">
-                </td>
-             <td>
-                    <input class="max" name="data[furniture]" type="text">
-                </td>
+	<tr>
+                <td>Шафи <span class="currency"></span></td>
+                <td><input class="min" name="data[furniture]" value="" type="text"></td>
+             <td><input class="max" name="data[furniture]" type="text"></td>
             </tr>
-				</td>
-              
+	</td>   
         </tr>
-           
-            <tr>
+         <tr>
                 <td>
                     <h3> Приміщення </h3>
-					<tr>
-<form method="post" name="place" action="b_function.php">
+	<tr>
+	<form method="post" name="place" action="b_function.php">
                 <td>
                   <input type="button" class="action-btn" value="Своє" onchange="this.form.submit()" >  </input>
                 </td>
@@ -161,10 +150,9 @@ $SMTM='SMTM';
                 </td>
             
               </tr>
-			</td>
+	</td>
         </tr>
  <?php 
-
 $value=3;
 $name='SelectT';
 	if(isset($_POST['exampl'])){
