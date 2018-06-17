@@ -59,7 +59,7 @@ else{$wg='Office_comp';	}
             </tr>
 	    <tr>
 		    <td>
-                    <form method="post" action="b_function.php">
+                    <form method="post" action="function.php">
             <select name="monitor"  onchange="this.form.submit()" >
                 <option value="-1">—</option>
                                 <option value="15">15</option>
