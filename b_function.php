@@ -8,15 +8,7 @@ include('function.php');
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>!</title>
    <link href="style.css" rel="stylesheet" />         
-<script>
 
-    function show() {
-    document.getElementById('info').style.display='block';
-    }
-    function hide() {
-        document.getElementById('info').style.display='none';
-    }
-</script>
 
 </head>
    
@@ -125,7 +117,16 @@ $SMTM='SMTM';
             </tr>
 	</td>   
         </tr>
-	<form action="" method="post" target="_blank">
+	<form >
+		<script>
+
+    function show() {
+    document.getElementById('info').style.display='block';
+    }
+    function hide() {
+        document.getElementById('info').style.display='none';
+    }
+</script>
    	 <tr>
 		 <td><input type="radio" name="place" value="Власне" onChange="hide()">Власне</td>
 		 <td><input type="radio" name="itemtype" value="Оренда" onChange="show()">Оренда</td>
