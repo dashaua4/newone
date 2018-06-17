@@ -8,28 +8,16 @@ include('function.php');
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>!</title>
    <link href="style.css" rel="stylesheet" />         
- <style>
-	 .place{display: none;}
-</style>
-	<style type="text/css">
+<script>
 
-        .vis0 {visibility: hidden}
-
-        .vis1 {visibility: visible}
-
-    </style>
-
-<script type="text/javascript">
-function ilkHomTh(stayType)
-{
-var e1 = document.getElementById("place");
-13
-            if (stayType=='Власне') {e1.className='vis1';}
-14
-            if (stayType=='Оренда') {e1.className='vis0';}
-
-}
+    function show() {
+    document.getElementById('info').style.display='block';
+    }
+    function hide() {
+        document.getElementById('info').style.display='none';
+    }
 </script>
+
 </head>
    
 <body>
@@ -139,11 +127,11 @@ $SMTM='SMTM';
         </tr>
 	<form action="" method="post" target="_blank">
    	 <tr>
-		 <td><input type="radio" name="place" value="Власне" onclick="ilkHomTh(this.value);">Власне</td>
-		 <td><input type="radio" name="itemtype" value="Оренда" onclick="ilkHomTh(this.value);">Оренда</td>
+		 <td><input type="radio" name="place" value="Власне" onChange="hide()">Власне</td>
+		 <td><input type="radio" name="itemtype" value="Оренда" onChange="show()">Оренда</td>
 	</tr>
 	
-	<div id="place">
+	<div id="info" style="display:none">
 	<tr>
                 <td><h3> Приміщення </h3>
 	<tr>
