@@ -72,7 +72,16 @@ else{$wg='Office_comp';	}
 		    		
                     </select>
     		 </form>
-<?php 
+
+
+	    </td>
+	    </tr>
+	     <tr>
+                <td>Монітори <span class="currency"></span></td>
+                <td><input class="min" name="data[comp]" value="<? $SMT($mon,$diagonal);?>"  type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? $SMTM($mon,$diagonal);?>" type="text"></td>
+            </tr>
+		 </form>	<?php 
 	 $mon='Monitor';
 $SMT='SMT';
 $SMTM='SMTM';
@@ -82,14 +91,7 @@ $SMTM='SMTM';
 	$diagonal=$val;
 	}
 	 ?>
-
-	    </td>
-	    </tr>
-	     <tr>
-                <td>Монітори <span class="currency"></span></td>
-                <td><input class="min" name="data[comp]" value="<? $SMT($mon,$diagonal);?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? $SMTM($mon,$diagonal);?>" type="text"></td>
-            </tr>
+			
 		 <tr>
                 <td>Переферія <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]" value="" type="text"></td>
