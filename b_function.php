@@ -128,41 +128,16 @@ $SMTM='SMTM';
     }
 </script>
    	 <tr>
-		 <td><input type="radio" name="place" value="Власне" onChange="hide()">Власне</td>
-		 <td><input type="radio" name="itemtype" value="Оренда" onChange="show()">Оренда</td>
+		 <td><input id="myRadioButton1" type="radio" name="place" value="Власне" onChange="hide()">Власне</td>
+		 <td><input id="myRadioButton2" type="radio" name="itemtype" value="Оренда" onChange="show()">Оренда</td>
 	</tr>
 	
 	<div id="info" style="display:none">
-	<tr>
-                <td><h3> Приміщення </h3>
-	<tr>
-             <td> <form method="post">
-            <select name="area"  onchange="this.form.submit()" >
-                <option value="-1">—</option>
-                                <option value="1">Галицький</option>
-                          	<option value="2">Залізничний</option>
-		    		<option value="3">Личаківський</option>
-                    </select>
-		 </form></td>
-		<td>  <form method="post">
-            <select name="size"  onchange="this.form.submit()" >
-                <option value="-1">—</option>
-                                <option value="0">0-50</option>
-                          	<option value="50">50-100</option>
-		    		<option value="100">100-200</option>
-		    		<option value="200">200-300</option>
-		    		<option value="300">>300</option>
-                    </select>
-		 </form></td>
-            </tr> 
-	<tr>
-              
-                <td><input class="min" name="data[furniture]" value="" type="text"></td>
-             <td><input class="max" name="data[furniture]" value="" type="text"></td>
-            </tr>
 	
-	</td>   
-        </tr>
+              
+               <input class="min" name="data[furniture]" value="" type="text">
+            <input class="max" name="data[furniture]" value="" type="text">
+         
 	</div>
 	</form>
 	
