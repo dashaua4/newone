@@ -7,10 +7,10 @@ include('function.php');
 
 //Cr_table('Monitor');
 echo 'GGGGGGGG';
-$html=curl_get('https://deshevshe.net.ua/monitors/');
+$html=curl_get('https://deshevshe.net.ua/monitors/2/');
 $dom=str_get_html($html);
 $tables=$dom->find('.product_title');
-$i=1;
+$i=9;
 foreach($tables as $table)
 {
 $tobd=array();
