@@ -130,7 +130,7 @@ $SMTM='SMTM';
 	<form>
    	 <tr>
 		 <td><input type="radio" name="place" value="my">Власне</td>
-		 <td><input type="radio" name="place" value="vehicle" onclick="toggleSet(this)">Оренда</td>
+		 <td><input type="radio" name="itemtype" value="vehicle" onclick="toggleSet(this)">Оренда</td>
 	</tr>
 	
 	<fieldset id="vehicle" class="item">
