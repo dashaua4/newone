@@ -2,8 +2,7 @@
 function SelectT($table)
 {
 $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
-$username = "mysqldbuser@diplomwork-mysqldbserver";
-	
+$username = "mysqldbuser@diplomwork-mysqldbserver";	
 $password = "Alexandr11";
 $dbname = "mysqldatabase";
 // Create connection
@@ -33,14 +32,13 @@ if (!$conn) {
 $sql ="SELECT MAX(price) as price FROM $table";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
-	echo $date["price"];
+echo $date["price"];
 mysqli_close($conn);
 }
 function SMT($table,$diagonal)
 {
 $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
-$username = "mysqldbuser@diplomwork-mysqldbserver";
-	
+$username = "mysqldbuser@diplomwork-mysqldbserver";	
 $password = "Alexandr11";
 $dbname = "mysqldatabase";
 // Create connection
@@ -58,8 +56,7 @@ mysqli_close($conn);
 function SMTM($table,$diagonal)
 {
 $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
-$username = "mysqldbuser@diplomwork-mysqldbserver";
-	
+$username = "mysqldbuser@diplomwork-mysqldbserver";	
 $password = "Alexandr11";
 $dbname = "mysqldatabase";
 // Create connection
@@ -80,7 +77,6 @@ $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";
 $password = "Alexandr11";
 $dbname = "mysqldatabase";
-
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
@@ -88,9 +84,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 	 $sql = "DROP TABLE WG_system";
-       
-         
-         if($conn->query($sql) === TRUE ) {
+             if($conn->query($sql) === TRUE ) {
             die('Could not delete table: ' . mysql_error());
          }
          echo "Table deleted successfully\n";
@@ -102,7 +96,6 @@ function Cr_table($table)
 $username = "mysqldbuser@diplomwork-mysqldbserver";
 $password = "Alexandr11";
 $dbname = "mysqldatabase";
-
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
@@ -114,17 +107,13 @@ id INTEGER AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(64),
 price INTEGER,
 diagonal INTEGER,
-id_site INTEGER
-)";
+id_site INTEGER)";
 if ($conn->query($sql) === TRUE) {
     echo "Table  created successfully";
 } else {
     echo "Error creating table: " . $conn->error;
 }
-
-mysqli_close($conn);
-
-}
+mysqli_close($conn);}
 function Insert($table,$object)
 { 	
  $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
