@@ -71,15 +71,14 @@ else{$wg='Office_comp';	}
 		    		<option value="23">23</option>
 		    		
                     </select>
-    		
+		 </form>
 	    </td>
 	    </tr>
 	     <tr>
                 <td>Монітори <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]" value="<? $SMT($mon,$diagonal);?>"  type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? $SMTM($mon,$diagonal);?>" type="text"></td>
-            </tr>
-		 </form>	<?php 
+            </tr>	<?php 
 	 $mon='Monitor';
 $SMT='SMT';
 $SMTM='SMTM';
