@@ -6,9 +6,20 @@ include('function.php');
 <html>
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Farfalla</title>
+  <title>!</title>
    <link href="style.css" rel="stylesheet" />         
- 
+ <style>
+fieldset{display: none; padding: 10px;}
+</style>
+<script type="text/javascript">
+function toggleSet(rad)
+{
+var type = rad.value;
+for(var k=0,elm;elm=rad.form.elements[k];k++)
+if(elm.className=='item')
+elm.style.display = elm.id==type? 'inline':'';
+}
+</script>
 </head>
    
 <body>
@@ -116,7 +127,45 @@ $SMTM='SMTM';
             </tr>
 	</td>   
         </tr>
-    
+   	 <tr>
+		 <td><input type="radio" name="place" value="my">Власне</td>
+		 <td><input type="radio" name="place" value="or" onclick="toggleSet(this)">Оренда</td>
+	</tr>
+	
+	<fieldset id="vehicle" class="item">
+	<tr>
+                <td><h3> Приміщення </h3>
+	<tr>
+              <form method="post">
+            <select name="area"  onchange="this.form.submit()" >
+                <option value="-1">—</option>
+                                <option value="1">Галицький</option>
+                          	<option value="2">Залізничний</option>
+		    		<option value="3">Личаківський</option>
+                    </select>
+		 </form>
+		  <form method="post">
+            <select name="size"  onchange="this.form.submit()" >
+                <option value="-1">—</option>
+                                <option value="0">0-50</option>
+                          	<option value="50">50-100</option>
+		    		<option value="100">100-200</option>
+		    		<option value="200">200-300</option>
+		    		<option value="300">>300</option>
+                    </select>
+		 </form>
+            </tr> 
+	<tr>
+                <td> <span class="currency"></span></td>
+                <td><input class="min" name="data[furniture]" value="" type="text"></td>
+             <td><input class="max" name="data[furniture]" value="" type="text"></td>
+            </tr>
+	
+	</td>   
+        </tr>
+	</fieldset>
+	
+	
 </table>
 </div>
  </body>
