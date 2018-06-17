@@ -121,7 +121,7 @@ $SMTM='SMTM';
 		
    	 <tr>
 		 <td><input id="myRadioButton1" type="radio" name="place" value="Власне" >Власне</td>
-		 <td><input id="myRadioButton2" type="radio" name="itemtype" value="Оренда" onFocus="this.form.text.disabled=0">Оренда</td>
+		 <td><input id="myRadioButton2" type="radio" name="itemtype" value="Оренда">Оренда</td>
 	</tr>
 	<tr>
 	
@@ -129,7 +129,7 @@ $SMTM='SMTM';
                 <td><h3> Приміщення </h3>
  <tr>
              <td> <form method="post"> 
-            <select name="area"  onchange="this.form.submit()" disabled="true" >
+            <select name="area"  onchange="this.form.submit()"  >
                 <option value="-1">—</option>
                                 <option value="1">Галицький</option>
                            <option value="2">Залізничний</option>
@@ -138,7 +138,7 @@ $SMTM='SMTM';
    </form></td>
   <td>  
 	  <form method="post">
-            <select name="size" onchange="this.form.submit()" disabled>
+            <select name="size" onchange="this.form.submit()" >
                 <option value="-1">—</option>
                                 <option value="0">0-50</option>
                            <option value="50">50-100</option>
@@ -150,8 +150,8 @@ $SMTM='SMTM';
 	 </td>
             </tr> 
  	<tr>
-	      <td><input class="min" name="data[furniture]" value="" type="text" disabled></td>
-             <td><input class="max" name="data[furniture]" value="" type="text" disabled></td>
+	      <td><input class="min" name="data[furniture]" value="" type="text" ></td>
+             <td><input class="max" name="data[furniture]" value="" type="text" ></td>
             </tr>
 	
 	 </td>   
