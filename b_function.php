@@ -9,7 +9,7 @@ include('function.php');
   <title>!</title>
    <link href="style.css" rel="stylesheet" />         
  <style>
-fieldset{display: none; padding: 10px;}
+	 fieldset{display: none;}
 </style>
 <script type="text/javascript">
 function toggleSet(rad)
@@ -130,7 +130,7 @@ $SMTM='SMTM';
 	<form>
    	 <tr>
 		 <td><input type="radio" name="place" value="my">Власне</td>
-		 <td><input type="radio" name="place" value="or" onclick="toggleSet(this)">Оренда</td>
+		 <td><input type="radio" name="place" value="vehicle" onclick="toggleSet(this)">Оренда</td>
 	</tr>
 	
 	<fieldset id="vehicle" class="item">
