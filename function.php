@@ -89,10 +89,9 @@ if (!$conn) {
 }
 $sql = "CREATE TABLE $table (
 id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-adress VARCHAR(64),
-area VARCHAR(64),
+name VARCHAR(64),
 price INTEGER,
-size INTEGER,
+diagonal INTEGER,
 id_site INTEGER
 )";
 if ($conn->query($sql) === TRUE) {
