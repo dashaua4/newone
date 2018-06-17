@@ -121,7 +121,7 @@ $SMTM='SMTM';
 		
    	 <tr>
 		 <td><input  type="radio" id='r1' onclick='foo(this.id);' checked value='1' >Власне</td>
-		 <td><input  type="radio" id='r2' onclick='foo(this.id);' checked value='2'>Оренда</td>
+		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2'>Оренда</td>
 	</tr>
 	<script> 
 function foo(id) { 
@@ -135,7 +135,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
                 <td><h3> Приміщення </h3>
  <tr>
              <td> <form method="post"> 
-            <select name="area"  onchange="this.form.submit()"  >
+            <select name="area" id="txt"  onchange="this.form.submit()"  >
                 <option value="-1">—</option>
                                 <option value="1">Галицький</option>
                            <option value="2">Залізничний</option>
@@ -144,7 +144,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
    </form></td>
   <td>  
 	  <form method="post">
-            <select name="size" onchange="this.form.submit()" >
+            <select name="size" id="txt" onchange="this.form.submit()" >
                 <option value="-1">—</option>
                                 <option value="0">0-50</option>
                            <option value="50">50-100</option>
@@ -157,7 +157,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
             </tr> 
  	<tr>
 	      <td><input class="min" name="txt" id="txt" value="" type="text" ></td>
-             <td><input class="max" name="data[furniture]" value="" type="text" ></td>
+             <td><input class="max" name="txt" id="txt" value="" type="text" ></td>
             </tr>
 	
 	 </td>   
