@@ -61,55 +61,6 @@ else{$wg='Office_comp';	}
                 <td>Монітори <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]" value="<? $SMT($mon,$diagonal);?>" type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? $SMTM($mon,$diagonal);?>" type="text"></td>
-		 <td>
-                    <form method="post" action="b_function.php">
-            <select name="monitor"  onchange="this.form.submit()" >
-                <option value="-1">—</option>
-                                <option value="15">15</option>
-                          	<option value="17">17</option>
-		    		<option value="18">18</option>
-		    		<option value="19">19</option>
-		    		<option value="20">20</option>
-		    		<option value="21">21</option>
-		    		<option value="23">23</option>
-		    		
-                    </select>
-    		 </form>
-			 <?php 
-			 $mon='Monitor'
-			 $value=3;
-$SMT='SNT';
-$SMTM='SMTM';
-	if(isset($_POST['monitor']))
-	{
-	$value = $_POST['monitor'];
-	switch($value){
-		case 15:
-		$diagonal=15;
-		break;
-		case 17:
-		$diagonal=17;
-		break;
-		case 18:
-		$diagonal=18;
-		break;
-		case 19:
-		$diagonal=19;
-		break;
-		case 20:
-		$diagonal=20;
-		break;
-		case 21:
-		$diagonal=21;
-		break;
-		case 23:
-		$diagonal=23;
-		break;
-	}
-	
-	}
-			 ?>
-                </td>
             </tr>
 		 <tr>
                 <td>Переферія <span class="currency"></span></td>
