@@ -71,9 +71,7 @@ else{$wg='Office_comp';	}
 		    		<option value="23">23</option>
 		    		
                     </select>
-    		 </form>
-
-
+    		
 	    </td>
 	    </tr>
 	     <tr>
