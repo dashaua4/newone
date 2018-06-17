@@ -137,7 +137,7 @@ $SMTM='SMTM';
             </tr>
 	</td>   
         </tr>
-	<form>
+	<form action="" method="post" target="_blank">
    	 <tr>
 		 <td><input type="radio" name="place" value="Власне">Власне</td>
 		 <td><input type="radio" name="itemtype" value="Оренда" onclick="ilkHomTh(this.value);">Оренда</td>
