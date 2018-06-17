@@ -120,12 +120,12 @@ $SMTM='SMTM';
 	
 		
    	 <tr>
-		 <td><input  type="radio" id='r1' onclick='foo(this.id);' checked value='1' >Власне</td>
+		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
 		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2'>Оренда</td>
 	</tr>
 	<script> 
 function foo(id) { 
-document.getElementById("txt2").disabled = id=='r1' ? false : true; 
+document.getElementByClassName("place").disabled = id=='r1' ? false : true; 
 } 
  
 </script>
@@ -156,8 +156,8 @@ document.getElementById("txt2").disabled = id=='r1' ? false : true;
 	 </td>
             </tr> 
  	<tr>
-	      <td><input class="min" name="txt" id="txt" value="" type="text" ></td>
-             <td><input class="max" name="txt2" id="txt" value="" type="text" ></td>
+	      <td><input class="place" name="txt" id="txt" value="" type="text" ></td>
+             <td><input class="place" name="txt2" id="txt" value="" type="text" ></td>
             </tr>
 	
 	 </td>   
