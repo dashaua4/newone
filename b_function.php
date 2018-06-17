@@ -121,7 +121,7 @@ $SMTM='SMTM';
 		
    	 <tr>
 		 <td><input id="myRadioButton1" type="radio" name="place" value="Власне" >Власне</td>
-		 <td><input id="myRadioButton2" type="radio" name="itemtype" value="Оренда" onFocus="this.form.select.disabled=0">Оренда</td>
+		 <td><input id="myRadioButton2" type="radio" name="itemtype" value="Оренда" onFocus="this.form.text.disabled=0">Оренда</td>
 	</tr>
 	<tr>
 	
