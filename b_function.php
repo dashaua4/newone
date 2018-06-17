@@ -22,7 +22,7 @@ include('function.php');
 <script type="text/javascript">
 function ilkHomTh(stayType)
 {
-var e1 = document.getElementById("are_usure");
+var e1 = document.getElementById("place");
 13
             if (stayType=='Власне') {e1.className='vis1';}
 14
@@ -139,11 +139,11 @@ $SMTM='SMTM';
         </tr>
 	<form action="" method="post" target="_blank">
    	 <tr>
-		 <td><input type="radio" name="place" value="Власне">Власне</td>
+		 <td><input type="radio" name="place" value="Власне" onclick="ilkHomTh(this.value);">Власне</td>
 		 <td><input type="radio" name="itemtype" value="Оренда" onclick="ilkHomTh(this.value);">Оренда</td>
 	</tr>
 	
-	<div class="place">
+	<div id="place">
 	<tr>
                 <td><h3> Приміщення </h3>
 	<tr>
