@@ -137,30 +137,7 @@ $SMTM='SMTM';
             </tr>
 	</td>   
         </tr>
-         <tr>
-                <td>
-                    <h3> Приміщення </h3>
-	<tr>
-	<form method="post" name="place" action="b_function.php">
-                <td>
-                  <input type="button" class="action-btn" value="Своє" onchange="this.form.submit()" >  </input>
-                </td>
-                <td>
-                   <input type="button" class="action-btn" value="Оренда" onchange="this.form.submit()"></input>
-                </td>
-            
-              </tr>
-	</td>
-        </tr>
-	<tr>
-		<td>
-                    <input class="min" name="data[furniture]" value="<? SelectT('Chairs');?>" type="text">
-                </td>
-             <td>
-                    <input class="max" name="data[furniture]" value="<? SelectTMAX('Chairs');?>" type="text">
-                </td>
-	</tr>
-         </form> 
+    
 </table>
 </div>
  </body>
