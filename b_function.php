@@ -162,7 +162,7 @@ $SLTMC=SelectTMAX('Chairs');
 		
    	 <tr>
 		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
-		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2'>Оренда</td>
+		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' checked >Оренда</td>
 	</tr>
 	<script> 
 function foo(id) { 
