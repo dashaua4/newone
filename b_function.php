@@ -23,15 +23,21 @@ include('function.php');
             </label>
 
    <form method="post" action="#">
-            <select name="exampl"  onchange="this.form.submit()" >
-                		<option value="-1">—</option>
-				<option value="1">Дизайн та Реклама  </option>
-                                <option value="2">IT Компанія</option>
-                                <option value="3">Офіс</option>            
-              </select>
-     </form> <script type="text/javascript">
-  document.getElementById('exampl').value = "<?php echo $_GET['exampl'];?>";
-</script>
+           
+	    <select name="favFruit[]" size="4" multiple="">
+  <?php
+$options = array("apple", "banana", "plum", "pomegranate", "strawberry", "watermelon");
+foreach ($options as $option) {
+    echo '<option value="' . $option . '"';
+    if (in_array($option, $favFruit)) {
+        echo " selected";
+    }
+    echo ">" . ucfirst($option) . "</option>";
+}
+?>
+  </select>
+  
+     </form> 
     </div>
 	
 </div>
