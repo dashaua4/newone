@@ -45,8 +45,8 @@ else{$wg='Office_comp';	}
 $SLTM=SelectTMAX($wg);
 
 session_start();
-$_SESSION['time'] = date("H:i:s");
-echo $_SESSION['time'];
+$_SESSION['min'] = $SLT;
+echo $_SESSION['min'];
 ?>
 <div class="main">
 <table>
@@ -59,11 +59,6 @@ echo $_SESSION['time'];
                 <td>                  
                     <h3>Обладнання</h3>
 			
-<? echo "<H1>";
-			echo $_SESSION['min'];
-echo "</H1>"; 
-?> 
-
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="comp" value="<? echo $SLT;?>" type="text"></td>
