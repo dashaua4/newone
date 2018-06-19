@@ -160,22 +160,7 @@ $SLTMC=SelectTMAX('Chairs');
             </tr>
 	</td>   
         </tr>
-	<?php
-	 if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){
-			$m= $mas['compmin'];
-	echo  $mas['compmin']; }} 
-	 if(isset($_SESSION['tn']))
-		{foreach ($_SESSION['tn'] as $mas){
-			$n=$mas['monmin'];
-	echo  $mas['monmin']; }} 
-$sum=$m+$n+$SLTT+$SLTC;
-$sum2=$sum*1.6;
-	echo $_SESSION['mas']['compmin'].'+'.$_SESSION['tn']['monmin'].'+'.$SLTT.'+'.$SLTC;
-echo "<h1>Постійні витрати складають ".$sum." тис. грн.</h1>";
-echo  "<h1> В день повинна бути виручка не менше ". $sum2/365 ."тис. грн. 
-Річний дохід не менше ". $sum2 ." тис. грн.</h1>";
-?>
+
 		
    	 <tr>
 		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
@@ -261,7 +246,23 @@ $W_PSMax=W_PSMax($table,$area,(int)$size);
 
 	
 </table>
-
+<div>	<?php
+	 if(isset($_SESSION['wp']))
+		{foreach ($_SESSION['wp'] as $mas){
+			$w= $mas['wpmin'];}} 
+	 if(isset($_SESSION['mas']))
+		{foreach ($_SESSION['mas'] as $mas){
+			$m= $mas['compmin'];}} 
+	 if(isset($_SESSION['tn']))
+		{foreach ($_SESSION['tn'] as $mas){
+			$n=$mas['monmin']; }} 
+$sum=$m+$n+$SLTT+$SLTC+$w;
+$sum2=$sum*1.6;
+	echo $_SESSION['mas']['compmin'].'+'.$_SESSION['tn']['monmin'].'+'.$SLTT.'+'.$SLTC;
+echo "<h1>Постійні витрати складають ".$sum." тис. грн.</h1>";
+echo  "<h1> В день повинна бути виручка не менше ". $sum2/365 ."тис. грн. 
+Річний дохід не менше ". $sum2 ." тис. грн.</h1>";
+?></div>
 </div>
 
  </body>
