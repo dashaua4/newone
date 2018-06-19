@@ -203,7 +203,7 @@ $SLTMC=SelectTMAX('Chairs');
    </td>
 </tr>  
 <?php 
-			$table='workplace';
+			$table='Workplace';
 	$value=3;
 	if(isset($_POST['area'])){
 	$value = $_POST['area'];
@@ -233,12 +233,9 @@ $W_PSMin=W_PSMax($table,$area,$size);
 	session_write_close($_SESSION['mas']);	
 ?>
  	<tr>
-	      <td><input type='text' name='txt' id='txt1' value="<? if(isset($_SESSION['wp']))
-		{foreach ($_SESSION['wp'] as $mas){
-	echo  $mas['wpmin']; }} ?>"></td>
-             <td><input type='text' name='txt' id='txt' value="<? if(isset($_SESSION['wp']))
-		{foreach ($_SESSION['wp'] as $mas){
-	echo  $mas['wpmax']; }} ?>"></td>
+	      
+		<td><input class="min" name="data[comp]"  value="$W_PSMin"  type="text"></td>
+                 <td><input class="max" name="data[comp]" value="$W_PSMin" type="text"></td>
             </tr>
 	
 	 </td>   
