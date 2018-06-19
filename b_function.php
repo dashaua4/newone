@@ -40,20 +40,19 @@ session_start();
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1){
-		{ $_SESSION['val'][]=  array('id' => $value, 'kl' => $t++);
+		{ $_SESSION['val']= $t++;
 		$wg='WG_system';}
-	else if($value==2){ $_SESSION['val'][]=  array('id' => $value, 'kl' => $t++); $wg='WG_system';}
+	else if($value==2){ $_SESSION['val']=$t++; $wg='WG_system';}
 else{$wg='Office_comp';	  $_SESSION['val']=  $value;$t=$t+1;}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
-	foreach($_SESSION['val'] as $val)
-	{
-	if($val['kl']==1)
+	
+	if($_SESSION['val']==1)
 	{$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);echo $t.'la1';}
 	else {unset($_SESSION['mas']);$t=0}
-		echo ' val '.$val['kl'].' ';
-	}
+		echo ' val '.$_SESSION['val'].' ';
+	
 		
 		
 ?>
