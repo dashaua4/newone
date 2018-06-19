@@ -86,7 +86,7 @@ if (!$conn) {
 $sql ="SELECT MIN(price) as price FROM $table WHERE area=$area AND size<$size";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
-	echo $date["price"];    
+	return $date["price"];    
 mysqli_close($conn);
 }
 function W_PSMax($table,$area,$size)
@@ -104,7 +104,7 @@ if (!$conn) {
 $sql ="SELECT MAX(price) as price FROM $table WHERE area=$area AND size<$size";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
-	echo $date["price"];    
+	return $date["price"];    
 mysqli_close($conn);
 }
 function Drop_table()
