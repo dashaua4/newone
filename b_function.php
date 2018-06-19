@@ -99,8 +99,9 @@ $t++;
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
 	$_SESSION['mas'][] = array('monmin' => $SMT, 'monmax' => $SMTM);		    
-	
-			    
+	unset($_SESSION['mas']);
+	if($t>1)
+			{unset($_SESSION['mas']);}		    
 	 ?>
 	    </td>
 	    </tr>
@@ -141,8 +142,7 @@ $SLTMT=SelectTMAX('Tables');
 			<?php
 	$SLTC=SelectT('Chairs');
 $SLTMC=SelectTMAX('Chairs');
-			if($t>1)
-			{unset($_SESSION['mas']);}
+			
 			session_write_close();
 	?>
 	<tr>
