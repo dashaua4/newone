@@ -206,10 +206,10 @@ $SLTMC=SelectTMAX('Chairs');
 			$table='Workplace';
 	$value=3;
 	if(isset($_POST['area'])){
-	$value = $_POST['area'];
-	if($value==1){$area='Галицький';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+	$val1 = $_POST['area'];
+	if($val1==1){$area='Галицький';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
 	$_SESSION['counter']++;}
-	else if($value==2){ $area='Залізничний';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+	else if($val1==2){ $area='Залізничний';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
 	$_SESSION['counter']++;}
 	else{$area='Личаківський';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
 	$_SESSION['counter']++;}
@@ -217,21 +217,21 @@ $SLTMC=SelectTMAX('Chairs');
 	echo $area;
 	if(isset($_POST['size']))
 	{
-	$val = $_POST['size'];
-	$size=$val;
+	$val2 = $_POST['size'];
+	$size=$val2;
 	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
 	$_SESSION['counter']++;
 	}
 		echo $size;	
-	$W_PSMin=W_PSMin('Workplace','Галицький',50);
-$W_PSMax=W_PSMax('Workplace','Галицький',50);
-echo $W_PSMin.'   '.$W_PSMax;
+	$W_PSMin=W_PSMin($table,$area,$size);
+$W_PSMax=W_PSMax($table,$area,$size);
+
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['wp']); $_SESSION['counter']=0;
-	$_SESSION['wp'][]=array('wpmin'=>$W_PSMin, 'wpmax'=> $W_PSMin);
+	$_SESSION['wp'][]=array('wpmin'=>$W_PSMin, 'wpmax'=> $W_PSMax);
 	}		
 	
-	session_write_close($_SESSION['mas']);	
+	
 ?>
  	<tr>
 	      
@@ -245,13 +245,7 @@ echo $W_PSMin.'   '.$W_PSMax;
 
 	
 </table>
-<?php
-$sum=$_SESSION['mas']['compmin']+$_SESSION['tn']['monmin]+$SLTT+$SLTC;
-$sum2=$sum*1.6;
-echo "<h1>Постійні витрати складають ".$sum." тис. грн.</h1>";
-echo  "<h1> В день повинна бути виручка не менше ". $sum2/365 ."тис. грн. 
-Річний дохід не менше ". $sum2 ." тис. грн.</h1>";
-?>
+
 </div>
  </body>
 </html>
