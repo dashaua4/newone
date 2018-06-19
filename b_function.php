@@ -49,9 +49,9 @@ else{$wg='Office_comp';	  $_SESSION['val']=$t++;}
 $SLTM=SelectTMAX($wg);
 	
 	if($_SESSION['val']==1)
-	{$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);echo $t.'la1';}
+	{$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);}
 	else {unset($_SESSION['mas']);$t=0;}
-		echo ' val '.$_SESSION['val'].' ';
+		
 	
 		
 		
@@ -150,8 +150,7 @@ $SLTMT=SelectTMAX('Tables');
 			<?php
 	$SLTC=SelectT('Chairs');
 $SLTMC=SelectTMAX('Chairs');
-		unset($_SESSION['mas']);	
-			session_write_close();
+				session_write_close();
 	?>
 	<tr>
                 <td>Стілець <span class="currency"></span></td>
