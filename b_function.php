@@ -46,13 +46,6 @@ $SLTM=SelectTMAX($wg);
 
 session_start();
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
-if(isset($_SESSION['mas'])){
-    
-    // Выводим пользователей через массив.
-    foreach($_SESSION['mas'] as $mas){
-        $cm=$mas['min'];$cmax=$mas['max']; 
-    }
-} 
 ?>
 <div class="main">
 <table>
@@ -67,8 +60,18 @@ if(isset($_SESSION['mas'])){
 			
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="comp" value="<? echo $cm;?>" type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? echo $cmax;?>" type="text"></td>
+                <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas'])){
+
+    foreach($_SESSION['mas'] as $mas){
+        echo $mas['min']; 
+    }
+} ?>" type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas'])){
+
+    foreach($_SESSION['mas'] as $mas){
+        echo $mas['max']; 
+    }
+} ?>" type="text"></td>
             </tr>
 	    <tr>
 		    <td>
