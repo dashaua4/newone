@@ -99,7 +99,7 @@ session_start();
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
 	$_SESSION['mas'][] = array('monmin' => $SMT, 'monmax' => $SMTM);		    
-	//unset($_SESSION['mas']);
+	unset($_SESSION['mas']);
 	 ?>
 	    </td>
 	    </tr>
