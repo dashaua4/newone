@@ -42,6 +42,7 @@ $value = $_POST['exampl'];
 	else if($value==2){$wg='WG_system';}
 else{$wg='Office_comp';	}
 	}
+	$mx=SelectTMAX($wg);
 ?>
 <div class="main">
 <table>
@@ -56,7 +57,7 @@ else{$wg='Office_comp';	}
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]" value="<? $SLT($wg);?>" type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? $SLTM($wg);?>" type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? echo $mx;?>" type="text"></td>
             </tr>
 	    <tr>
 		    <td>
