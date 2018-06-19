@@ -50,7 +50,7 @@ if (!$conn) {
 $sql ="SELECT MIN(price) as price FROM $table WHERE diagonal=$diagonal";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
-	echo $date["price"];    
+	return $date["price"];    
 mysqli_close($conn);
 }
 function SMTM($table,$diagonal)
@@ -68,7 +68,7 @@ if (!$conn) {
 $sql ="SELECT MAX(price) as price FROM $table WHERE diagonal=$diagonal";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
-	echo $date["price"];    
+	return $date["price"];    
 mysqli_close($conn);
 }
 function Drop_table()
