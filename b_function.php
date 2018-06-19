@@ -45,6 +45,7 @@ else{$wg='Office_comp';	}
 $SLTM=SelectTMAX($wg);
 
 session_start();
+	unset($_SESSION['mas']);
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 ?>
 <div class="main">
