@@ -38,25 +38,24 @@ include('function.php');
 
 $value=3;
 	session_start(); 
-
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1){$wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-echo "Вы обновили эту страницу ".$_SESSION['counter']++." раз. ";}
+$_SESSION['counter']++;}
 	else if($value==2){ $wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-echo "Вы обновили эту страницу ".$_SESSION['counter']++." раз. ";}
+$_SESSION['counter']++;}
 else{$wg='Office_comp';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-echo "Вы обновили эту страницу ".$_SESSION['counter']++." раз. ";}
+$_SESSION['counter']++;}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
-	$key='35899';
+
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);
 	}		
 	
-		
+	session_write_close($_SESSION['mas']);	
 ?>
 <div class="main">
 <table>
@@ -101,7 +100,7 @@ $SLTM=SelectTMAX($wg);
 	$val = $_POST['monitor'];
 	$diagonal=$val;
 	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-echo "Вы обновили эту страницу ".$_SESSION['counter']++." раз. ";
+$_SESSION['counter']++;
 	}
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
@@ -145,7 +144,7 @@ $SLTMT=SelectTMAX('Tables');
 			<?php
 	$SLTC=SelectT('Chairs');
 $SLTMC=SelectTMAX('Chairs');
-				session_write_close($_SESSION['mas']);
+				
 	?>
 	<tr>
                 <td>Стілець <span class="currency"></span></td>
