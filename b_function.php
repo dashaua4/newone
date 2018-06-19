@@ -102,8 +102,8 @@ $_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);
 	$SMTM=SMTM($mon,$diagonal);
 	$_SESSION['mas'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);
 		    
-	unset($_SESSION['mas']);
-	unset($_SESSION['counter']);	    
+	//unset($_SESSION['mas']);
+	//unset($_SESSION['counter']);	    
 	 ?>
 	    </td>
 	    </tr>
