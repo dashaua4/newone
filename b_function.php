@@ -99,8 +99,8 @@ $t++;
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
 	$_SESSION['mas'][] = array('monmin' => $SMT, 'monmax' => $SMTM);		    
-	unset($_SESSION['mas']);
-	if($t>1)
+	
+	if($t>2)
 			{unset($_SESSION['mas']);}		    
 	 ?>
 	    </td>
