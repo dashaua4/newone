@@ -60,7 +60,7 @@ $SLTM=SelectTMAX($wg);
 			
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas'])){
+                <td><input class="min" name="comp" value="<? $t=0;if(isset($_SESSION['mas'])){
 $t++;
     foreach($_SESSION['mas'] as $mas){
         echo $mas['min']; 
@@ -99,8 +99,8 @@ $t++;
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
 	$_SESSION['mas'][] = array('monmin' => $SMT, 'monmax' => $SMTM);		    
-	unset($_SESSION['mas']);
-	if($t>2)
+	//unset($_SESSION['mas']);
+	if($t>1)
 			{unset($_SESSION['mas']);}	echo '<h1>'.$t.'</h1>'	    
 	 ?>
 	    </td>
