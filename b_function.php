@@ -20,6 +20,7 @@ include('function.php');
                 Шаблони (3)
             </label>
 	    <?PHP
+	    session_start();
 $months = array(
     1 => 'Дизайн та Реклама ',
     2 => 'IT Компанія',
@@ -32,9 +33,7 @@ $months = array(
 		    <?PHP foreach ($months as $index => $month) {?>
     <option <?=($_SESSION['Month']==$index?'selected="selected"':'')?> value="<?=$index?>"><?=$month?></option>
     <?PHP } ?>
-                                   <option value="1">Дизайн та Реклама  </option>
-                                    <option value="2">IT Компанія</option>
-                                    <option value="3">Офіс</option>
+                                 
               </select>
      </form>
     </div>
@@ -44,7 +43,7 @@ $months = array(
  <?php 
 
 $value=3;
-session_start();
+
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1){
