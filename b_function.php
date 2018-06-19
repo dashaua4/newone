@@ -30,11 +30,7 @@ include('function.php');
     </div>
 	
 </div>
-	<?php
-session_start();
-
-     $_SESSION['min'] = $SLT;
-?>
+	
  <?php 
 
 $value=3;
@@ -47,6 +43,10 @@ else{$wg='Office_comp';	}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
+
+session_start();
+
+     $_SESSION['min'] = $SLT;
 ?>
 <div class="main">
 <table>
@@ -60,8 +60,7 @@ $SLTM=SelectTMAX($wg);
                     <h3>Обладнання</h3>
 			
 <? echo "<H1>";
-			foreach($_SESSION['min'] as $min)
-			{print_r ($min);}
+			echo $_SESSION['min'];
 echo "</H1>"; 
 ?> 
 
