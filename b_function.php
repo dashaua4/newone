@@ -39,7 +39,7 @@ session_start();
 	$t=0;
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
-	if($value==1){
+	if($value==1)
 		{$wg='WG_system';}
 	else if($value==2){ $wg='WG_system';}
 else{$wg='Office_comp';	  }
