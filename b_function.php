@@ -43,14 +43,14 @@ $value = $_POST['exampl'];
 		{ $_SESSION['val']= $t++;
 		$wg='WG_system';}
 	else if($value==2){ $_SESSION['val']=$t++; $wg='WG_system';}
-else{$wg='Office_comp';	  $_SESSION['val']=  $value;$t=$t+1;}
+else{$wg='Office_comp';	  $_SESSION['val']=$t++;}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
 	
 	if($_SESSION['val']==1)
 	{$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);echo $t.'la1';}
-	else {unset($_SESSION['mas']);$t=0}
+	else {unset($_SESSION['mas']);$t=0;}
 		echo ' val '.$_SESSION['val'].' ';
 	
 		
