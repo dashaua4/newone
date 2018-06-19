@@ -49,7 +49,8 @@ $SLTM=SelectTMAX($wg);
 	echo $_SESSION['val'];
 if($_SESSION['val']==1)
 {$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);}
-	else{unset($_SESSION['mas']);$t=0;}
+	else{//unset($_SESSION['mas']);
+		$t=0;}
 	
 		
 		
