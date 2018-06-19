@@ -45,10 +45,6 @@ else{$wg='Office_comp';	 $_SESSION['mas'][] = array('valid' => $value);}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
-$t=count($_SESSION['mas']['valid']);
-
-        echo '<h1>'.$_SESSION->count() .'</h1>'; 
-
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 ?>
 <div class="main">
@@ -65,7 +61,7 @@ $t=count($_SESSION['mas']['valid']);
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas'])){
-
+$t++;
     foreach($_SESSION['mas'] as $mas){
         echo $mas['min']; 
     }
@@ -103,7 +99,7 @@ $t=count($_SESSION['mas']['valid']);
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
 	$_SESSION['mas'][] = array('monmin' => $SMT, 'monmax' => $SMTM);		    
-	//unset($_SESSION['mas']);
+	
 			    
 	 ?>
 	    </td>
@@ -145,6 +141,8 @@ $SLTMT=SelectTMAX('Tables');
 			<?php
 	$SLTC=SelectT('Chairs');
 $SLTMC=SelectTMAX('Chairs');
+			if($t>1)
+			{unset($_SESSION['mas']);}
 			session_write_close();
 	?>
 	<tr>
