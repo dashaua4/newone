@@ -229,6 +229,7 @@ echo  "<h1> В день повинна бути виручка не менше "
 	else{$area='Личаківський';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
 	$_SESSION['counter']++;}
 	}
+	$area="'".$area."'";
 	echo $area;
 	if(isset($_POST['size']))
 	{
@@ -238,8 +239,8 @@ echo  "<h1> В день повинна бути виручка не менше "
 	$_SESSION['counter']++;
 	}
 		echo $size;	
-	$W_PSMin=W_PSMin($table,."'".$area."'".,(int)$size);
-$W_PSMax=W_PSMax($table,."'".$area."'".,(int)$size);
+	$W_PSMin=W_PSMin($table,$area,(int)$size);
+$W_PSMax=W_PSMax($table,$area,(int)$size);
 
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['wp']); $_SESSION['counter']=0;
