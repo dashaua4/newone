@@ -161,7 +161,15 @@ $SLTMC=SelectTMAX('Chairs');
 	</td>   
         </tr>
 	<?php
-$sum=$_SESSION['mas']['compmin']+$_SESSION['tn']['monmin']+$SLTT+$SLTC;
+	 if(isset($_SESSION['mas']))
+		{foreach ($_SESSION['mas'] as $mas){
+			$m= $mas['compmin'];
+	echo  $mas['compmin']; }} 
+	 if(isset($_SESSION['tn']))
+		{foreach ($_SESSION['tn'] as $mas){
+			$n=$mas['monmin'];
+	echo  $mas['monmin']; }} 
+$sum=$m+$n+$SLTT+$SLTC;
 $sum2=$sum*1.6;
 	echo $_SESSION['mas']['compmin'].'+'.$_SESSION['tn']['monmin'].'+'.$SLTT.'+'.$SLTC;
 echo "<h1>Постійні витрати складають ".$sum." тис. грн.</h1>";
