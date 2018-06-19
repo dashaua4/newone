@@ -46,11 +46,11 @@ $SLTM=SelectTMAX($wg);
 
 session_start();
 if (!isset($_SESSION['min'])) {
-    $_SESSION['min'] =$SLT;
-	  $_SESSION['max'] =$SLTM;
+    $_SESSION['mas']['min'] =$SLT;
+	$_SESSION['mas']['max'] =$SLTM; 
 }
-echo $_SESSION['min'];
-	echo $_SESSION['max'];
+echo $_SESSION['mas']['min'];
+	echo $_SESSION['mas']['max'];
 ?>
 <div class="main">
 <table>
