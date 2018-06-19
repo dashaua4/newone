@@ -30,6 +30,13 @@ include('function.php');
     </div>
 	
 </div>
+	<?php
+// Проверяем, что форма пришла.
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    
+     $_SESSION['min'][] = $SLT['comp'];
+}
+?>
  <?php 
 
 $value=3;
@@ -53,9 +60,15 @@ $SLTM=SelectTMAX($wg);
 		<tr>
                 <td>                  
                     <h3>Обладнання</h3>
+			
+<? echo "<H1>";
+print_r ($_SESSION);
+echo "</H1>"; 
+?> 
+
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="data[comp]" value="<? echo $SLT;?>" type="text"></td>
+                <td><input class="min" name="comp" value="<? echo $SLT;?>" type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? echo $SLTM;?>" type="text"></td>
             </tr>
 	    <tr>
