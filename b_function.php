@@ -105,8 +105,8 @@ echo "Вы обновили эту страницу ".$_SESSION['counter']++." �
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
 			    if($_SESSION['counter']>=1)
-	{unset($_SESSION['mas']); $_SESSION['counter']=0;
-	$_SESSION['mas'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);}
+	{unset($_SESSION['tn']); $_SESSION['counter']=0;
+	$_SESSION['tn'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);}
 		    
 	//unset($_SESSION['mas']);
 	//unset($_SESSION['counter']);	    
@@ -115,11 +115,11 @@ echo "Вы обновили эту страницу ".$_SESSION['counter']++." �
 	    </tr>
 	     <tr>
                 <td>Монітори <span class="currency"></span></td>
-                <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){
+                <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['tn']))
+		{foreach ($_SESSION['tn'] as $mas){
 	echo  $mas['monmin']; }} ?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){
+                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['tn']))
+		{foreach ($_SESSION['tn'] as $mas){
 	echo  $mas['monmax']; }} ?>" type="text"></td>
             </tr>	
 			
