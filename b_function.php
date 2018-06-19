@@ -31,11 +31,9 @@ include('function.php');
 	
 </div>
 	<?php
-// Проверяем, что форма пришла.
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-    
+session_start();
+
      $_SESSION['min'] = $SLT;
-}
 ?>
  <?php 
 
