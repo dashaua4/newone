@@ -181,16 +181,16 @@ $SLTMC=SelectTMAX('Chairs');
                 <td><h3> Приміщення </h3>
  <tr>
              <td> <form method="post"> 
-            <select name="area"  id="txt3" onchange="this.form.submit()"  >
+            <select name="area"  id="txt3"  >
                 		<option value="-1">—</option>
                                 <option value="1">Галицький</option>
                           	<option value="2">Залізничний</option>
        				<option value="3">Личаківський</option>
              </select>
-   		</form></td>
+   		</td>
 	
   <td>  
-	  <form method="post">
+	
             <select name="size"   id="txt2" onchange="this.form.submit()" >
               	  		<option value="-1">—</option>
                                 <option value="50">0-50</option>
