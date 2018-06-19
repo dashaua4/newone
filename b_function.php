@@ -50,7 +50,7 @@ if(isset($_SESSION['mas'])){
     
     // Выводим пользователей через массив.
     foreach($_SESSION['mas'] as $mas){
-        echo '<h1>' . $mas['min'] . ' ' . $mas['max'] . '</h1>'; 
+        $cm=$mas['min'];$cmax=$mas['max']; 
     }
 } 
 ?>
@@ -67,8 +67,8 @@ if(isset($_SESSION['mas'])){
 			
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="comp" value="<? echo $SLT;?>" type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? echo $SLTM;?>" type="text"></td>
+                <td><input class="min" name="comp" value="<? echo $cm;?>" type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? echo $cmax;?>" type="text"></td>
             </tr>
 	    <tr>
 		    <td>
