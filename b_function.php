@@ -29,7 +29,9 @@ include('function.php');
                                 <option value="2">IT Компанія</option>
                                 <option value="3">Офіс</option>            
               </select>
-     </form>
+     </form> <script type="text/javascript">
+  document.getElementById('exampl').value = "<?php echo $_GET['exampl'];?>";
+</script>
     </div>
 	
 </div>
@@ -186,9 +188,7 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
         <option value="3">Личаківський</option>
                     </select>
    </form></td>
-	 <script type="text/javascript">
-  document.getElementById('area').value = "<?php echo $_GET['area'];?>";
-</script>
+	
   <td>  
 	  <form method="post">
             <select name="size"  disabled id="txt2" onchange="this.form.submit()" >
