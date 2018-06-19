@@ -13,8 +13,7 @@ include('function.php');
 </head>
    
 <body>
-	<?php session_start();
-	$_SESSION['val']=0;
+	<?php 
 	?>
    <div class="header">
  <h1>Бізнес Ідея</h1>
@@ -38,7 +37,11 @@ include('function.php');
  <?php 
 
 $value=3;
-
+	session_start();
+	$_SESSION['val']=0;
+if ($request->session()->has('mas')) {
+  unset($_SESSION['mas']);
+}
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1)
@@ -49,10 +52,8 @@ else{$wg='Office_comp';	$_SESSION['val']=$_SESSION['val']++;  }
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
 	echo $_SESSION['val'];
-if($_SESSION['val']==1)
-{$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);}
-	else{unset($_SESSION['mas']);
-		echo 'trtrtrt';}
+$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
+	echo 'trtrtrt';
 	
 		
 		
