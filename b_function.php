@@ -47,7 +47,7 @@ else{$wg='Office_comp';	 $_SESSION['mas'][] = array('valid' => $value);}
 $SLTM=SelectTMAX($wg);
 $t=count($_SESSION['mas']['valid']);
 
-        echo '<h1>'.$t.'</h1>'; 
+        echo '<h1>'.$_SESSION->count() .'</h1>'; 
 
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 ?>
