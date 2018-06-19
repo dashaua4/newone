@@ -13,6 +13,9 @@ include('function.php');
 </head>
    
 <body>
+	<?php session_start();
+	$_SESSION['val']=0;
+	?>
    <div class="header">
  <h1>Бізнес Ідея</h1>
     <div class="row">
@@ -35,14 +38,13 @@ include('function.php');
  <?php 
 
 $value=3;
-session_start();
-	$_SESSION['val']=0;
+
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1)
 		{$wg='WG_system';$_SESSION['val']=$_SESSION['val']++;}
-	else if($value==2){ $wg='WG_system';$_SESSION['val']=$t+1;}
-else{$wg='Office_comp';	$_SESSION['val']=$t++;  }
+	else if($value==2){ $wg='WG_system';$_SESSION['val']=$_SESSION['val']++;}
+else{$wg='Office_comp';	$_SESSION['val']=$_SESSION['val']++;  }
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
