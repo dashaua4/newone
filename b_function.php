@@ -36,18 +36,18 @@ include('function.php');
 
 $value=3;
 session_start();
-	
+	$t=0;
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1){
 		 $_SESSION['val']=  $value;
-		$wg='WG_system';$t++;}
-	else if($value==2){ $_SESSION['val']=  $value; $wg='WG_system';$t++;}
-else{$wg='Office_comp';	  $_SESSION['val']=  $value;$t++;}
+		$wg='WG_system';$t=$t+1;}
+	else if($value==2){ $_SESSION['val']=  $value; $wg='WG_system';$t=$t+1;}
+else{$wg='Office_comp';	  $_SESSION['val']=  $value;$t=$t+1;}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
-	echo $t.'la';
+	echo $t.'rt';
 	if($t==1)
 	{$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);echo $t.'la1';}
 	else if($t>1){unset($_SESSION['mas']);$t=0;echo $t.'la2';}
