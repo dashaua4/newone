@@ -1,7 +1,7 @@
  <?php
 include('curl_query.php');
 include('simple_html_dom.php');
-//include('main.php');
+include('main.php');
 include('function.php');
 //Drop_table();
 
@@ -30,20 +30,5 @@ $n=$tobd['name'];
 //echo $tobd[name].'-'.$tobd[price].'-'.$tobd[diagonal].'='.$tobd[id_site].'<br>';
 	//Insert('Monitor',$tobd);
 }
-$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
-$username = "mysqldbuser@diplomwork-mysqldbserver";	
-$password = "Alexandr11";
-$dbname = "mysqldatabase";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-$sql ="SELECT MAX(price) as price FROM Tables";
-$result = mysqli_query($conn, $sql);
-$date=mysqli_fetch_array($result);
-	echo $date["price"];    
-mysqli_close($conn);
-//echo 'GGG';
+
 ?>
