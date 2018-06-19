@@ -99,10 +99,14 @@ $SLTM=SelectTMAX($wg);
 	{
 	$val = $_POST['monitor'];
 	$diagonal=$val;
+	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+echo "Вы обновили эту страницу ".$_SESSION['counter']++." раз. ";
 	}
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
-	$_SESSION['mas'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);
+			    if($_SESSION['counter']>=1)
+	{unset($_SESSION['mas']); $_SESSION['counter']=0;
+	$_SESSION['mas'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);}
 		    
 	//unset($_SESSION['mas']);
 	//unset($_SESSION['counter']);	    
