@@ -234,8 +234,8 @@ $W_PSMin=W_PSMax($table,$area,$size);
 ?>
  	<tr>
 	      
-		<td><input class="min" name="data[comp]"  value="$W_PSMin"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="$W_PSMin" type="text"></td>
+		<td><input class="min" name="data[comp]"  value="<? echo $W_PSMin;?>"  type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? echo $W_PSMin;?>" type="text"></td>
             </tr>
 	
 	 </td>   
