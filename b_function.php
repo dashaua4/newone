@@ -33,8 +33,7 @@ include('function.php');
  <?php 
 
 $value=3;
-$SLT='SelectT';
-$SLTM='SelectTMAX';
+
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 
@@ -42,7 +41,8 @@ $value = $_POST['exampl'];
 	else if($value==2){$wg='WG_system';}
 else{$wg='Office_comp';	}
 	}
-	$mx=SelectTMAX($wg);
+	$SLT=SelectT($wg);
+$SLTM=SelectTMAX($wg);
 ?>
 <div class="main">
 <table>
@@ -56,8 +56,8 @@ else{$wg='Office_comp';	}
                     <h3>Обладнання</h3>
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="data[comp]" value="<? $SLT($wg);?>" type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? echo $mx;?>" type="text"></td>
+                <td><input class="min" name="data[comp]" value="<? echo $SLT;?>" type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? echo $SLTM;?>" type="text"></td>
             </tr>
 	    <tr>
 		    <td>
@@ -99,17 +99,25 @@ $SMTM='SMTM';
             </tr>
            </td>
         </tr>
+	<?php
+	$SLT=SelectT('Tables');
+$SLTM=SelectTMAX('Tables');
+	?>
         <tr>
                 <td><h3> Меблі </h3>
 	<tr>
                 <td>Стіл <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" value="<? $SLT('Tables');?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" value="<? $SLTM('Tables');?>" type="text"></td>
+                <td><input class="min" name="data[furniture]" value="<? $SLT;?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" value="<? $SLTM;?>" type="text"></td>
             </tr> 
+			<?php
+	$SLT=SelectT('Chairs');
+$SLTM=SelectTMAX('Chairs');
+	?>
 	<tr>
                 <td>Стілець <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" value="<? $SLT('Chairs');?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" value="<? $SLTM('Chairs');?>" type="text"></td>
+                <td><input class="min" name="data[furniture]" value="<? $SLT;?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" value="<? $SLTM;?>" type="text"></td>
             </tr>
 	<tr>
                 <td>Шафи <span class="currency"></span></td>
