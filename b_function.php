@@ -19,21 +19,13 @@ include('function.php');
             <label  >
                 Шаблони (3)
             </label>
-	    <?PHP
-	    session_start();
-$months = array(
-    1 => 'Дизайн та Реклама ',
-    2 => 'IT Компанія',
-	3=>'Офіс'
-);
-?>
+
    <form method="post" action="#">
             <select name="exampl"  onchange="this.form.submit()" >
                 		<option value="-1">—</option>
-		    <?PHP foreach ($months as $index => $month) {?>
-    <option <?=($_SESSION['Month']==$index?'selected="selected"':'')?> value="<?=$index?>"><?=$month?></option>
-    <?PHP } ?>
-                                 
+				<option value="1">Дизайн та Реклама  </option>
+                                <option value="2">IT Компанія</option>
+                                <option value="3">Офіс</option>            
               </select>
      </form>
     </div>
@@ -43,17 +35,18 @@ $months = array(
  <?php 
 
 $value=3;
-
+session_start();
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1){
-		 $_SESSION['mas'][] = array('valid' => $value);
+		 $_SESSION['val']=  $value;
 		$wg='WG_system';}
-	else if($value==2){ $_SESSION['mas'][] = array('valid' => $value);$wg='WG_system';}
-else{$wg='Office_comp';	 $_SESSION['mas'][] = array('valid' => $value);}
+	else if($value==2){ $_SESSION['val']=  $value; $wg='WG_system';}
+else{$wg='Office_comp';	  $_SESSION['val']=  $value;}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
+	echo $_SESSION['val'];
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 ?>
 <div class="main">
@@ -108,7 +101,7 @@ $t++;
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
 	$_SESSION['mas'][] = array('monmin' => $SMT, 'monmax' => $SMTM);		    
-	unset($_SESSION['mas']);
+	//unset($_SESSION['mas']);
 		    
 	 ?>
 	    </td>
