@@ -90,13 +90,14 @@ session_start();
 		 </form>
 			    <?php 
 	 $mon='Monitor';
-$SMT=SMT($mon,$diagonal);
-$SMTM=SMTM($mon,$diagonal);
+
 	if(isset($_POST['monitor']))
 	{
 	$val = $_POST['monitor'];
 	$diagonal=$val;
 	}
+	$SMT=SMT($mon,$diagonal);
+	$SMTM=SMTM($mon,$diagonal);
 	$_SESSION['mas'][] = array('monmin' => $SMT, 'monmax' => $SMTM);		    
 	//unset($_SESSION['mas']);
 	 ?>
