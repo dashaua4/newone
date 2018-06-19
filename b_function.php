@@ -52,7 +52,8 @@ else{$wg='Office_comp';}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
 	
-$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
+$_SESSION['compmin']=$SLT; 
+$_SESSION['compmax']= $SLTM;
 
 	
 		
@@ -71,16 +72,8 @@ $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 			
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas'])){
-    foreach($_SESSION['mas'] as $mas){
-        echo $mas['min']; 
-    }
-} ?>" type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas'])){
-    foreach($_SESSION['mas'] as $mas){
-        echo $mas['max']; 
-    }
-} ?>" type="text"></td>
+                <td><input class="min" name="comp" value="<? if(isset($_SESSION['compmin'])){echo $_SESSION['compmin']; } ?>" type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['compmax'])){echo $_SESSION['compmax']; } ?>" type="text"></td>
             </tr>
 	    <tr>
 		    <td>
@@ -107,7 +100,8 @@ $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 	}
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
-	$_SESSION['mas'][] = array('monmin' => $SMT, 'monmax' => $SMTM);		    
+	$_SESSION['monmin']= $SMT;
+			    $_SESSION['monmax'] = $SMTM;		    
 	//unset($_SESSION['mas']);
 		    
 	 ?>
@@ -115,18 +109,8 @@ $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 	    </tr>
 	     <tr>
                 <td>Монітори <span class="currency"></span></td>
-                <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['mas'])){
-
-    foreach($_SESSION['mas'] as $mas){
-        echo $mas['monmin']; 
-    }
-} ?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas'])){
-
-    foreach($_SESSION['mas'] as $mas){
-        echo $mas['monmax']; 
-    }
-}session_register_shutdown ($_SESSION['mas']); ?>" type="text"></td>
+                <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['monmin'])){echo $_SESSION['monmin'];} ?>"  type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['monmax'])){echo $_SESSION['monmax']; }}session_register_shutdown ($_SESSION['mas']); ?>" type="text"></td>
             </tr>	
 			
 		 <tr>
