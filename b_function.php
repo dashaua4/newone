@@ -60,7 +60,8 @@ $SLTM=SelectTMAX($wg);
                     <h3>Обладнання</h3>
 			
 <? echo "<H1>";
-print_r ($_SESSION['min']);
+			foreach($_SESSION['min'] as $min)
+			{print_r ($min);}
 echo "</H1>"; 
 ?> 
 
