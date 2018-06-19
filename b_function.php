@@ -45,15 +45,15 @@ if ($request->session()->has('mas')) {
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1)
-		{$wg='WG_system';$_SESSION['val']=$_SESSION['val']++;}
-	else if($value==2){ $wg='WG_system';$_SESSION['val']=$_SESSION['val']++;}
-else{$wg='Office_comp';	$_SESSION['val']=$_SESSION['val']++;  }
+		{$wg='WG_system';}
+	else if($value==2){ $wg='WG_system';}
+else{$wg='Office_comp';}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
-	echo $_SESSION['val'];
+	
 $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
-	echo 'trtrtrt';
+
 	
 		
 		
