@@ -46,11 +46,16 @@ $SLTM=SelectTMAX($wg);
 
 session_start();
 if (!isset($_SESSION['mas'])) {
-    $_SESSION['mas']['min'] =$SLT;
-	$_SESSION['mas']['max'] =$SLTM; 
+     $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
+    
 }
-echo $_SESSION['mas']['min'];
-	echo $_SESSION['mas']['max'];
+if(isset($_SESSION['mas'])){
+    
+    // Выводим пользователей через массив.
+    foreach($_SESSION['mas'] as $mas){
+        echo '<p>' . $mas['min'] . ' ' . $mas['max'] . '</p>'; 
+    }
+} 
 ?>
 <div class="main">
 <table>
