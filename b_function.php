@@ -43,14 +43,16 @@ $value=3;
 $value = $_POST['exampl'];
 	if($value==1){$wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
 echo "Вы обновили эту страницу ".$_SESSION['counter']++." раз. ";}
-	else if($value==2){ $wg='WG_system';}
-else{$wg='Office_comp';}
+	else if($value==2){ $wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+echo "Вы обновили эту страницу ".$_SESSION['counter']++." раз. ";}
+else{$wg='Office_comp';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+echo "Вы обновили эту страницу ".$_SESSION['counter']++." раз. ";}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
 	if($_SESSION['counter']>1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;}
-$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);
+else{$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);}
 
 	
 		
