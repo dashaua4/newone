@@ -39,7 +39,7 @@ include('function.php');
 $value=3;
 	session_start();
 	$_SESSION['val']=0;
-if ($request->session()->has('mas')) {
+if (isset($_SESSION['mas'])) {
   unset($_SESSION['mas']);
 }
 	if(isset($_POST['exampl'])){
