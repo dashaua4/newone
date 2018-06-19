@@ -36,7 +36,7 @@ include('function.php');
 
 $value=3;
 session_start();
-	$t=0;
+	$_SESSION['val']=0;
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1)
@@ -50,7 +50,7 @@ $SLTM=SelectTMAX($wg);
 if($_SESSION['val']==1)
 {$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);}
 	else{//unset($_SESSION['mas']);
-		$t=0;}
+		echo 'trtrtrt';}
 	
 		
 		
