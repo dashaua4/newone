@@ -45,15 +45,12 @@ else{$wg='Office_comp';	}
 $SLTM=SelectTMAX($wg);
 
 session_start();
-if (!isset($_SESSION['mas'])) {
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
-    
-}
 if(isset($_SESSION['mas'])){
     
     // Выводим пользователей через массив.
     foreach($_SESSION['mas'] as $mas){
-        echo '<p>' . $mas['min'] . ' ' . $mas['max'] . '</p>'; 
+        echo '<h1>' . $mas['min'] . ' ' . $mas['max'] . '</h1>'; 
     }
 } 
 ?>
