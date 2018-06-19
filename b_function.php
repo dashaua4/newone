@@ -34,17 +34,24 @@ include('function.php');
  <?php 
 
 $value=3;
-
+session_start();
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
-	if($value==1){$wg='WG_system';}
-	else if($value==2){$wg='WG_system';}
-else{$wg='Office_comp';	}
+	if($value==1){
+		 $_SESSION['mas'][] = array('valid' => $value);
+		$wg='WG_system';}
+	else if($value==2){ $_SESSION['mas'][] = array('valid' => $value);$wg='WG_system';}
+else{$wg='Office_comp';	 $_SESSION['mas'][] = array('valid' => $value);}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
+if( $_SESSION['mas']['valid']>3)
+{//unset($_SESSION['mas']);
+   foreach($_SESSION['mas'] as $mas){
+        echo '<h1>'.$mas['valid'].'</h1>'; 
+    }
+}
 
-session_start();
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 ?>
 <div class="main">
