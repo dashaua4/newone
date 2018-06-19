@@ -141,7 +141,7 @@ $SLTMT=SelectTMAX('Tables');
 			<?php
 	$SLTC=SelectT('Chairs');
 $SLTMC=SelectTMAX('Chairs');
-				session_write_close();
+				session_write_close($_SESSION['mas']);
 	?>
 	<tr>
                 <td>Стілець <span class="currency"></span></td>
