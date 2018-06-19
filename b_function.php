@@ -162,7 +162,7 @@ $SLTMC=SelectTMAX('Chairs');
 		
    	 <tr>
 		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
-		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' checked >Оренда</td>
+		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' >Оренда</td>
 	</tr>
 	<script> 
 function foo(id) { 
@@ -186,6 +186,9 @@ document.getElementById("txt").disabled = id=='r2' ? false : true;
         <option value="3">Личаківський</option>
                     </select>
    </form></td>
+	 <script type="text/javascript">
+  document.getElementById('area').value = "<?php echo $_GET['area'];?>";
+</script>
   <td>  
 	  <form method="post">
             <select name="size"  disabled id="txt2" onchange="this.form.submit()" >
