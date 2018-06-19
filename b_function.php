@@ -51,8 +51,11 @@ echo "Вы обновили эту страницу ".$_SESSION['counter']++." �
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
 	if($_SESSION['counter']>1)
-	{unset($_SESSION['mas']); $_SESSION['counter']=0;$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);}
-else{$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);}
+	{unset($_SESSION['mas']); //$_SESSION['counter']=0;
+	 //$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);
+	}
+else{//$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);
+}
 
 	
 		
