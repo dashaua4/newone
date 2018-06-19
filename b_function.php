@@ -66,14 +66,12 @@ $SLTM=SelectTMAX($wg);
 			
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="comp" value="<? $t=0;if(isset($_SESSION['mas'])){
-$t++;
+                <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas'])){
     foreach($_SESSION['mas'] as $mas){
         echo $mas['min']; 
     }
 } ?>" type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas'])){
-
     foreach($_SESSION['mas'] as $mas){
         echo $mas['max']; 
     }
