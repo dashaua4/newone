@@ -24,7 +24,9 @@ include('function.php');
 
    <form method="post" action="#">
            
-	    <select name="foo"> <option value="bar" <?php if(isset($_POST['foo']) && $_POST['foo'] == 'bar') echo ' selected="selected"'; ?> >Text</option> </select>
+	    <select name="foo"> <option value="bar" <?php if(isset($_POST['foo']) && $_POST['foo'] == 'bar') echo ' selected="selected"'; ?> >Text</option>
+	   option value="new" <?php if(isset($_POST['foo']) && $_POST['foo'] == 'new') echo ' selected="selected"'; ?> >new</option>
+	   </select>
   
      </form> 
     </div>
