@@ -36,7 +36,6 @@ $value=3;
 
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
-
 	if($value==1){$wg='WG_system';}
 	else if($value==2){$wg='WG_system';}
 else{$wg='Office_comp';	}
@@ -100,24 +99,24 @@ $SMTM='SMTM';
            </td>
         </tr>
 	<?php
-	$SLT=SelectT('Tables');
-$SLTM=SelectTMAX('Tables');
+	$SLTT=SelectT('Tables');
+$SLTMT=SelectTMAX('Tables');
 	?>
         <tr>
                 <td><h3> Меблі </h3>
 	<tr>
                 <td>Стіл <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" value="<? $SLT;?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" value="<? $SLTM;?>" type="text"></td>
+                <td><input class="min" name="data[furniture]" value="<? echo $SLTT;?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" value="<? echo $SLTMT;?>" type="text"></td>
             </tr> 
 			<?php
-	$SLT=SelectT('Chairs');
-$SLTM=SelectTMAX('Chairs');
+	$SLTC=SelectT('Chairs');
+$SLTMC=SelectTMAX('Chairs');
 	?>
 	<tr>
                 <td>Стілець <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" value="<? $SLT;?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" value="<? $SLTM;?>" type="text"></td>
+                <td><input class="min" name="data[furniture]" value="<? echo $SLTC;?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" value="<? echo $SLTMC;?>" type="text"></td>
             </tr>
 	<tr>
                 <td>Шафи <span class="currency"></span></td>
