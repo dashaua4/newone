@@ -24,9 +24,9 @@ include('function.php');
 
    <form method="post" action="#">
            
-	    <select name="foo" onchange="this.form.submit()" > <option value="1" <?php if(isset($_POST['foo'] && $_POST['foo'] == '1'){  $_SESSION['foo'] = '2';echo ' selected="selected"'; } ?> >Дизайн та Реклама</option>
-	   <option value="2" <?php if(isset($_POST['foo'] && $_POST == '2'){  $_SESSION['foo'] = '2';echo ' selected="selected"'; }?> ><?php echo $_SESSION['foo']; ?></option>
-		     <option value="3" <?php if(isset($_POST['foo'] && $_POST['foo'] == '3'){ $_SESSION['foo'] = '3'; echo ' selected="selected"';} ?> >Офіс</option>
+	    <select name="foo" onchange="this.form.submit()" > <option value="1" <?php if(isset($_POST['foo']) && $_POST['foo'] == 'Дизайн'){  $_SESSION['foo'] = '2';echo ' selected="selected"'; } ?> >Дизайн та Реклама</option>
+	   <option value="2" <?php if(isset($_POST['foo']) && $_POST == '2'){  $_SESSION['foo'] = 'ІТ';echo ' selected="selected"'; }?> ><?php echo $_SESSION['foo']; ?></option>
+		     <option value="3" <?php if(isset($_POST['foo'] )&& $_POST['foo'] == '3'){ $_SESSION['foo'] = 'Офіс'; echo ' selected="selected"';} ?> >Офіс</option>
 	   </select>
   
      </form> 
