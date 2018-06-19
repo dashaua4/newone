@@ -45,12 +45,9 @@ else{$wg='Office_comp';	 $_SESSION['mas'][] = array('valid' => $value);}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
-if( count($_SESSION['mas']['valid'])>2)
-{//unset($_SESSION['mas']);
-   foreach($_SESSION['mas'] as $mas){
-        echo '<h1>'.$mas['valid'].'</h1>'; 
-    }
-}
+$t=count($_SESSION['mas']['valid']);
+
+        echo '<h1>'.$t.'</h1>'; 
 
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 ?>
