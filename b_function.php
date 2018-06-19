@@ -19,9 +19,19 @@ include('function.php');
             <label  >
                 Шаблони (3)
             </label>
+	    <?PHP
+$months = array(
+    1 => 'Дизайн та Реклама ',
+    2 => 'IT Компанія',
+	3=>'Офіс'
+);
+?>
    <form method="post" action="#">
             <select name="exampl"  onchange="this.form.submit()" >
                 		<option value="-1">—</option>
+		    <?PHP foreach ($months as $index => $month) {?>
+    <option <?=($_SESSION['Month']==$index?'selected="selected"':'')?> value="<?=$index?>"><?=$month?></option>
+    <?PHP } ?>
                                    <option value="1">Дизайн та Реклама  </option>
                                     <option value="2">IT Компанія</option>
                                     <option value="3">Офіс</option>
