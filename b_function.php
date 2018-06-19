@@ -51,7 +51,7 @@ if( count($_SESSION['mas']['valid'])>2)
         echo '<h1>'.$mas['valid'].'</h1>'; 
     }
 }
-unset($_SESSION['mas']);
+
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 ?>
 <div class="main">
