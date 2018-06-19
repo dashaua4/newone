@@ -46,7 +46,8 @@ else{$wg='Office_comp';	  $_SESSION['val']=  $value;}
 	}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
-	echo $_SESSION['val'];
+	foreach($_SESSION['val'] as $val)
+	{echo $val;}
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 ?>
 <div class="main">
