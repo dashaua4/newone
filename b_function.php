@@ -48,9 +48,7 @@ else{$wg='Office_comp';	  $_SESSION['val']=$t++;}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
 	
-	if($_SESSION['val']==1)
-	{$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);}
-	else {unset($_SESSION['mas']);$t=0;}
+
 		
 	
 		
