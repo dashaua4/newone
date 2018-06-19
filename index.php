@@ -40,7 +40,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql ="SELECT MAX(price) as price FROM Workplace WHERE size<50";
+$sql ="SELECT MAX(price) as price FROM Workplace WHERE size=50";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
 	echo $date["price"];    
