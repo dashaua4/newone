@@ -181,7 +181,7 @@ $SLTMC=SelectTMAX('Chairs');
                 <td><h3> Приміщення </h3>
  <tr>
              <td> <form method="post"> 
-            <select name="area" disabled id="txt3" onchange="this.form.submit()"  >
+            <select name="area"  id="txt3" onchange="this.form.submit()"  >
                 		<option value="-1">—</option>
                                 <option value="1">Галицький</option>
                           	<option value="2">Залізничний</option>
@@ -191,7 +191,7 @@ $SLTMC=SelectTMAX('Chairs');
 	
   <td>  
 	  <form method="post">
-            <select name="size"  disabled id="txt2" onchange="this.form.submit()" >
+            <select name="size"   id="txt2" onchange="this.form.submit()" >
               	  		<option value="-1">—</option>
                                 <option value="50">0-50</option>
                            	<option value="100">50-100</option>
@@ -233,12 +233,12 @@ $W_PSMin=W_PSMax($table,$area,$size);
 	session_write_close($_SESSION['mas']);	
 ?>
  	<tr>
-	      <td><input type='text' name='txt' id='txt1' disabled value=''>value="<? if(isset($_SESSION['wp']))
+	      <td><input type='text' name='txt' id='txt1' value="<? if(isset($_SESSION['wp']))
 		{foreach ($_SESSION['wp'] as $mas){
-	echo  $mas['wpmin']; }} ?>"</td>
-             <td><input type='text' name='txt' id='txt' disabled value=''>value="<? if(isset($_SESSION['wp']))
+	echo  $mas['wpmin']; }} ?>"></td>
+             <td><input type='text' name='txt' id='txt' value="<? if(isset($_SESSION['wp']))
 		{foreach ($_SESSION['wp'] as $mas){
-	echo  $mas['wpmax']; }} ?>"</td>
+	echo  $mas['wpmax']; }} ?>"></td>
             </tr>
 	
 	 </td>   
