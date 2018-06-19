@@ -214,6 +214,7 @@ $SLTMC=SelectTMAX('Chairs');
 	else{$area='Личаківський';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
 	$_SESSION['counter']++;}
 	}
+	echo $area;
 	if(isset($_POST['size']))
 	{
 	$val = $_POST['size'];
@@ -221,10 +222,10 @@ $SLTMC=SelectTMAX('Chairs');
 	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
 	$_SESSION['counter']++;
 	}
-			
+		echo $size;	
 	$W_PSMin=W_PSMin($table,$area,$size);
-$W_PSMin=W_PSMax($table,$area,$size);
-
+$W_PSMax=W_PSMax($table,$area,$size);
+echo $W_PSMin.'   '.$W_PSMax;
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['wp']); $_SESSION['counter']=0;
 	$_SESSION['wp'][]=array('wpmin'=>$W_PSMin, 'wpmax'=> $W_PSMin);
@@ -235,7 +236,7 @@ $W_PSMin=W_PSMax($table,$area,$size);
  	<tr>
 	      
 		<td><input class="min" name="data[comp]"  value="<? echo $W_PSMin;?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? echo $W_PSMin;?>" type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? echo $W_PSMax;?>" type="text"></td>
             </tr>
 	
 	 </td>   
