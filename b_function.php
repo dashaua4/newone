@@ -40,8 +40,8 @@ session_start();
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1)
-		{$wg='WG_system';$_SESSION['val']=$t++;}
-	else if($value==2){ $wg='WG_system';$_SESSION['val']=$t++;}
+		{$wg='WG_system';$_SESSION['val']=$t+1;}
+	else if($value==2){ $wg='WG_system';$_SESSION['val']=$t+1;}
 else{$wg='Office_comp';	$_SESSION['val']=$t++;  }
 	}
 	$SLT=SelectT($wg);
