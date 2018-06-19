@@ -38,14 +38,9 @@ include('function.php');
 
 $value=3;
 	session_start();
-	$_SESSION['val']=0;
-if (isset($_SESSION['mas'])) {
-  unset($_SESSION['mas']);
-}
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
-	if($value==1)
-		{$wg='WG_system';}
+	if($value==1){$wg='WG_system';}
 	else if($value==2){ $wg='WG_system';}
 else{$wg='Office_comp';}
 	}
@@ -110,7 +105,7 @@ $_SESSION['compmax']= $SLTM;
 	     <tr>
                 <td>Монітори <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['monmin'])){echo $_SESSION['monmin'];} ?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['monmax'])){echo $_SESSION['monmax']; }}session_register_shutdown ($_SESSION['mas']); ?>" type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['monmax'])){echo $_SESSION['monmax'];} ?>" type="text"></td>
             </tr>	
 			
 		 <tr>
