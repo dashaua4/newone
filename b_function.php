@@ -47,8 +47,7 @@ else{$wg='Office_comp';}
 	$SLT=SelectT($wg);
 $SLTM=SelectTMAX($wg);
 	
-$_SESSION['compmin']=$SLT; 
-$_SESSION['compmax']= $SLTM;
+$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);
 
 	
 		
@@ -67,8 +66,12 @@ $_SESSION['compmax']= $SLTM;
 			
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="comp" value="<? if(isset($_SESSION['compmin'])){echo $_SESSION['compmin']; } ?>" type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['compmax'])){echo $_SESSION['compmax']; } ?>" type="text"></td>
+                <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas']))
+		{foreach ($_SESSION['mas'] as $mas){
+	echo  $mas['compmin']; }} ?>" type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
+		{foreach ($_SESSION['mas'] as $mas){
+	echo  $mas['compmax']; }} ?>" type="text"></td>
             </tr>
 	    <tr>
 		    <td>
@@ -95,8 +98,8 @@ $_SESSION['compmax']= $SLTM;
 	}
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
-	$_SESSION['monmin']= $SMT;
-			    $_SESSION['monmax'] = $SMTM;		    
+	$_SESSION['mas'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);
+		    
 	//unset($_SESSION['mas']);
 		    
 	 ?>
@@ -104,8 +107,12 @@ $_SESSION['compmax']= $SLTM;
 	    </tr>
 	     <tr>
                 <td>Монітори <span class="currency"></span></td>
-                <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['monmin'])){echo $_SESSION['monmin'];} ?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['monmax'])){echo $_SESSION['monmax'];} ?>" type="text"></td>
+                <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['mas']))
+		{foreach ($_SESSION['mas'] as $mas){
+	echo  $mas['monmin']; }} ?>"  type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
+		{foreach ($_SESSION['mas'] as $mas){
+	echo  $mas['monmax']; }} ?>" type="text"></td>
             </tr>	
 			
 		 <tr>
