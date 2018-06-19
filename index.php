@@ -27,7 +27,7 @@ $n=$tobd['name'];
 	$diagonal=$one_dom->find('.characteristic__product_value',0);
 	$tobd['diagonal']=(int)$diagonal->plaintext;
 	$tobd['id_site']=1;
-echo $tobd[name].'-'.$tobd[price].'-'.$tobd[diagonal].'='.$tobd[id_site].'<br>';
+//echo $tobd[name].'-'.$tobd[price].'-'.$tobd[diagonal].'='.$tobd[id_site].'<br>';
 	//Insert('Monitor',$tobd);
 }
 W_PSMax('Workplace','Галицький',50);
