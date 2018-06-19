@@ -250,7 +250,7 @@ $SLTMC=SelectTMAX('Chairs');
 		{foreach ($_SESSION['tn'] as $mas){$n=$mas['monmin']; }} 
 $sum=$m+$n+$SLTT+$SLTC+$w;
 $sum2=$sum*1.6;
-	echo $_SESSION['mas']['compmin'].'+'.$_SESSION['tn']['monmin'].'+'.$SLTT.'+'.$SLTC;
+	
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
 echo  "<h1> В день повинна бути виручка не менше ". (int)$sum2/365 ." грн. 
 Річний дохід не менше ". $sum2 ."  грн.</h1>";
