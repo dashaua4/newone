@@ -57,7 +57,7 @@ $SLTM=SelectTMAX($wg);
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);
 	}		
 	
-	session_write_close($_SESSION['mas']);	
+	//session_write_close($_SESSION['mas']);	
 ?>
 <div class="main">
 <table>
