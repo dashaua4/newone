@@ -61,12 +61,13 @@ session_start();
 			
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas'])){
+                <td><label><? if(isset($_SESSION['mas'])){
 
     foreach($_SESSION['mas'] as $mas){
         echo $mas['min']; 
     }
-} ?>" type="text"></td>
+} ?></label>
+			<input class="min" name="comp" value="" type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas'])){
 
     foreach($_SESSION['mas'] as $mas){
