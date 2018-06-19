@@ -40,7 +40,7 @@ session_start();
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
 	if($value==1)
-		{$wg='WG_system';$_SESSION['val']=$_SESSION['val']+1;}
+		{$wg='WG_system';$_SESSION['val']=$_SESSION['val']++;}
 	else if($value==2){ $wg='WG_system';$_SESSION['val']=$t+1;}
 else{$wg='Office_comp';	$_SESSION['val']=$t++;  }
 	}
@@ -49,7 +49,7 @@ $SLTM=SelectTMAX($wg);
 	echo $_SESSION['val'];
 if($_SESSION['val']==1)
 {$_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);}
-	else{//unset($_SESSION['mas']);
+	else{unset($_SESSION['mas']);
 		echo 'trtrtrt';}
 	
 		
