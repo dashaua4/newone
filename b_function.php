@@ -45,7 +45,6 @@ else{$wg='Office_comp';	}
 $SLTM=SelectTMAX($wg);
 
 session_start();
-	//unset($_SESSION['mas']);
      $_SESSION['mas'][] = array('min' => $SLT, 'max' => $SLTM);
 ?>
 <div class="main">
@@ -99,6 +98,8 @@ $SMTM='SMTM';
 	$val = $_POST['monitor'];
 	$diagonal=$val;
 	}
+			    
+	unset($_SESSION['mas']);
 	 ?>
 	    </td>
 	    </tr>
