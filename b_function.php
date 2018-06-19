@@ -38,11 +38,11 @@ include('function.php');
 
 $value=3;
 	session_start(); 
-if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-echo "Вы обновили эту страницу ".$_SESSION['counter']++." раз. ";
+
 	if(isset($_POST['exampl'])){
 $value = $_POST['exampl'];
-	if($value==1){$wg='WG_system';}
+	if($value==1){$wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+echo "Вы обновили эту страницу ".$_SESSION['counter']++." раз. ";}
 	else if($value==2){ $wg='WG_system';}
 else{$wg='Office_comp';}
 	}
