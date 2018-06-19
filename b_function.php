@@ -45,8 +45,8 @@ else{$wg='Office_comp';	}
 $SLTM=SelectTMAX($wg);
 
 session_start();
-
-     $_SESSION['min'] = $SLT;
+$_SESSION['time'] = date("H:i:s");
+echo $_SESSION['time'];
 ?>
 <div class="main">
 <table>
