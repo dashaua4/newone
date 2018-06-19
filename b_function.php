@@ -24,8 +24,9 @@ include('function.php');
 
    <form method="post" action="#">
            
-	    <select name="foo" onchange="this.form.submit()" > <option value="bar" <?php if(isset($_POST['foo']) && $_POST['foo'] == 'bar') echo ' selected="selected"'; ?> >Text</option>
-	   <option value="new" <?php if(isset($_POST['foo']) && $_POST['foo'] == 'new') echo ' selected="selected"'; ?> >new</option>
+	    <select name="foo" onchange="this.form.submit()" > <option value="1" <?php if(isset($_POST['foo']) && $_POST['foo'] == '1') echo ' selected="selected"'; ?> >Дизайн та Реклама</option>
+	   <option value="2" <?php if(isset($_POST['foo']) && $_POST['foo'] == '2') echo ' selected="selected"'; ?> >IT Компанія</option>
+		     <option value="3" <?php if(isset($_POST['foo']) && $_POST['foo'] == '3') echo ' selected="selected"'; ?> >Офіс</option>
 	   </select>
   
      </form> 
@@ -37,8 +38,8 @@ include('function.php');
 
 $value=3;
 	session_start(); 
-	if(isset($_POST['exampl'])){
-$value = $_POST['exampl'];
+	if(isset($_POST['foo'])){
+$value = $_POST['foo'];
 	if($value==1){$wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
 $_SESSION['counter']++;}
 	else if($value==2){ $wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
