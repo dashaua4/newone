@@ -163,6 +163,7 @@ $SLTMC=SelectTMAX('Chairs');
 	<?php
 $sum=$_SESSION['mas']['compmin']+$_SESSION['tn']['monmin']+$SLTT+$SLTC;
 $sum2=$sum*1.6;
+	echo $_SESSION['mas']['compmin'].'+'.$_SESSION['tn']['monmin'].'+'.$SLTT.'+'.$SLTC;
 echo "<h1>Постійні витрати складають ".$sum." тис. грн.</h1>";
 echo  "<h1> В день повинна бути виручка не менше ". $sum2/365 ."тис. грн. 
 Річний дохід не менше ". $sum2 ." тис. грн.</h1>";
