@@ -83,7 +83,25 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql ="SELECT MIN(price) as price FROM $table WHERE area=$area";
+$sql ="SELECT MIN(price) as price FROM $table WHERE area=$area AND size<$size";
+$result = mysqli_query($conn, $sql);
+$date=mysqli_fetch_array($result);
+	return $date["price"];    
+mysqli_close($conn);
+}
+function W_PSMax($table,$area,$size)
+{
+$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
+$username = "mysqldbuser@diplomwork-mysqldbserver";	
+$password = "Alexandr11";
+$dbname = "mysqldatabase";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql ="SELECT MAX(price) as price FROM $table WHERE area=$area AND size<$size";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
 	return $date["price"];    
