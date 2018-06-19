@@ -34,7 +34,7 @@ include('function.php');
 // Проверяем, что форма пришла.
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     
-     $_SESSION['min'][] = $SLT['comp'];
+     $_SESSION['min'] = $SLT;
 }
 ?>
  <?php 
