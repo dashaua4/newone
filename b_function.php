@@ -24,18 +24,7 @@ include('function.php');
 
    <form method="post" action="#">
            
-	    <select name="favFruit[]" size="4" multiple="">
-  <?php
-$options = array("apple", "banana", "plum", "pomegranate", "strawberry", "watermelon");
-foreach ($options as $option) {
-    echo '<option value="' . $option . '"';
-    if (in_array($option, $favFruit)) {
-        echo " selected";
-    }
-    echo ">" . ucfirst($option) . "</option>";
-}
-?>
-  </select>
+	    <select name="foo"> <option value="bar" <?php if(isset($_POST['foo']) && $_POST['foo'] == 'bar') echo ' selected="selected"'; ?> >Text</option> </select>
   
      </form> 
     </div>
