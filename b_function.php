@@ -55,7 +55,7 @@ $SLTM=SelectTMAX($wg);
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	//$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);
 	}		
-	else if($_SESSION['counter']>0){$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);}
+	else if($_SESSION['counter']==1){$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);}
 		
 ?>
 <div class="main">
