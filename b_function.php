@@ -60,13 +60,12 @@ session_start();
 			
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><? if(isset($_SESSION['mas'])){
+                <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas'])){
 
     foreach($_SESSION['mas'] as $mas){
         echo $mas['min']; 
     }
-} ?>
-			<input class="min" name="comp" value="" type="text"></td>
+} ?>" type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas'])){
 
     foreach($_SESSION['mas'] as $mas){
@@ -91,22 +90,32 @@ session_start();
 		 </form>
 			    <?php 
 	 $mon='Monitor';
-$SMT='SMT';
-$SMTM='SMTM';
+$SMT=SMT($mon,$diagonal);
+$SMTM=SMTM($mon,$diagonal);
 	if(isset($_POST['monitor']))
 	{
 	$val = $_POST['monitor'];
 	$diagonal=$val;
 	}
-			    
-	unset($_SESSION['mas']);
+	$_SESSION['mas'][] = array('monmin' => $SMT, 'monmax' => $SMTM);		    
+	//unset($_SESSION['mas']);
 	 ?>
 	    </td>
 	    </tr>
 	     <tr>
                 <td>Монітори <span class="currency"></span></td>
-                <td><input class="min" name="data[comp]" value="<? $SMT($mon,$diagonal);?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? $SMTM($mon,$diagonal);?>" type="text"></td>
+                <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['mas'])){
+
+    foreach($_SESSION['mas'] as $mas){
+        echo $mas['monmin']; 
+    }
+} ?>"  type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas'])){
+
+    foreach($_SESSION['mas'] as $mas){
+        echo $mas['monmax']; 
+    }
+} ?>" type="text"></td>
             </tr>	
 			
 		 <tr>
