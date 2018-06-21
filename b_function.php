@@ -124,10 +124,10 @@ $kol = $_POST['chet'];
                 <td>Монітори <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['tn']))
 		{foreach ($_SESSION['tn'] as $mas){
-	echo  $kol*$mas['monmin']; }} ?>"  type="text"></td>
+	echo  $mas['monmin']; }} ?>"  type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['tn']))
 		{foreach ($_SESSION['tn'] as $mas){
-	echo  $kol*$mas['monmax']; }} ?>" type="text"></td>
+	echo  $mas['monmax']; }} ?>" type="text"></td>
             </tr>	
 			
 		 <tr>
