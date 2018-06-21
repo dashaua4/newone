@@ -67,13 +67,13 @@ $SLTM=SelectTMAX($wg);
                 <td>                  
                     <h3>Обладнання</h3>
 		 <form action="#" metod="post">
-  		  <p><input type="number" name="chet" min="0" max="10" step="2" value="6" onblur="this.form.submit()"></p>
+  		  <p><input type="number" name="chet" min="0" max="10" step="2" value="2" onchange="this.form.submit()"></p>
   		</form>
 	
  <?php 
 	if(isset($_POST['chet'])){
 $kol = $_POST['chet'];
-		
+	}	
 	?>
 
 
