@@ -107,3 +107,7 @@ nav li:hover > .submenu {
   background: #112D52;
   color: white;
 }
+body
+{
+  background:grey;
+}
