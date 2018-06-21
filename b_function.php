@@ -8,8 +8,6 @@ include('function.php');
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>!</title>
    <link href="style.css" rel="stylesheet" />         
-
-
 </head>
    
 <body>
@@ -75,11 +73,10 @@ include('function.php');
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){
-	$comp=$mas['compmin'];
-		echo  $kol*$comp;}} ?>" type="text" placeholder="0.0"></td>
+	$comp=$mas['compmin'];echo  $kol*$comp;}} ?>" type="text" placeholder="0.0"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){
-	$comp1=$mas['compmax'];	echo  $kol*$comp1}} ?>" type="text" placeholder="0.0"></td>
+	$comp1=$mas['compmax'];	echo  $kol*$comp1;}} ?>" type="text" placeholder="0.0"></td>
             </tr>
 	    <tr>
 		    <td>
