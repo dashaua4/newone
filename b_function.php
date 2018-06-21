@@ -67,7 +67,7 @@ $SLTM=SelectTMAX($wg);
                 <td>                  
                     <h3>Обладнання</h3>
 		 <form action="#" metod="post">
-  		  <p><input type="number" id="chet" min="0" max="10" step="2" value="6" onblur="alert(this.value)"></p>
+  		  <p><input type="number" id="chet" min="0" max="10" step="2" value="6" onblur="someFunc()"></p>
   		</form>
 	
 <script>
@@ -75,9 +75,9 @@ function someFunc(){
 var quantity = document.getElementById("chet").value;
 var price = quantity;
 alert(price);
-}
-	document.getElementById("by").appendChild(div);
 
+	document.getElementById("by").appendChild(div);
+}
 </script>
 
 
