@@ -23,13 +23,12 @@ include('function.php');
             </label>
 
    <form method="post" action="#">
-           
-	   <select name="exampl"  onchange="this.form.submit()" >
-                  <option value="-1">—</option>
-    <option value="1">Дизайн та Реклама  </option>
-                                <option value="2">IT Компанія</option>
-                                <option value="3">Офіс</option>            
-              </select>
+          	   <select name="exampl"  onchange="this.form.submit()" >
+                  	<option value="-1">—</option>
+    			<option value="1">Дизайн та Реклама  </option>
+                        <option value="2">IT Компанія</option>
+                        <option value="3">Офіс</option>            
+              		</select>
   
      </form> 
     </div>
@@ -56,9 +55,7 @@ $SLTM=SelectTMAX($wg);
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);
 	}		
-	
-	//session_write_close($_SESSION['mas']);	
-?>
+	?>
 <div class="main">
 <table>
 <tr>
@@ -69,7 +66,18 @@ $SLTM=SelectTMAX($wg);
 		<tr>
                 <td>                  
                     <h3>Обладнання</h3>
-			
+		 <form action="#" metod="post">
+  		  <p><<input type="range" id="chet" min="0" max="10" step="2" value="6" onblur="SumFunk()"></p>
+  		</form>
+	
+<script>
+function someFunc(){
+var quantity = document.getElementById("chet").value;
+var price = quantity;
+alert(price);
+}
+</script>
+
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas']))
