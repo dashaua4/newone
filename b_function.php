@@ -67,30 +67,26 @@ $SLTM=SelectTMAX($wg);
                 <td>                  
                     <h3>Обладнання</h3>
 		 <form action="#" metod="post">
-  		  <p><input type="number" id="chet" min="0" max="10" step="2" value="6" onblur="someFunc()"></p>
+  		  <p><input type="number" name="chet" min="0" max="10" step="2" value="6" onblur="this.form.submit()"></p>
   		</form>
 	
-<script>
-function someFunc(){
-var quantity = document.getElementById("chet").value;
-var price = quantity;
-alert(price);
-
-	document.getElementById("by").appendChild(div);
-}
-</script>
+ <?php 
+	if(isset($_POST['chet'])){
+$kol = $_POST['chet'];
+		
+	?>
 
 
 
-<div id='by'></div>
+
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){
-	echo  $mas['compmin']; }} ?>" type="text" placeholder="0.0"></td>
+	echo  $kol*$mas['compmin']; }} ?>" type="text" placeholder="0.0"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){
-	echo  $mas['compmax']; }} ?>" type="text" placeholder="0.0"></td>
+	echo  $kol*$mas['compmax']; }} ?>" type="text" placeholder="0.0"></td>
             </tr>
 	    <tr>
 		    <td>
@@ -114,17 +110,13 @@ alert(price);
 	{
 	$val = $_POST['monitor'];
 	$diagonal=$val;
-	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-$_SESSION['counter']++;
-	}
+	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
 	$SMT=SMT($mon,$diagonal);
 	$SMTM=SMTM($mon,$diagonal);
-			    if($_SESSION['counter']>=1)
+	 if($_SESSION['counter']>=1)
 	{unset($_SESSION['tn']); $_SESSION['counter']=0;
 	$_SESSION['tn'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);}
-		    
-	//unset($_SESSION['mas']);
-	//unset($_SESSION['counter']);	    
+	    
 	 ?>
 	    </td>
 	    </tr>
@@ -132,10 +124,10 @@ $_SESSION['counter']++;
                 <td>Монітори <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['tn']))
 		{foreach ($_SESSION['tn'] as $mas){
-	echo  $mas['monmin']; }} ?>"  type="text"></td>
+	echo  $kol*$mas['monmin']; }} ?>"  type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['tn']))
 		{foreach ($_SESSION['tn'] as $mas){
-	echo  $mas['monmax']; }} ?>" type="text"></td>
+	echo  $kol*$mas['monmax']; }} ?>" type="text"></td>
             </tr>	
 			
 		 <tr>
