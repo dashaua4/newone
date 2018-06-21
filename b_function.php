@@ -60,7 +60,7 @@ include('function.php');
                 <td>                  
                     <h3>Обладнання</h3>
 		 <form action="#" metod="post">
-  		  <p><input type="number" name="chet" min="0" max="10" step="2" value="2" onchange="this.form.submit()"></p>
+  		  <p><input type="number" name="chet" min="0" max="10" step="2" value="2" onclick="this.form.submit()"></p>
   		</form>
 	
 	 <?php 
