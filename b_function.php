@@ -68,7 +68,8 @@ include('function.php');
 	$kol = $_POST['chet'];}	
 	if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){
-	$mas['compmin']=$mas['compmin']*$kol;}}		
+	$mas['compmin']=$mas['compmin']*$kol;
+		$comp=$mas['compmin']*$kol;}}		
 	?>
 
 
@@ -76,7 +77,7 @@ include('function.php');
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){
-	echo $mas['compmin'];}}?>" type="text" placeholder="0.0"></td>
+	echo $comp;}}?>" type="text" placeholder="0.0"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){
 	$comp1=$mas['compmax'];	echo  $kol*$comp1;}} ?>" type="text" placeholder="0.0"></td>
