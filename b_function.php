@@ -32,30 +32,25 @@ include('function.php');
   
      </form> 
     </div>
-	
 </div>
 	
  <?php 
 
-$value=3;
+	$value=3;
 	session_start(); 
 	if(isset($_POST['exampl'])){
-$value = $_POST['exampl'];
-	if($value==1){$wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-$_SESSION['counter']++;}
-	else if($value==2){ $wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-$_SESSION['counter']++;}
-else{$wg='Office_comp';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-$_SESSION['counter']++;}
-	}
+	$value = $_POST['exampl'];
+	if($value==1){$wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;	$_SESSION['counter']++;}
+	else if($value==2){ $wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
+	else{$wg='Office_comp';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}}
 	$SLT=SelectT($wg);
-$SLTM=SelectTMAX($wg);
+	$SLTM=SelectTMAX($wg);
 
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
-	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);
-	}		
+	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	}		
 	?>
+
 <div class="main">
 <table>
 <tr>
@@ -70,23 +65,21 @@ $SLTM=SelectTMAX($wg);
   		  <p><input type="number" name="chet" min="0" max="10" step="2" value="2" onchange="this.form.submit()"></p>
   		</form>
 	
- <?php 
+	 <?php 
 	if(isset($_POST['chet'])){
-$kol = $_POST['chet'];
-	}	
+	$kol = $_POST['chet'];}	
 	?>
-
-
 
 
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){
-	echo  $kol*$mas['compmin']; }} ?>" type="text" placeholder="0.0"></td>
+	$comp=$mas['compmin'];
+		echo  $kol*$comp;}} ?>" type="text" placeholder="0.0"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){
-	echo  $kol*$mas['compmax']; }} ?>" type="text" placeholder="0.0"></td>
+	$comp1=$mas['compmax'];	echo  $kol*$comp1}} ?>" type="text" placeholder="0.0"></td>
             </tr>
 	    <tr>
 		    <td>
