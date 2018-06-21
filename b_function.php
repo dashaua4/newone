@@ -11,17 +11,16 @@ include('function.php');
 </head>
    
 <body>
-	///////////head
-	<?php 
-	?>
+	
+	
    <div class="header">
- <h1>Бізнес Ідея</h1>
+ 	<h1>Бізнес Ідея</h1>
     <div class="row">
             <label  >
                 Шаблони (3)
             </label>
 
-   <form method="post" action="#">
+  	 <form method="post" action="#">
           	   <select name="exampl"  onchange="this.form.submit()" >
                   	<option value="-1">—</option>
     			<option value="1">Дизайн та Реклама  </option>
@@ -29,7 +28,7 @@ include('function.php');
                         <option value="3">Офіс</option>            
               		</select>
   
-     </form> 
+    	 </form> 
     </div>
 </div>
 	
@@ -51,7 +50,7 @@ include('function.php');
 	?>
 
 <div class="main">
-	////////////////////////////////table
+	
 <table>
 	<h3>Стартовий капітал</h3>
 	<tr>
@@ -137,11 +136,7 @@ include('function.php');
 		<tr>
                 <td>                  
                     <h3>Обладнання</h3>
-		// <form action="#" metod="post">
-  		  //<p><input type="number" name="chet" min="0" max="10" step="2" value="2" onblur="this.form.submit()"></p>
-  		//</form>
-	
-	 <?php 
+ <?php 
 	if(isset($_POST['chet'])){
 	$kol = $_POST['chet'];}	
 	if(isset($_SESSION['mas']))
