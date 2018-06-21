@@ -241,6 +241,13 @@ $SLTMC=SelectTMAX('Chairs');
 
 	
 </table>
+
+<img src="info.jpg" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/>
+
+
+
+
+
 <div>	<?php
 	 if(isset($_SESSION['wp']))
 		{foreach ($_SESSION['wp'] as $mas){$w= $mas['wpmin'];}} 
