@@ -158,13 +158,13 @@ include('function.php');
 	   
 	<?php
 	$PSL=PerMin('Employees');
-	$SLTMC=SelectTMAX('Chairs');				
+	$PSLM=PerMax('Employees');				
 	?>
 	
 	<tr>
                 <td>Персонал <span class="currency"></span></td>
                 <td><input class="min" name="data[furniture]" value="<? echo $PSL;?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" type="text"></td>
+             <td><input class="max" name="data[furniture]" value="<? echo $PSLM;?>" type="text"></td>
             </tr>
 	</td>   
         </tr>
