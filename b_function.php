@@ -67,7 +67,7 @@ $SLTM=SelectTMAX($wg);
                 <td>                  
                     <h3>Обладнання</h3>
 		 <form action="#" metod="post">
-  		  <p><<input type="range" id="chet" min="0" max="10" step="2" value="6" onblur="SumFunk()"></p>
+  		  <p><input type="number" id="chet" min="0" max="10" step="2" value="6" onblur="SumFunk()"></p>
   		</form>
 	
 <script>
@@ -76,8 +76,13 @@ var quantity = document.getElementById("chet").value;
 var price = quantity;
 alert(price);
 }
+	document.getElementById("by").appendChild(div);
+
 </script>
 
+
+
+<div id='by'></div>
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas']))
