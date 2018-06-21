@@ -58,85 +58,11 @@ include('function.php');
 		<th>Мінімальна вартість</th>
 		<th>Максимальна вартість</th>
 	</tr>  
-	
-	<tr>
-		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
-		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' >Оренда</td>
-	</tr>
-	<script> 
-	//function foo(id) { 
-	//document.getElementById("txt").disabled = id=='r2' ? false : true; 
-	//document.getElementById("txt1").disabled = id=='r2' ? false : true;
-	//document.getElementById("txt2").disabled = id=='r2' ? false : true;
-	//document.getElementById("txt3").disabled = id=='r2' ? false : true;
-	//} 
- 	</script>
-<tr>
-	
- 	<tr>
-                <td><h3> Приміщення </h3>
- <tr>
-             <td> <form method="post"> 
-           		 <select name="area"  id="txt3"  >
-                		<option value="-1">—</option>
-                                <option value="1">Галицький</option>
-                          	<option value="2">Залізничний</option>
-       				<option value="3">Личаківський</option>
-            			 </select>
-   	      </td>
-	
-  		<td>  
-	
-           		 <select name="size"   id="txt2" onchange="this.form.submit()" >
-              	  		<option value="-1">—</option>
-                                <option value="50">0-50</option>
-                           	<option value="100">50-100</option>
-        		 	<option value="200">100-200</option>
-       	 			<option value="300">200-300</option>
-        			<option value="400">>300</option>
-                   	 </select>
-   		   </form>
-   		</td>
-</tr>  
-<?php 
-	$table='Workplace';
-	$value=3;
-	if(isset($_POST['area'])){
-	$val1 = $_POST['area'];
-	if($val1==1){$area='Галицький';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-	$_SESSION['counter']++;}
-	else if($val1==2){ $area='Залізничний';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-	$_SESSION['counter']++;}
-	else{$area='Личаківський';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-	$_SESSION['counter']++;}}
-	$area="'".$area."'";
-	if(isset($_POST['size']))
-	{
-	$val2 = $_POST['size'];
-	$size=$val2;
-	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-	$_SESSION['counter']++;
-	}
-	$W_PSMin=W_PSMin($table,$area,(int)$size);
-	$W_PSMax=W_PSMax($table,$area,(int)$size);
-	if($_SESSION['counter']>=1)
-	{unset($_SESSION['wp']); $_SESSION['counter']=0;
-	$_SESSION['wp'][]=array('wpmin'=>$W_PSMin, 'wpmax'=> $W_PSMax);
-	}?>
- 		<tr>
-	      	<td><input class="min" name="data[comp]"  value="<? echo $W_PSMin;?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? echo $W_PSMax;?>" type="text"></td>
-            	</tr>
 
-	 </td>   
-     </tr>
- </tr>
-	
-	
 		<tr>
                 <td>                  
                     <h3>Обладнання</h3>
- <?php 
+ 	<?php 
 	if(isset($_POST['chet'])){
 	$kol = $_POST['chet'];}	
 	if(isset($_SESSION['mas']))
@@ -225,6 +151,102 @@ include('function.php');
             </tr>
 	</td>   
         </tr>
+	
+	
+	 <tr>
+                <td><h3> Витрати на оплату праці </h3>
+	   
+	<?php
+	$PSL=PerMin('Employees');
+	$SLTMC=SelectTMAX('Chairs');				
+	?>
+	
+	<tr>
+                <td>Персонал <span class="currency"></span></td>
+                <td><input class="min" name="data[furniture]" value="<? echo $PSL;?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" type="text"></td>
+            </tr>
+	</td>   
+        </tr>
+	
+		
+	<tr>
+		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
+		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' >Оренда</td>
+	</tr>
+	<script> 
+	//function foo(id) { 
+	//document.getElementById("txt").disabled = id=='r2' ? false : true; 
+	//document.getElementById("txt1").disabled = id=='r2' ? false : true;
+	//document.getElementById("txt2").disabled = id=='r2' ? false : true;
+	//document.getElementById("txt3").disabled = id=='r2' ? false : true;
+	//} 
+ 	</script>
+<tr>
+	
+ <tr>
+                <td><h3> Оренда приміщення </h3>
+ <tr>
+             <td> <form method="post"> 
+           		 <select name="area"  id="txt3"  >
+                		<option value="-1">—</option>
+                                <option value="1">Галицький</option>
+                          	<option value="2">Залізничний</option>
+       				<option value="3">Личаківський</option>
+            			 </select>
+   	      </td>
+	
+  		<td>  
+	
+           		 <select name="size"   id="txt2" onchange="this.form.submit()" >
+              	  		<option value="-1">—</option>
+                                <option value="50">0-50</option>
+                           	<option value="100">50-100</option>
+        		 	<option value="200">100-200</option>
+       	 			<option value="300">200-300</option>
+        			<option value="400">>300</option>
+                   	 </select>
+   		   </form>
+   		</td>
+</tr>  
+<?php 
+	$table='Workplace';
+	$value=3;
+	if(isset($_POST['area'])){
+	$val1 = $_POST['area'];
+	if($val1==1){$area='Галицький';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+	$_SESSION['counter']++;}
+	else if($val1==2){ $area='Залізничний';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+	$_SESSION['counter']++;}
+	else{$area='Личаківський';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+	$_SESSION['counter']++;}}
+	$area="'".$area."'";
+	if(isset($_POST['size']))
+	{
+	$val2 = $_POST['size'];
+	$size=$val2;
+	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+	$_SESSION['counter']++;
+	}
+	$W_PSMin=W_PSMin($table,$area,(int)$size);
+	$W_PSMax=W_PSMax($table,$area,(int)$size);
+	if($_SESSION['counter']>=1)
+	{unset($_SESSION['wp']); $_SESSION['counter']=0;
+	$_SESSION['wp'][]=array('wpmin'=>$W_PSMin, 'wpmax'=> $W_PSMax);
+	}?>
+ 		<tr>
+	      	<td><input class="min" name="data[comp]"  value="<? echo $W_PSMin;?>"  type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? echo $W_PSMax;?>" type="text"></td>
+            	</tr>
+
+	 </td>   
+     </tr>
+ </tr>
+	
+	
+	
+	
+	
 </table>
 
 <img src="info.jpg" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/>
