@@ -107,6 +107,31 @@ $date=mysqli_fetch_array($result);
 	return $date["price"];    
 mysqli_close($conn);
 }
+function PerMin($table,$kol,$empl)
+{
+$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
+$username = "mysqldbuser@diplomwork-mysqldbserver";	
+$password = "Alexandr11";
+$dbname = "mysqldatabase";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql ="SELECT MIN(salary) as salary FROM $table WHERE position='Директор'";
+$sql1 ="SELECT MIN(salary) as salary FROM $table WHERE position='Менеджер'";
+$sql2 ="SELECT MIN(salary) as salary FROM $table WHERE position='Бухгалтер'";
+$result = mysqli_query($conn, $sql);
+$result1 = mysqli_query($conn, $sql1);
+$result2 = mysqli_query($conn, $sql2);	
+$date=mysqli_fetch_array($result);
+$date1=mysqli_fetch_array($result1);
+$date2=mysqli_fetch_array($result2);	
+	return $date["salary"]+$date1["salary"]+$date2["salary"];    
+mysqli_close($conn);
+}
+
 function Drop_table()
 {
 $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
