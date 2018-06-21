@@ -11,6 +11,7 @@ include('function.php');
 </head>
    
 <body>
+	///////////head
 	<?php 
 	?>
    <div class="header">
@@ -50,25 +51,102 @@ include('function.php');
 	?>
 
 <div class="main">
+	////////////////////////////////table
 <table>
+	<h3>Стартовий капітал</h3>
+	<tr>
+		<th></th>
+		<th>Мінімальна вартість</th>
+		<th>Максимальна вартість</th>
+	</tr>  
+	
+	<tr>
+		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
+		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' >Оренда</td>
+	</tr>
+	<script> 
+	//function foo(id) { 
+	//document.getElementById("txt").disabled = id=='r2' ? false : true; 
+	//document.getElementById("txt1").disabled = id=='r2' ? false : true;
+	//document.getElementById("txt2").disabled = id=='r2' ? false : true;
+	//document.getElementById("txt3").disabled = id=='r2' ? false : true;
+	//} 
+ 	</script>
 <tr>
-	<th>Що купуємо</th>
-        <th>Мінімальна вартість</th>
-        <th>Максимальна вартість</th>
-</tr>        
+	
+ 	<tr>
+                <td><h3> Приміщення </h3>
+ <tr>
+             <td> <form method="post"> 
+           		 <select name="area"  id="txt3"  >
+                		<option value="-1">—</option>
+                                <option value="1">Галицький</option>
+                          	<option value="2">Залізничний</option>
+       				<option value="3">Личаківський</option>
+            			 </select>
+   	      </td>
+	
+  		<td>  
+	
+           		 <select name="size"   id="txt2" onchange="this.form.submit()" >
+              	  		<option value="-1">—</option>
+                                <option value="50">0-50</option>
+                           	<option value="100">50-100</option>
+        		 	<option value="200">100-200</option>
+       	 			<option value="300">200-300</option>
+        			<option value="400">>300</option>
+                   	 </select>
+   		   </form>
+   		</td>
+</tr>  
+<?php 
+	$table='Workplace';
+	$value=3;
+	if(isset($_POST['area'])){
+	$val1 = $_POST['area'];
+	if($val1==1){$area='Галицький';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+	$_SESSION['counter']++;}
+	else if($val1==2){ $area='Залізничний';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+	$_SESSION['counter']++;}
+	else{$area='Личаківський';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+	$_SESSION['counter']++;}}
+	$area="'".$area."'";
+	if(isset($_POST['size']))
+	{
+	$val2 = $_POST['size'];
+	$size=$val2;
+	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
+	$_SESSION['counter']++;
+	}
+	$W_PSMin=W_PSMin($table,$area,(int)$size);
+	$W_PSMax=W_PSMax($table,$area,(int)$size);
+	if($_SESSION['counter']>=1)
+	{unset($_SESSION['wp']); $_SESSION['counter']=0;
+	$_SESSION['wp'][]=array('wpmin'=>$W_PSMin, 'wpmax'=> $W_PSMax);
+	}?>
+ 		<tr>
+	      	<td><input class="min" name="data[comp]"  value="<? echo $W_PSMin;?>"  type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? echo $W_PSMax;?>" type="text"></td>
+            	</tr>
+
+	 </td>   
+     </tr>
+ </tr>
+	
+	
 		<tr>
                 <td>                  
                     <h3>Обладнання</h3>
-		 <form action="#" metod="post">
-  		  <p><input type="number" name="chet" min="0" max="10" step="2" value="2" onblur="this.form.submit()"></p>
-  		</form>
+		// <form action="#" metod="post">
+  		  //<p><input type="number" name="chet" min="0" max="10" step="2" value="2" onblur="this.form.submit()"></p>
+  		//</form>
 	
 	 <?php 
 	if(isset($_POST['chet'])){
 	$kol = $_POST['chet'];}	
 	if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){
-	$mas['compmin']=$mas['compmin']*$kol;
+		$mas['compmin']=$mas['compmin']*$kol;
 		$comp=$mas['compmin']*$kol;}}		
 	?>
 
@@ -76,11 +154,9 @@ include('function.php');
 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){
-	echo $comp;}}?>" type="text" placeholder="0.0"></td>
+		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmin'];}}?>" type="text" placeholder="0.0"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){
-	$comp1=$mas['compmax'];	echo  $kol*$comp1;}} ?>" type="text" placeholder="0.0"></td>
+		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmax'];}} ?>" type="text" placeholder="0.0"></td>
             </tr>
 	    <tr>
 		    <td>
@@ -97,9 +173,8 @@ include('function.php');
 		    		
                     </select>
 		 </form>
-			    <?php 
+ <?php 
 	 $mon='Monitor';
-
 	if(isset($_POST['monitor']))
 	{
 	$val = $_POST['monitor'];
@@ -110,43 +185,39 @@ include('function.php');
 	 if($_SESSION['counter']>=1)
 	{unset($_SESSION['tn']); $_SESSION['counter']=0;
 	$_SESSION['tn'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);}
-	    
-	 ?>
+ ?>
 	    </td>
 	    </tr>
 	     <tr>
                 <td>Монітори <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['tn']))
-		{foreach ($_SESSION['tn'] as $mas){
-	echo  $mas['monmin']; }} ?>"  type="text"></td>
+		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmin']; }} ?>"  type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['tn']))
-		{foreach ($_SESSION['tn'] as $mas){
-	echo  $mas['monmax']; }} ?>" type="text"></td>
+		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmax']; }} ?>" type="text"></td>
             </tr>	
 			
-		 <tr>
+	     <tr>
                 <td>Переферія <span class="currency"></span></td>
                 <td><input class="min" name="data[comp]" value="" type="text"></td>
                  <td><input class="max" name="data[comp]" type="text"></td>
-            </tr>
+             </tr>
            </td>
         </tr>
-	<?php
+<?php
 	$SLTT=SelectT('Tables');
-$SLTMT=SelectTMAX('Tables');
-	?>
+	$SLTMT=SelectTMAX('Tables');
+?>
         <tr>
                 <td><h3> Меблі </h3>
-	<tr>
+	    <tr>
                 <td>Стіл <span class="currency"></span></td>
                 <td><input class="min" name="data[furniture]" value="<? echo $SLTT;?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" value="<? echo $SLTMT;?>" type="text"></td>
+                <td><input class="max" name="data[furniture]" value="<? echo $SLTMT;?>" type="text"></td>
             </tr> 
-			<?php
+<?php
 	$SLTC=SelectT('Chairs');
-$SLTMC=SelectTMAX('Chairs');
-				
-	?>
+	$SLTMC=SelectTMAX('Chairs');				
+?>
 	<tr>
                 <td>Стілець <span class="currency"></span></td>
                 <td><input class="min" name="data[furniture]" value="<? echo $SLTC;?>" type="text"></td>
@@ -159,86 +230,6 @@ $SLTMC=SelectTMAX('Chairs');
             </tr>
 	</td>   
         </tr>
-
-		
-   	 <tr>
-		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
-		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' >Оренда</td>
-	</tr>
-	<script> 
-//function foo(id) { 
-//document.getElementById("txt").disabled = id=='r2' ? false : true; 
-	//document.getElementById("txt1").disabled = id=='r2' ? false : true;
-	//document.getElementById("txt2").disabled = id=='r2' ? false : true;
-	//document.getElementById("txt3").disabled = id=='r2' ? false : true;
-	//} 
- 
-</script>
-	<tr>
-	
- <tr>
-                <td><h3> Приміщення </h3>
- <tr>
-             <td> <form method="post"> 
-            <select name="area"  id="txt3"  >
-                		<option value="-1">—</option>
-                                <option value="1">Галицький</option>
-                          	<option value="2">Залізничний</option>
-       				<option value="3">Личаківський</option>
-             </select>
-   		</td>
-	
-  <td>  
-	
-            <select name="size"   id="txt2" onchange="this.form.submit()" >
-              	  		<option value="-1">—</option>
-                                <option value="50">0-50</option>
-                           	<option value="100">50-100</option>
-        		 	<option value="200">100-200</option>
-       	 			<option value="300">200-300</option>
-        			<option value="400">>300</option>
-                    </select>
-   		</form>
-   </td>
-</tr>  
-<?php 
-			$table='Workplace';
-	$value=3;
-	if(isset($_POST['area'])){
-	$val1 = $_POST['area'];
-	if($val1==1){$area='Галицький';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-	$_SESSION['counter']++;}
-	else if($val1==2){ $area='Залізничний';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-	$_SESSION['counter']++;}
-	else{$area='Личаківський';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-	$_SESSION['counter']++;}
-	}
-	$area="'".$area."'";
-		if(isset($_POST['size']))
-	{
-	$val2 = $_POST['size'];
-	$size=$val2;
-	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;
-	$_SESSION['counter']++;
-	}
-	$W_PSMin=W_PSMin($table,$area,(int)$size);
-	$W_PSMax=W_PSMax($table,$area,(int)$size);
-
-	if($_SESSION['counter']>=1)
-	{unset($_SESSION['wp']); $_SESSION['counter']=0;
-	$_SESSION['wp'][]=array('wpmin'=>$W_PSMin, 'wpmax'=> $W_PSMax);
-	}?>
- 	<tr>
-	      
-		<td><input class="min" name="data[comp]"  value="<? echo $W_PSMin;?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? echo $W_PSMax;?>" type="text"></td>
-            </tr>
-	
-	 </td>   
-        </tr>
- 	</tr>
-
-	
 </table>
 
 <img src="info.jpg" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/>
@@ -247,7 +238,8 @@ $SLTMC=SelectTMAX('Chairs');
 
 
 
-<div>	<?php
+<div>	
+	<?php
 	 if(isset($_SESSION['wp']))
 		{foreach ($_SESSION['wp'] as $mas){$w= $mas['wpmin'];}} 
 	 if(isset($_SESSION['mas']))
