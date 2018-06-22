@@ -162,7 +162,7 @@ include('function.php');
 	if($v==1){$emp="'Дизайнер'";}
 	else if($v==2){$emp="'ІТ Розробник'";}
 	else if($v==3){$emp="'Робітник'";}
-	echo $emp;
+	echo $emp.'---'.(int)$kol;
 	$PSL=PerMin('Employees',$emp,(int)$kol);
 	$PSLM=PerMax('Employees',$emp,(int)$kol);				
 	?>
