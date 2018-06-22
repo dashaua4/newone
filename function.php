@@ -131,7 +131,7 @@ $date=mysqli_fetch_array($result);
 $date1=mysqli_fetch_array($result1);
 $date2=mysqli_fetch_array($result2);	
 $date3=mysqli_fetch_array($result3);	
-	return $date["salary"]+$date1["salary"]+$date2["salary"]+($kol*$date3["salary"]);    
+	return ((int)$kol*$date3["salary"]);    
 mysqli_close($conn);
 }
 function PerMax($table,$kol,$empl)
