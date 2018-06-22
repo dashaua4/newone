@@ -68,7 +68,7 @@ if (!$conn) {
 $sql ="SELECT MAX(price) as price FROM $table WHERE diagonal=$diagonal";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
-	return $date["price"]*$kol;    
+	return $date["price"];    
 mysqli_close($conn);
 }
 function W_PSMin($table,$area,$size)
@@ -131,7 +131,7 @@ $date=mysqli_fetch_array($result);
 $date1=mysqli_fetch_array($result1);
 $date2=mysqli_fetch_array($result2);	
 $date3=mysqli_fetch_array($result3);	
-	return $date3["salary"];    
+	return $date3["salary"]*$kol;    
 mysqli_close($conn);
 }
 function PerMax($table,$kol,$empl)
