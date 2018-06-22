@@ -156,17 +156,13 @@ include('function.php');
 	if(isset($_POST['chet']))
 	{
 	$kol=$_POST['chet'];
-echo ' -----'.$kol;
-		
-	if(!isset($_SESSION['per'])){
-	echo '!!!!!!!!!!!!';}
-		
 	if(isset($_SESSION['per'])){
-	echo $_SESSION['per'];}}
-	
-	
-	$PSL=PerMin('Employees',$kol);
-	$PSLM=PerMax('Employees');				
+	$v=$_SESSION['per'];}}
+	if($v==1){$emp="'Дизайнер'";}
+	else if($v==2){$emp="'ІТ Розробник'";}
+	else if($v==3){$emp="'Робітник'";}
+	$PSL=PerMin('Employees',$emp,$kol);
+	$PSLM=PerMax('Employees',$emp,$kol);				
 	?>
 	
 	<tr>
