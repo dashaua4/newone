@@ -43,8 +43,7 @@ include('function.php');
 	else{$wg='Office_comp';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}}
 	$SLT=SelectT($wg);
 	$SLTM=SelectTMAX($wg);
-	$wg="'".$wg."'";
-$_SESSION['wg'][]=array('w_g'=>$wg);
+
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	}		
