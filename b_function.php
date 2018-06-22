@@ -155,8 +155,13 @@ include('function.php');
 	
 	 <tr>
                 <td><h3> Витрати на оплату праці </h3>
-	   
-	<?php
+			<input class="min" name="chet" value="" type="text" onblur="this.form.submit()"></td>
+	    <?php 
+	 $mon='Monitor';
+	if(isset($_POST['chet']))
+	{
+	$kol=$_POST['chet'];
+echo $wg.' -----'.$kol;}
 	$PSL=PerMin('Employees');
 	$PSLM=PerMax('Employees');				
 	?>
