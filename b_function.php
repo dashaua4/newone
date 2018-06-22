@@ -155,9 +155,11 @@ $_SESSION['wg']=$wg;
 	
 	 <tr>
                 <td><h3> Витрати на оплату праці </h3>
-			<input class="min" name="chet" value="" type="text" onblur="this.form.submit()"></td>
+			<form method="post">
+ 				<input class="min" name="chet" value="" type="text" onchange="this.form.submit()"></td>
+			</form>
 	    <?php 
-	 $mon='Monitor';
+	
 	if(isset($_POST['chet']))
 	{
 	$kol=$_POST['chet'];
