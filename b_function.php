@@ -48,7 +48,7 @@ include('function.php');
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	}
 		$wg="'".$wg."'";
-
+$_SESSION['wg']=$wg;
 	?>
 
 <div class="main">
