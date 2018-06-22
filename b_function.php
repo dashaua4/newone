@@ -158,8 +158,9 @@ include('function.php');
 	$kol=$_POST['chet'];
 echo ' -----'.$kol;
 		
-	if(isset($_SESSION['per'])){
+	if(!isset($_SESSION['per'])){
 	echo $_SESSION['per'];}}
+	
 	
 	$PSL=PerMin('Employees',$kol);
 	$PSLM=PerMax('Employees');				
