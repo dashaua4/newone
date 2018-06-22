@@ -162,6 +162,7 @@ include('function.php');
 	{
 	$kol=$_POST['chet'];
 echo $wg.' -----'.$kol;}
+		 echo $wg.' -----'.$kol;
 	$PSL=PerMin('Employees');
 	$PSLM=PerMax('Employees');				
 	?>
