@@ -156,7 +156,7 @@ $_SESSION['wg']=$wg;
 	 <tr>
                 <td><h3> Витрати на оплату праці </h3>
 			<form method="post">
- 				<input class="min" name="chet" value="" type="text" onchange="this.form.submit()"></td>
+ 				<input class="min" name="chet" value="" type="text" onblur="this.form.submit()"></td>
 			</form>
 	    <?php 
 	
