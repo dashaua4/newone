@@ -68,7 +68,7 @@ if (!$conn) {
 $sql ="SELECT MAX(price) as price FROM $table WHERE diagonal=$diagonal";
 $result = mysqli_query($conn, $sql);
 $date=mysqli_fetch_array($result);
-	return $date["price"];    
+	return $date["price"]*$kol;    
 mysqli_close($conn);
 }
 function W_PSMin($table,$area,$size)
