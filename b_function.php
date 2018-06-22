@@ -47,8 +47,8 @@ include('function.php');
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	}
-		$wg="'".$wg."'";
-$_SESSION['wg']=$wg;
+		
+$_SESSION['wg'][]=array('personal'=>$wg);
 	?>
 
 <div class="main">
@@ -156,7 +156,7 @@ $_SESSION['wg']=$wg;
 	{
 	$kol=$_POST['chet'];
 echo ' -----'.$kol;
-		$th= $_SESSION['wg'];
+		$th= $_SESSION['wg']['personal'];
 		echo  $th; }
 	
 	$PSL=PerMin('Employees',$kol);
