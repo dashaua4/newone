@@ -38,6 +38,7 @@ include('function.php');
 	session_start(); 
 	if(isset($_POST['exampl'])){
 	$value = $_POST['exampl'];
+	$_SESSION['per']=$value;
 	if($value==1){$wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;	$_SESSION['counter']++;}
 	else if($value==2){ $wg='WG_system';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
 	else{$wg='Office_comp';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}}
@@ -47,8 +48,8 @@ include('function.php');
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	}
-		
-$_SESSION['wg'][]=array('personal'=>$wg);
+		$_SESSION['per']=$wg;
+
 	?>
 
 <div class="main">
@@ -156,8 +157,9 @@ $_SESSION['wg'][]=array('personal'=>$wg);
 	{
 	$kol=$_POST['chet'];
 echo ' -----'.$kol;
-		$th= $_SESSION['wg']['personal'];
-		echo  $th; }
+		
+	if(isset($_SESSION['per'])){
+	echo $_SESSION['per'];}}
 	
 	$PSL=PerMin('Employees',$kol);
 	$PSLM=PerMax('Employees');				
