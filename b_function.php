@@ -43,7 +43,7 @@ include('function.php');
 	else{$wg='Office_comp';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}}
 	$SLT=SelectT($wg);
 	$SLTM=SelectTMAX($wg);
-$_SESSION['wg']=$wg;
+$_SESSION['wg'][]=array('wg'=>"'".$wg."'");
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	}		
@@ -62,17 +62,7 @@ $_SESSION['wg']=$wg;
 		<tr>
                 <td>                  
                     <h3>Обладнання</h3>
- 	<?php 
-	if(isset($_POST['chet'])){
-	$kol = $_POST['chet'];}	
-	if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){
-		$mas['compmin']=$mas['compmin']*$kol;
-		$comp=$mas['compmin']*$kol;}}		
-	?>
-
-
-	    <tr>
+ 	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
                 <td><input class="min" name="comp" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmin'];}}?>" type="text" placeholder="0.0"></td>
@@ -163,8 +153,9 @@ $_SESSION['wg']=$wg;
 	if(isset($_POST['chet']))
 	{
 	$kol=$_POST['chet'];
-echo $_SESSION['wg'].' -----'.$kol;}
-		$_SESSION['wg']="'".$_SESSION['wg']."'";
+echo ' -----'.$kol;
+		if(isset($_SESSION['wg']))
+		{foreach ($_SESSION['wg'] as $mas){echo  $mas['wg']; }} }
 	
 	$PSL=PerMin('Employees',$kol);
 	$PSLM=PerMax('Employees');				
