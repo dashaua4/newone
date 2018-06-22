@@ -159,7 +159,7 @@ include('function.php');
 echo ' -----'.$kol;
 		
 	if(!isset($_SESSION['per'])){
-	echo $_SESSION['per'];}}
+	echo '!!!!!!!!!!!!';}}
 	
 	
 	$PSL=PerMin('Employees',$kol);
