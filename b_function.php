@@ -156,8 +156,7 @@ $_SESSION['wg']=$wg;
 	{
 	$kol=$_POST['chet'];
 echo ' -----'.$kol;
-		if(isset($_SESSION['wg']))
-		{foreach ($_SESSION['wg'] as $mas){echo  $mas['per']; }} }
+		echo  $_SESSION['wg'];  }
 	
 	$PSL=PerMin('Employees',$kol);
 	$PSLM=PerMax('Employees');				
