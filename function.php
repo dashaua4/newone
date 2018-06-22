@@ -122,13 +122,16 @@ if (!$conn) {
 $sql ="SELECT MIN(salary) as salary FROM $table WHERE position='Директор'";
 $sql1 ="SELECT MIN(salary) as salary FROM $table WHERE position='Менеджер'";
 $sql2 ="SELECT MIN(salary) as salary FROM $table WHERE position='Бухгалтер'";
+$sql3 ="SELECT MIN(salary) as salary FROM $table WHERE position=$empl";
 $result = mysqli_query($conn, $sql);
 $result1 = mysqli_query($conn, $sql1);
 $result2 = mysqli_query($conn, $sql2);	
+$result3 = mysqli_query($conn, $sql3);	
 $date=mysqli_fetch_array($result);
 $date1=mysqli_fetch_array($result1);
 $date2=mysqli_fetch_array($result2);	
-	return $date["salary"]+$date1["salary"]+$date2["salary"];    
+$date3=mysqli_fetch_array($result3);	
+	return $date["salary"]+$date1["salary"]+$date2["salary"]+($kol*$date3["salary"]);    
 mysqli_close($conn);
 }
 function PerMax($table,$kol,$empl)
@@ -146,13 +149,16 @@ if (!$conn) {
 $sql ="SELECT MAX(salary) as salary FROM $table WHERE position='Директор'";
 $sql1 ="SELECT MAX(salary) as salary FROM $table WHERE position='Менеджер'";
 $sql2 ="SELECT MAX(salary) as salary FROM $table WHERE position='Бухгалтер'";
+$sql3 ="SELECT MAX(salary) as salary FROM $table WHERE position=$empl";
 $result = mysqli_query($conn, $sql);
 $result1 = mysqli_query($conn, $sql1);
-$result2 = mysqli_query($conn, $sql2);	
+$result2 = mysqli_query($conn, $sql2);
+$result3 = mysqli_query($conn, $sql3);
 $date=mysqli_fetch_array($result);
 $date1=mysqli_fetch_array($result1);
 $date2=mysqli_fetch_array($result2);	
-	return $date["salary"]+$date1["salary"]+$date2["salary"];    
+$date3=mysqli_fetch_array($result3);	
+	return $date["salary"]+$date1["salary"]+$date2["salary"]+($kol*$date3["salary"]);    
 mysqli_close($conn);
 }
 function Drop_table()
