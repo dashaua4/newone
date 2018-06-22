@@ -48,7 +48,7 @@ include('function.php');
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	}
-		$_SESSION['per']=$wg;
+		
 
 	?>
 
@@ -159,7 +159,10 @@ include('function.php');
 echo ' -----'.$kol;
 		
 	if(!isset($_SESSION['per'])){
-	echo '!!!!!!!!!!!!';}}
+	echo '!!!!!!!!!!!!';}
+		
+	if(isset($_SESSION['per'])){
+	echo $_SESSION['per'];}}
 	
 	
 	$PSL=PerMin('Employees',$kol);
