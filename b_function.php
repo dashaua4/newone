@@ -158,9 +158,11 @@ include('function.php');
 	$kol=$_POST['chet'];
 	if(isset($_SESSION['per'])){
 	$v=$_SESSION['per'];}}
+	echo $v.'<br>'
 	if($v==1){$emp="'Дизайнер'";}
 	else if($v==2){$emp="'ІТ Розробник'";}
 	else if($v==3){$emp="'Робітник'";}
+	echo $emp;
 	$PSL=PerMin('Employees',$emp,(int)$kol);
 	$PSLM=PerMax('Employees',$emp,(int)$kol);				
 	?>
