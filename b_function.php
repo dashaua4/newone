@@ -43,7 +43,7 @@ include('function.php');
 	else{$wg='Office_comp';if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}}
 	$SLT=SelectT($wg);
 	$SLTM=SelectTMAX($wg);
-
+$_SESSION['wg']=$wg;
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	}		
@@ -162,7 +162,7 @@ include('function.php');
 	{
 	$kol=$_POST['chet'];
 echo $wg.' -----'.$kol;}
-		 echo $wg.' -----'.$kol;
+		 echo $_SESSION['wg'].' -----'.$kol;
 	$PSL=PerMin('Employees');
 	$PSLM=PerMax('Employees');				
 	?>
