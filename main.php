@@ -1,4 +1,4 @@
-<html>
+<?php echo ('<html>
  <head>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -18,7 +18,10 @@
     <frame src="footer.php" name="footer" frameborder="1" scrolling="no" noresize></frame>
 	</frameset>
  </frameset>
+
 <body>
 
 </body>
 </html>
+');
+?>
