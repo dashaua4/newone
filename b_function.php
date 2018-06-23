@@ -1,10 +1,7 @@
   <?php 
 
 include('function.php');
-session_start(); 
-unset($_SESSION['mas']);
-unset($_SESSION['empl']);
-unset($_SESSION['wp']);
+
 ?>
 <html>
 <head>
