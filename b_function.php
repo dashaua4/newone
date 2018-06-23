@@ -172,7 +172,7 @@ include('function.php');
 	
 	?>
 	
-	<tr>
+		<tr>
                 <td>Персонал <span class="currency"></span></td>
                 <td><input class="min" name="data[furniture]" value="<? if(isset($_SESSION['empl']))
 		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmin']; }} ?>" type="text"></td>
@@ -200,7 +200,7 @@ include('function.php');
 	
  <tr>
                 <td><h3> Оренда приміщення </h3>
- <tr>
+
              <td> <form method="post"> 
 		       <p>Виберіть район
            		 <select name="area"  id="txt3"  >
