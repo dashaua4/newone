@@ -1,6 +1,6 @@
   <?php 
 
-///include('function.php');
+include('function.php');
 ?>
 <html>
 <head>
@@ -10,10 +10,6 @@
 </head>
    
 <body>
-	
-	
-
-
     <div class="row">
    <div class="header">
  	<h1>Бізнес Ідея</h1>
@@ -50,8 +46,6 @@
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
 	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	}
-		
-
 	?>
 
 <div class="main">
@@ -259,15 +253,8 @@
             	</tr>
 
 	 </td>   
-</tr>
-
-	
-	
-	
+</tr>	
 </table>
-
-
-
 <div>	
 	<?php
 	 if(isset($_SESSION['wp']))
