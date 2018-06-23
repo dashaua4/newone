@@ -1,9 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,cyrillic);
 *{box-sizing: border-box;}
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-}
 nav {background: #413F3C;}
 nav ul {
   margin: 0;
