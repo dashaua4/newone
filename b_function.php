@@ -83,7 +83,7 @@ include('function.php');
                     </select></p>
 		 </form>
  <?php 
-	/* $mon='Monitor';
+	$mon='Monitor';
 	if(isset($_POST['monitor']))
 	{
 	$val = $_POST['monitor'];
@@ -93,34 +93,34 @@ include('function.php');
 	$SMTM=SMTM($mon,$diagonal);
 	 if($_SESSION['counter']>=1)
 	{unset($_SESSION['tn']); $_SESSION['counter']=0;
-	$_SESSION['tn'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);}*/
+	$_SESSION['tn'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);}
  ?>
 	    </td>
 	    </tr>
 	     <tr>
                 <td>Монітори <span class="currency"></span></td>
-                <td><input class="min" name="data[comp]" placeholder="0.0"  value="<?/* if(isset($_SESSION['tn']))
-		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmin']; }} */?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" placeholder="0.0" value="<? /*if(isset($_SESSION['tn']))
-		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmax']; }} */?>" type="text"></td>
+                <td><input class="min" name="data[comp]" placeholder="0.0"  value="<? if(isset($_SESSION['tn']))
+		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmin']; }} ?>"  type="text"></td>
+                 <td><input class="max" name="data[comp]" placeholder="0.0" value="<? if(isset($_SESSION['tn']))
+		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmax']; }}?>" type="text"></td>
             </tr>	
 		
            </td>
         </tr>
 <?php
-	/* $SLTT=SelectT('Tables');
-	$SLTMT=SelectTMAX('Tables');*/
+	 $SLTT=SelectT('Tables');
+	$SLTMT=SelectTMAX('Tables');
 ?>
         <tr>
                 <td><h3> Меблі </h3>
 	   	 <tr>
                 <td>Стіл <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<?/* echo $SLTT;*/?>" type="text"></td>
-                <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<?/* echo $SLTMT;*/?>" type="text"></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<?echo $SLTT;?>" type="text"></td>
+                <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SLTMT;?>" type="text"></td>
            	 </tr> 
 <?php
-	/* $SLTC=SelectT('Chairs');
-	$SLTMC=SelectTMAX('Chairs');*/				
+			$SLTC=SelectT('Chairs');
+	$SLTMC=SelectTMAX('Chairs');			
 ?>
 		<tr>
                 <td>Стілець <span class="currency"></span></td>
