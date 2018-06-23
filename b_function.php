@@ -255,7 +255,7 @@ include('function.php');
 </tr>	
 </table>
 <div>	
-	<?php
+	<?php/*
 	 if(isset($_SESSION['wp']))
 		{foreach ($_SESSION['wp'] as $mas){$wp= $mas['wpmin'];}} 
 	 if(isset($_SESSION['mas']))
@@ -271,7 +271,7 @@ $sum2=$sum*1.6;
 	
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
 echo  "<h1> В день повинна бути виручка не менше ". (int)$sum2/365 ." грн. 
-<p>Річний дохід не менше ". $sum2 ."  грн.</p></h1>";
+<p>Річний дохід не менше ". $sum2 ."  грн.</p></h1>";*/
 ?></div>
 </div>
  </div>
