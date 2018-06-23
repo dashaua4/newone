@@ -1,6 +1,6 @@
   <?php 
 
-include('function.php');
+//include('function.php');
 ?>
 <html>
 <head>
@@ -124,8 +124,8 @@ include('function.php');
 ?>
 		<tr>
                 <td>Стілець <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SLTC;>" type="text"></td>
-             <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<?echo $SLTMC;>" type="text"></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SLTC;?>" type="text"></td>
+             <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SLTMC;?>" type="text"></td>
             	</tr>
 			<?php
 	 $SLM=SelectT('Locker');
@@ -181,14 +181,14 @@ include('function.php');
 		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
 		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' >Оренда</td>
 	</tr>
-	<script> 
-	function foo(id) { 
-	document.getElementById("txt").disabled = id=='r2' ? false : true; 
-	document.getElementById("txt1").disabled = id=='r2' ? false : true;
-	document.getElementById("txt2").disabled = id=='r2' ? false : true;
-	document.getElementById("txt3").disabled = id=='r2' ? false : true;
-	} 
- 	</script>
+	
+	//function foo(id) { 
+	//document.getElementById("txt").disabled = id=='r2' ? false : true; 
+	//document.getElementById("txt1").disabled = id=='r2' ? false : true;
+	//document.getElementById("txt2").disabled = id=='r2' ? false : true;
+	//document.getElementById("txt3").disabled = id=='r2' ? false : true;
+	
+ 	
 
 	
  <tr>
@@ -254,18 +254,18 @@ include('function.php');
 	 </td>   
 </tr>	
 	<?php
-+	$SAM=SelectT('Advertisement');
-+	$SAMX=SelectTMAX('Advertisement');				
-+		?>
-+        <tr>
-+                <td><h3> Реклама </h3>
-+	   	 <tr>
-+                <td>Реклама <span class="currency"></span></td>
-+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SAM;?>" type="text"></td>
-+                <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SAMX;?>" type="text"></td>
-+           	 </tr>
-+		</td>
-+	</tr>
+	$SAM=SelectT('Advertisement');
+	$SAMX=SelectTMAX('Advertisement');				
+		?>
+        <tr>
+               <td><h3> Реклама </h3>
+	   	 <tr>
+               <td>Реклама <span class="currency"></span></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SAM;?>" type="text"></td>
+                <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SAMX;?>" type="text"></td>
+           	 </tr>
+		</td>
+</tr>
 </table>
 <div>	
 	<?php
@@ -284,7 +284,7 @@ $sum2=$sum*1.6;
 	
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
 echo  "<h1> В день повинна бути виручка не менше ". (int)$sum2/365 ." грн. 
-<p>Річний дохід не менше ". $sum2 ."  грн.</p></h1>";*/
+<p>Річний дохід не менше ". $sum2 ."  грн.</p></h1>";
 ?></div>
 </div>
  </div>
