@@ -121,10 +121,4 @@ nav li:hover > .submenu {
   background: #112D52;
   color: white;
 }
-input[type=radio] {display: none;}
-img.slide {max-width: 950px; max-height: 500px; margin: 0 auto; border-radius: 5px; display: none;}
-
-label input:checked ~ img {display: block;}
-
-img.label {height: 150px; }
 
