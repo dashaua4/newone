@@ -8,6 +8,25 @@
  </head>
 
 <body>
+	<div class="slideshow">
+ <div class="slides">
+   <label><img class="slide" src="img1.jpg"><input id='s1' type=radio /></label>
+   <label><img class="slide" src="info.pnp"><input id='s2' type=radio /></label>
+   <label><img class="slide" src="путь_к_картинке3"><input id='s3' type=radio /></label>
+ </div>
+ <div class="labels">
+  <label for="s1"><img src="img1.jpg" class='label'></label>
+  <label for="s2"><img src="info.pnp" class='label'></label>
+  <label for="s3"><img src="путь_к_картинке3" class='label'></label>
+ </div>
+</div>
+	<script>
+	var idArray = ["s1", "s2", "s3"];
+var i = 0;
+setInterval(function(){
+  document.getElementById(idArray[i]).click();
+  i = (i+1)%idArray.length;
+}, 10000);</script>
 <div class="test">
 
     Бізнес план - план створення або розвитку підприємства.
