@@ -167,7 +167,7 @@ include('function.php');
 	$PSLM=PerMax('Employees',(int)$kol,$emp);
 	 if($_SESSION['counter']>=1)
 	{unset($_SESSION['empl']); $_SESSION['counter']=0;
-	$_SESSION['empl'][]=array('emplmin'=>$SMT, 'emplmax'=> $SMTM);}
+	$_SESSION['empl'][]=array('emplmin'=>$PSL, 'emplmax'=> $PSLM);}
 	
 	?>
 	
