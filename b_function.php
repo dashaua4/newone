@@ -31,7 +31,7 @@
 </div>
 	
  <?php 
-/*	$value=3;
+	$value=3;
 	session_start(); 
 	if(isset($_POST['exampl'])){
 	$value = $_POST['exampl'];
@@ -44,7 +44,7 @@
 
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
-	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	} */
+	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	} 
 	?>
 
 <div class="main">
@@ -182,12 +182,12 @@
 		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' >Оренда</td>
 	</tr>
 	<script> 
-	//function foo(id) { 
-	//document.getElementById("txt").disabled = id=='r2' ? false : true; 
-	//document.getElementById("txt1").disabled = id=='r2' ? false : true;
-	//document.getElementById("txt2").disabled = id=='r2' ? false : true;
-	//document.getElementById("txt3").disabled = id=='r2' ? false : true;
-	//} 
+	function foo(id) { 
+	document.getElementById("txt").disabled = id=='r2' ? false : true; 
+	document.getElementById("txt1").disabled = id=='r2' ? false : true;
+	document.getElementById("txt2").disabled = id=='r2' ? false : true;
+	document.getElementById("txt3").disabled = id=='r2' ? false : true;
+	} 
  	</script>
 
 	
