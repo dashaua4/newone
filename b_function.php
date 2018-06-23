@@ -144,7 +144,7 @@ include('function.php');
 		<tr>
                 <td>Шафи <span class="currency"></span></td>
                 <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SLM;?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" placeholder="0.0" "<? echo $SLMN;?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<? echo $SLMN;?>" type="text"></td>
            	 </tr>
 	</td>   
      </tr>
