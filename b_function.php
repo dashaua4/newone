@@ -1,7 +1,9 @@
   <?php 
 
 include('function.php');
-
+unset($_SESSION['mas']);
+unset($_SESSION['empl']);
+unset($_SESSION['wp']);
 ?>
 <html>
 <head>
@@ -75,6 +77,7 @@ include('function.php');
 	    <tr>
 		    <td>
                     <form method="post">
+			    <p>Виберіть діагональ</p>
             <select name="monitor"  onchange="this.form.submit()" >
                 <option value="-1">—</option>
                                 <option value="15">15</option>
@@ -149,13 +152,14 @@ include('function.php');
 	 <tr>
                 <td><h3> Витрати на оплату праці </h3>
 			<form method="post">
- 				<input class="min" name="chet" value="" type="text" onblur="this.form.submit()"></td>
+ 				  <p>Введіть кількість співробітників*</p><input class="min" name="chet" value="" type="text" onblur="this.form.submit()"></td>
 			</form>
 	    <?php 
 	
 	if(isset($_POST['chet']))
 	{
 	$kol=$_POST['chet'];
+	$_SESSION['kolvo']=$kol;
 	if(isset($_SESSION['per'])){
 	$v=$_SESSION['per'];}
 	
@@ -201,6 +205,7 @@ include('function.php');
                 <td><h3> Оренда приміщення </h3>
  <tr>
              <td> <form method="post"> 
+		       <p>Виберіть район</p>
            		 <select name="area"  id="txt3"  >
                 		<option value="-1">—</option>
                                 <option value="1">Галицький</option>
@@ -210,7 +215,7 @@ include('function.php');
    	      </td>
 	
   		<td>  
-	
+	<p>Виберіть квадратуру</p>
            		 <select name="size"   id="txt2" onchange="this.form.submit()" >
               	  		<option value="-1">—</option>
                                 <option value="50">0-50</option>
@@ -272,12 +277,16 @@ include('function.php');
 <div>	
 	<?php
 	 if(isset($_SESSION['wp']))
-		{foreach ($_SESSION['wp'] as $mas){$w= $mas['wpmin'];}} 
+		{foreach ($_SESSION['wp'] as $mas){$wp= $mas['wpmin'];}} 
 	 if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){$m= $mas['compmin'];}} 
+		{foreach ($_SESSION['mas'] as $mas){$comp= $mas['compmin'];}} 
 	 if(isset($_SESSION['tn']))
-		{foreach ($_SESSION['tn'] as $mas){$n=$mas['monmin']; }} 
-$sum=$m+$n+$SLTT+$SLTC+$w;
+		{foreach ($_SESSION['tn'] as $mas){$monitor=$mas['monmin']; }} 
+	 if(isset($_SESSION['empl']))
+		{foreach ($_SESSION['empl'] as $mas){$empl= $mas['emplmin'];}} 
+	if(isset($_SESSION['kolvo'])){
+	$s=$_SESSION['kolvo'];}
+$sum=$s*($comp+$monitor+$SLTT+$SLTC)+$wp+$$empl;
 $sum2=$sum*1.6;
 	
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
