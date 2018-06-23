@@ -31,7 +31,7 @@ include('function.php');
 </div>
 	
  <?php 
- /*	$value=3;
+	$value=3;
 	session_start(); 
 	if(isset($_POST['exampl'])){
 	$value = $_POST['exampl'];
@@ -44,7 +44,7 @@ include('function.php');
 
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['mas']); $_SESSION['counter']=0;
-	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	} */
+	$_SESSION['mas'][]=array('compmin'=>$SLT, 'compmax'=> $SLTM);	} 
 	?>
 
 <div class="main">
