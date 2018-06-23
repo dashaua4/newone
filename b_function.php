@@ -123,27 +123,27 @@ include('function.php');
 ?>
         <tr>
                 <td><h3> Меблі </h3>
-	    <tr>
+	   	 <tr>
                 <td>Стіл <span class="currency"></span></td>
                 <td><input class="min" name="data[furniture]" value="<? echo $SLTT;?>" type="text"></td>
                 <td><input class="max" name="data[furniture]" value="<? echo $SLTMT;?>" type="text"></td>
-            </tr> 
+           	 </tr> 
 <?php
 	$SLTC=SelectT('Chairs');
 	$SLTMC=SelectTMAX('Chairs');				
 ?>
-	<tr>
+		<tr>
                 <td>Стілець <span class="currency"></span></td>
                 <td><input class="min" name="data[furniture]" value="<? echo $SLTC;?>" type="text"></td>
              <td><input class="max" name="data[furniture]" value="<? echo $SLTMC;?>" type="text"></td>
-            </tr>
-	<tr>
+            	</tr>
+		<tr>
                 <td>Шафи <span class="currency"></span></td>
                 <td><input class="min" name="data[furniture]" value="" type="text"></td>
              <td><input class="max" name="data[furniture]" type="text"></td>
-            </tr>
+           	 </tr>
 	</td>   
-        </tr>
+     </tr>
 	
 	
 	 <tr>
@@ -201,29 +201,29 @@ include('function.php');
  <tr>
                 <td><h3> Оренда приміщення </h3>
 
-             <td> <form method="post"> 
-		       <p>Виберіть район
-           		 <select name="area"  id="txt3"  >
-                		<option value="-1">—</option>
-                                <option value="1">Галицький</option>
-                          	<option value="2">Залізничний</option>
-       				<option value="3">Личаківський</option>
-            			 </select></p>
-   	      </td>
-	
-  		<td>  
-	<p>Виберіть квадратуру
-           		 <select name="size"   id="txt2" onchange="this.form.submit()" >
-              	  		<option value="-1">—</option>
-                                <option value="50">0-50</option>
-                           	<option value="100">50-100</option>
-        		 	<option value="200">100-200</option>
-       	 			<option value="300">200-300</option>
-        			<option value="400">>300</option>
-                   	 </select></p>
-   		   </form>
-   		</td>
-</tr>  
+			     <td> <form method="post"> 
+				       <p>Виберіть район
+					 <select name="area"  id="txt3"  >
+						<option value="-1">—</option>
+						<option value="1">Галицький</option>
+						<option value="2">Залізничний</option>
+						<option value="3">Личаківський</option>
+						 </select></p>
+			      </td>
+
+				<td>  
+					<p>Виберіть квадратуру
+					 <select name="size"   id="txt2" onchange="this.form.submit()" >
+						<option value="-1">—</option>
+						<option value="50">0-50</option>
+						<option value="100">50-100</option>
+						<option value="200">100-200</option>
+						<option value="300">200-300</option>
+						<option value="400">>300</option>
+					 </select></p>
+				   </form>
+				</td>
+  
 <?php 
 	$table='Workplace';
 	$value=3;
@@ -257,7 +257,7 @@ include('function.php');
             	</tr>
 
 	 </td>   
-     </tr>
+</tr>
 
 	
 	
