@@ -61,10 +61,10 @@ include('function.php');
                     <h3>Обладнання</h3>
  	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="comp" value=" <?/* if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmin'];}}*/?>" type="text" placeholder="0.0"></td>
-                 <td><input class="max" name="data[comp]" value="<?/* if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmax'];}}*/ ?>" type="text" placeholder="0.0"></td>
+                <td><input class="min" name="comp" value=" <? if(isset($_SESSION['mas']))
+		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmin'];}}?>" type="text" placeholder="0.0"></td>
+                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
+		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmax'];}} ?>" type="text" placeholder="0.0"></td>
             </tr>
 	    <tr>
 		    <td>
