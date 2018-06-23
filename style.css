@@ -113,13 +113,15 @@ body
 }
 .row
 {
-  font-size:18px;
+  font-size:28px;
 }
 .min
 {
-  size:20;
+  width:30px;
+  height:10px;
 }
 .max
 {
-  size:20;
+  width:30px;
+  height:10px;
 }
