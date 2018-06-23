@@ -134,7 +134,7 @@ $date3=mysqli_fetch_array($result3);
 	return $date["salary"]+$date1["salary"]+$date2["salary"]+($kol*$date3["salary"]);    
 mysqli_close($conn);
 }
-function PerMin($table,$kol,$empl)
+function PerMax($table,$kol,$empl)
 {
 $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";	
@@ -146,10 +146,10 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql ="SELECT MIN(salary) as salary FROM $table WHERE position='Директор'";
-$sql1 ="SELECT MIN(salary) as salary FROM $table WHERE position='Менеджер'";
-$sql2 ="SELECT MIN(salary) as salary FROM $table WHERE position='Бухгалтер'";
-$sql3 ="SELECT MIN(salary) as salary FROM $table WHERE position=$empl";
+$sql ="SELECT MAX(salary) as salary FROM $table WHERE position='Директор'";
+$sql1 ="SELECT MAX(salary) as salary FROM $table WHERE position='Менеджер'";
+$sql2 ="SELECT MAX(salary) as salary FROM $table WHERE position='Бухгалтер'";
+$sql3 ="SELECT Max(salary) as salary FROM $table WHERE position=$empl";
 $result = mysqli_query($conn, $sql);
 $result1 = mysqli_query($conn, $sql1);
 $result2 = mysqli_query($conn, $sql2);	
