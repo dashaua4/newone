@@ -162,15 +162,22 @@ include('function.php');
 	if($v==1){$emp="'Дизайнер'";}
 	else if($v==2){$emp="'ІТ Розробник'";}
 	else if($v==3){$emp="'Робітник'";}
-	echo $emp.'---'.(int)$kol;}
+	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
 	$PSL=PerMin('Employees',(int)$kol,$emp);
-	$PSLM=PerMax('Employees',(int)$kol,$emp);				
+	$PSLM=PerMax('Employees',(int)$kol,$emp);
+	 if($_SESSION['counter']>=1)
+	{unset($_SESSION['empl']); $_SESSION['counter']=0;
+	$_SESSION['empl'][]=array('emplmin'=>$SMT, 'emplmax'=> $SMTM);}
+	
 	?>
 	
 	<tr>
                 <td>Персонал <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" value="<? echo $PSL;?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" value="<? echo $PSLM;?>" type="text"></td>
+                <td><input class="min" name="data[furniture]" value="<? if(isset($_SESSION['empl']))
+		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmin']; }} ?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" value="<? if(isset($_SESSION['empl']))
+		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmax']; }} ?>" type="text">
+		<img src="info.jpg"  width="18" height="25" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/></td>
             </tr>
 	</td>   
         </tr>
@@ -241,8 +248,10 @@ include('function.php');
 	$_SESSION['wp'][]=array('wpmin'=>$W_PSMin, 'wpmax'=> $W_PSMax);
 	}?>
  		<tr>
-	      	<td><input class="min" name="data[comp]"  value="<? echo $W_PSMin;?>"  type="text"></td>
-                 <td><input class="max" name="data[comp]" value="<? echo $W_PSMax;?>" type="text"></td>
+	      	<td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['wp']))
+		{foreach ($_SESSION['wp'] as $mas){echo  $mas['wpmin']; }} ?>"  type="text"></td>
+                 <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['wp']))
+		{foreach ($_SESSION['wp'] as $mas){echo  $mas['wpmax']; }} ?>" type="text"></td>
             	</tr>
 
 	 </td>   
@@ -255,7 +264,6 @@ include('function.php');
 	
 </table>
 
-<img src="info.jpg" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/>
 
 
 
