@@ -109,11 +109,17 @@ include('function.php');
                  <td><input class="max" name="data[comp]" placeholder="0.0" value="<? if(isset($_SESSION['tn']))
 		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmax']; }} ?>" type="text"></td>
             </tr>	
+		<?php 
+			if(isset($_SESSION['kolvo'])){
+	$vl=$_SESSION['kolvo'];}	
 			
+	$SP=SelectT('Periphery',$vl);
+	$SPM=SelectTMAX('Periphery',$vl);
+			?>
 	     <tr>
                 <td>Переферія <span class="currency"></span></td>
-                <td><input class="min" placeholder="0.0" name="data[comp]" value="" type="text"></td>
-                 <td><input class="max" placeholder="0.0" name="data[comp]" type="text"></td>
+                <td><input class="min" placeholder="0.0" name="data[comp]" value="<? echo $SP;?>" type="text"></td>
+                 <td><input class="max" placeholder="0.0" name="data[comp]" value="<? echo $SPM;?>" type="text"></td>
              </tr>
            </td>
         </tr>
@@ -265,6 +271,19 @@ include('function.php');
 </tr>
 
 	<?php
+	$SAM=SelectT('Advertisement');
+	$SAMX=SelectTMAX('Advertisement');				
+		?>
+        <tr>
+                <td><h3> Реклама </h3>
+	   	 <tr>
+                <td>Реклама <span class="currency"></span></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SAM;?>" type="text"></td>
+                <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SAMX;?>" type="text"></td>
+           	 </tr>
+		</td>
+	</tr>
+<?php
 	$SAM=SelectT('Advertisement');
 	$SAMX=SelectTMAX('Advertisement');				
 		?>
