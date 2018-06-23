@@ -178,7 +178,7 @@ include('function.php');
 		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmin']; }} ?>" type="text"></td>
              <td><input class="max" name="data[furniture]" value="<? if(isset($_SESSION['empl']))
 		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmax']; }} ?>" type="text">
-		<img src="info.png"  width="18" height="25" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/></td>
+		<img src="info.png"  width="18" height="18" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/></td>
             </tr>
 	</td>   
         </tr>
