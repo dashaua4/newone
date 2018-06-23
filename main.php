@@ -5,13 +5,13 @@
   <title>Business Plan</title>
    <link href="style.css" rel="stylesheet" />
  </head>
- <frameset rows="20%,80%,5%" bordercolor="grey" border="0" >
+ <frameset rows="20%,75%,5%" bordercolor="grey" border="0" >
   <frameset>
-    <frame src="menu.php" name="footer" frameborder="1" scrolling="no" noresize></frame>
+    <frame src="menu.php" name="menu" frameborder="1" scrolling="no" noresize></frame>
 	</frameset>
    <frameset cols="15%,85%">
    <frame src="left.php" frameborder="0" name="left" scrolling="no" noresize></frame>
-    <frame src="main.php"  frameborder="0" name="cont" scrolling="yes" noresize></frame>
+    <frame src="first.php"  frameborder="0" name="cont" scrolling="yes" noresize></frame>
 	
    </frameset>
    <frameset>
