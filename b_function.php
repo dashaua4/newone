@@ -196,7 +196,7 @@ include('function.php');
 	//document.getElementById("txt3").disabled = id=='r2' ? false : true;
 	//} 
  	</script>
-<tr>
+
 	
  <tr>
                 <td><h3> Оренда приміщення </h3>
@@ -258,7 +258,7 @@ include('function.php');
 
 	 </td>   
      </tr>
- </tr>
+
 	
 	
 	
