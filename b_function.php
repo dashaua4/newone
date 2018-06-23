@@ -1,7 +1,13 @@
   <?php 
 
 include('function.php');
-
+unset($_SESSION['mas']);
+unset($_SESSION['per']);
+unset($_SESSION['counter']);
+unset($_SESSION['tn']);
+unset($_SESSION['kolvo']);
+unset($_SESSION['empl']);
+unset($_SESSION['wp']);
 ?>
 <html>
 <head>
@@ -272,21 +278,7 @@ include('function.php');
            	 </tr>
 		</td>
 	</tr>
-<?php
-	$SAM=SelectT('Advertisement');
-	$SAMX=SelectTMAX('Advertisement');				
-		?>
-        <tr>
-                <td><h3> Реклама </h3>
-	   	 <tr>
-                <td>Реклама <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SAM;?>" type="text"></td>
-                <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SAMX;?>" type="text"></td>
-           	 </tr>
-		</td>
-	</tr>
-	
-	
+
 	
 	
 </table>
