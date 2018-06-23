@@ -115,7 +115,7 @@ include('function.php');
                 <td><h3> Меблі </h3>
 	   	 <tr>
                 <td>Стіл <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<?echo $SLTT;?>" type="text"></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SLTT;?>" type="text"></td>
                 <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SLTMT;?>" type="text"></td>
            	 </tr> 
 <?php
@@ -124,17 +124,17 @@ include('function.php');
 ?>
 		<tr>
                 <td>Стілець <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<?/* echo $SLTC;*/?>" type="text"></td>
-             <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<?/* echo $SLTMC;*/?>" type="text"></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SLTC;>" type="text"></td>
+             <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<?echo $SLTMC;>" type="text"></td>
             	</tr>
 			<?php
-	/* $SLM=SelectT('Locker');
-	$SLMN=SelectTMAX('Locker');*/				
+	 $SLM=SelectT('Locker');
+	$SLMN=SelectTMAX('Locker');				
 		?>
 		<tr>
                 <td>Шафи <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<?/* echo $SLM;*/?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<?/* echo $SLMN;*/?>" type="text"></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SLM;?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<? echo $SLMN;?>" type="text"></td>
            	 </tr>
 	</td>   
      </tr>
@@ -146,7 +146,7 @@ include('function.php');
  				  <p>Введіть кількість співробітників*<input name="chet" value="" type="text" onblur="this.form.submit()"></td>
 			</p></form>
 	    <?php 
-	/*
+	
 	if(isset($_POST['chet']))
 	{
 	$kol=$_POST['chet'];
@@ -162,15 +162,15 @@ include('function.php');
 	 if($_SESSION['counter']>=1)
 	{unset($_SESSION['empl']); $_SESSION['counter']=0;
 	$_SESSION['empl'][]=array('emplmin'=>$PSL, 'emplmax'=> $PSLM);}
-	*/
+	
 	?>
 	
 		<tr>
                 <td>Персонал </td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<?/* if(isset($_SESSION['empl']))
-		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmin']; }}*/ ?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<?/* if(isset($_SESSION['empl']))
-		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmax']; }} */?>" type="text">
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<?if(isset($_SESSION['empl']))
+		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmin']; }} ?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<? if(isset($_SESSION['empl']))
+		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmax']; }} ?>" type="text">
 		<img src="info.png"  width="18" height="18" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/></td>
             </tr>
 	</td>   
@@ -219,7 +219,7 @@ include('function.php');
 	 			</tr>
   
 <?php 
-	/*$table='Workplace';
+	$table='Workplace';
 	$value=3;
 	if(isset($_POST['area'])){
 	$val1 = $_POST['area'];
@@ -242,20 +242,20 @@ include('function.php');
 	if($_SESSION['counter']>=1)
 	{unset($_SESSION['wp']); $_SESSION['counter']=0;
 	$_SESSION['wp'][]=array('wpmin'=>$W_PSMin, 'wpmax'=> $W_PSMax);
-	}*/?>
+	}?>
  		<tr>
 			  <td>Приміщення </td>
-	      	<td><input class="min"  placeholder="0.0"  value="<?/* if(isset($_SESSION['wp']))
-		{foreach ($_SESSION['wp'] as $mas){echo  $mas['wpmin']; }} */?>"  type="text"></td>
-                 <td><input class="max"  placeholder="0.0" value="<? /*if(isset($_SESSION['wp']))
-		{foreach ($_SESSION['wp'] as $mas){echo  $mas['wpmax']; }}*/ ?>" type="text"></td>
+	      	<td><input class="min"  placeholder="0.0"  value="<? if(isset($_SESSION['wp']))
+		{foreach ($_SESSION['wp'] as $mas){echo  $mas['wpmin']; }} ?>"  type="text"></td>
+                 <td><input class="max"  placeholder="0.0" value="<? if(isset($_SESSION['wp']))
+		{foreach ($_SESSION['wp'] as $mas){echo  $mas['wpmax']; }} ?>" type="text"></td>
             	</tr>
 
 	 </td>   
 </tr>	
 </table>
 <div>	
-	<?php/*
+	<?php
 	 if(isset($_SESSION['wp']))
 		{foreach ($_SESSION['wp'] as $mas){$wp= $mas['wpmin'];}} 
 	 if(isset($_SESSION['mas']))
@@ -272,7 +272,7 @@ $sum2=$sum*1.6;
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
 echo  "<h1> В день повинна бути виручка не менше ". (int)$sum2/365 ." грн. 
 <p>Річний дохід не менше ". $sum2 ."  грн.</p></h1>";
-*/?></div>
+?></div>
 </div>
  </div>
  </body>
