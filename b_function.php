@@ -1,13 +1,6 @@
   <?php 
 
 include('function.php');
-unset($_SESSION['mas']);
-unset($_SESSION['per']);
-unset($_SESSION['counter']);
-unset($_SESSION['tn']);
-unset($_SESSION['kolvo']);
-unset($_SESSION['empl']);
-unset($_SESSION['wp']);
 ?>
 <html>
 <head>
@@ -18,6 +11,6 @@ unset($_SESSION['wp']);
    
 <body>
 	
-	
+	ghjkl;
  </body>
 </html>
