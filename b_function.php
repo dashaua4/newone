@@ -130,7 +130,7 @@ include('function.php');
 			<?php
 	 $SLM=SelectT('Locker');
 	$SLMN=SelectTMAX('Locker');				
-		?>
+	?>
 		<tr>
                 <td>Шафи <span class="currency"></span></td>
                 <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SLM;?>" type="text"></td>
@@ -253,6 +253,19 @@ include('function.php');
 
 	 </td>   
 </tr>	
+	<?php
++	$SAM=SelectT('Advertisement');
++	$SAMX=SelectTMAX('Advertisement');				
++		?>
++        <tr>
++                <td><h3> Реклама </h3>
++	   	 <tr>
++                <td>Реклама <span class="currency"></span></td>
++                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SAM;?>" type="text"></td>
++                <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SAMX;?>" type="text"></td>
++           	 </tr>
++		</td>
++	</tr>
 </table>
 <div>	
 	<?php
@@ -265,7 +278,7 @@ include('function.php');
 	 if(isset($_SESSION['empl']))
 		{foreach ($_SESSION['empl'] as $mas){$empl= $mas['emplmin'];}} 
 	if(isset($_SESSION['kolvo'])){
-	$s=$_SESSION['kolvo']+3;}
+	$s=$_SESSION['kolvo'];}
 $sum=$s*($comp+$monitor+$SLTT+$SLTC+$SLM)+$wp+$empl;
 $sum2=$sum*1.6;
 	
