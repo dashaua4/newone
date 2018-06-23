@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Farfalla</title>
- <link href="css/style.css" rel="stylesheet" />
+ <link href="style.css" rel="stylesheet" />
 
 </head>
 <style>
@@ -11,7 +11,7 @@
 </style>
 <body >
 	
-	left
+
 
 </body>
 </html> 
