@@ -109,18 +109,7 @@ include('function.php');
                  <td><input class="max" name="data[comp]" placeholder="0.0" value="<? if(isset($_SESSION['tn']))
 		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmax']; }} ?>" type="text"></td>
             </tr>	
-		<?php 
-			if(isset($_SESSION['kolvo'])){
-	$vl=$_SESSION['kolvo'];}	
-			
-	$SP=PerfMin('Periphery',$vl);
-	$SPM=PerfMax('Periphery',$vl);
-			?>
-	     <tr>
-                <td>Переферія <span class="currency"></span></td>
-                <td><input class="min" placeholder="0.0" name="data[comp]" value="<? echo $SP;?>" type="text"></td>
-                 <td><input class="max" placeholder="0.0" name="data[comp]" value="<? echo $SPM;?>" type="text"></td>
-             </tr>
+		
            </td>
         </tr>
 <?php
@@ -319,7 +308,7 @@ include('function.php');
 		{foreach ($_SESSION['empl'] as $mas){$empl= $mas['emplmin'];}} 
 	if(isset($_SESSION['kolvo'])){
 	$s=$_SESSION['kolvo']+3;}
-$sum=$s*($comp+$monitor+$SLTT+$SLTC+$SLM)+$wp+$empl;
+$sum=$s*($comp+$monitor+$SLTT+$SLTC+$SLM)+$wp+$empl+$SAM;
 $sum2=$sum*1.6;
 	
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
