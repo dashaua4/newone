@@ -61,7 +61,6 @@ include('function.php');
 		<th>Мінімальна вартість</th>
 		<th>Максимальна вартість</th>
 	</tr>  
-
 		<tr>
                 <td>                  
                     <h3>Обладнання</h3>
@@ -75,7 +74,7 @@ include('function.php');
 	    <tr>
 		    <td>
                     <form method="post">
-			    <p>Виберіть діагональ</p>
+			    <p>Виберіть діагональ
             <select name="monitor"  onchange="this.form.submit()" >
                 <option value="-1">—</option>
                                 <option value="15">15</option>
@@ -86,7 +85,7 @@ include('function.php');
 		    		<option value="21">21</option>
 		    		<option value="23">23</option>
 		    		
-                    </select>
+                    </select></p>
 		 </form>
  <?php 
 	 $mon='Monitor';
@@ -150,8 +149,8 @@ include('function.php');
 	 <tr>
                 <td><h3> Витрати на оплату праці </h3>
 			<form method="post">
- 				  <p>Введіть кількість співробітників*</p><input class="min" name="chet" value="" type="text" onblur="this.form.submit()"></td>
-			</form>
+ 				  <p>Введіть кількість співробітників*<input class="min" name="chet" value="" type="text" onblur="this.form.submit()"></td>
+			</p></form>
 	    <?php 
 	
 	if(isset($_POST['chet']))
@@ -203,17 +202,17 @@ include('function.php');
                 <td><h3> Оренда приміщення </h3>
  <tr>
              <td> <form method="post"> 
-		       <p>Виберіть район</p>
+		       <p>Виберіть район
            		 <select name="area"  id="txt3"  >
                 		<option value="-1">—</option>
                                 <option value="1">Галицький</option>
                           	<option value="2">Залізничний</option>
        				<option value="3">Личаківський</option>
-            			 </select>
+            			 </select></p>
    	      </td>
 	
   		<td>  
-	<p>Виберіть квадратуру</p>
+	<p>Виберіть квадратуру
            		 <select name="size"   id="txt2" onchange="this.form.submit()" >
               	  		<option value="-1">—</option>
                                 <option value="50">0-50</option>
@@ -221,7 +220,7 @@ include('function.php');
         		 	<option value="200">100-200</option>
        	 			<option value="300">200-300</option>
         			<option value="400">>300</option>
-                   	 </select>
+                   	 </select></p>
    		   </form>
    		</td>
 </tr>  
