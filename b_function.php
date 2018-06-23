@@ -137,10 +137,14 @@ include('function.php');
                 <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SLTC;?>" type="text"></td>
              <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SLTMC;?>" type="text"></td>
             	</tr>
+			<?php
+	$SLM=SelectT('Locker');
+	$SLMN=SelectTMAX('Locker');				
+?>
 		<tr>
                 <td>Шафи <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="" type="text"></td>
-             <td><input class="max" name="data[furniture]" placeholder="0.0" type="text"></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SLM;?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" placeholder="0.0" "<? echo $SLMN;?>" type="text"></td>
            	 </tr>
 	</td>   
      </tr>
@@ -284,7 +288,7 @@ include('function.php');
 		{foreach ($_SESSION['empl'] as $mas){$empl= $mas['emplmin'];}} 
 	if(isset($_SESSION['kolvo'])){
 	$s=$_SESSION['kolvo'];}
-$sum=$s*($comp+$monitor+$SLTT+$SLTC)+$wp+$empl;
+$sum=$s*($comp+$monitor+$SLTT+$SLTC+$SLM)+$wp+$empl;
 $sum2=$sum*1.6;
 	
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
