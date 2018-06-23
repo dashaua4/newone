@@ -3,20 +3,6 @@ body
 {
   background:#DCDCDC;
 }
-.row
-{
-  font-size:28px;
-}
-.min input
-{
-  width:50px;
-  height:20px;
-}
-.max input
-{
-  width:50px;
-  height:20px;
-}
 *{box-sizing: border-box;}
 nav {background: #413F3C;}
 nav ul {
