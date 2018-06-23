@@ -201,7 +201,7 @@ include('function.php');
  <tr>
                 <td><h3> Оренда приміщення </h3>
 
-			     <td> <form method="post"> 
+			     <tr><td> <form method="post"> 
 				       <p>Виберіть район
 					 <select name="area"  id="txt3"  >
 						<option value="-1">—</option>
@@ -223,6 +223,7 @@ include('function.php');
 					 </select></p>
 				   </form>
 				</td>
+	 			</tr>
   
 <?php 
 	$table='Workplace';
@@ -250,6 +251,7 @@ include('function.php');
 	$_SESSION['wp'][]=array('wpmin'=>$W_PSMin, 'wpmax'=> $W_PSMax);
 	}?>
  		<tr>
+			  <td>Приміщення <span class="currency"></span></td>
 	      	<td><input class="min" name="data[comp]"  value="<? if(isset($_SESSION['wp']))
 		{foreach ($_SESSION['wp'] as $mas){echo  $mas['wpmin']; }} ?>"  type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['wp']))
