@@ -158,11 +158,11 @@ include('function.php');
 	$kol=$_POST['chet'];
 	if(isset($_SESSION['per'])){
 	$v=$_SESSION['per'];}
-	echo $v;
-	if($v==1){$emp="'Дизайнер'";}
-	else if($v==2){$emp="'ІТ Розробник'";}
-	else if($v==3){$emp="'Робітник'";}
-	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
+	
+	if($v==1){$emp="'Дизайнер'";if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
+	else if($v==2){$emp="'ІТ Розробник'";if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
+	else if($v==3){$emp="'Робітник'";if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}}
+	
 	$PSL=PerMin('Employees',(int)$kol,$emp);
 	$PSLM=PerMax('Employees',(int)$kol,$emp);
 	 if($_SESSION['counter']>=1)
