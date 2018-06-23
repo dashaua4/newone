@@ -255,7 +255,7 @@ include('function.php');
 </tr>	
 </table>
 <div>	
-	<?php/*
+	<?php
 	 if(isset($_SESSION['wp']))
 		{foreach ($_SESSION['wp'] as $mas){$wp= $mas['wpmin'];}} 
 	 if(isset($_SESSION['mas']))
