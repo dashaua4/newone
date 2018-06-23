@@ -1,6 +1,7 @@
   <?php 
 
 include('function.php');
+session_start(); 
 unset($_SESSION['mas']);
 unset($_SESSION['empl']);
 unset($_SESSION['wp']);
@@ -286,7 +287,7 @@ unset($_SESSION['wp']);
 		{foreach ($_SESSION['empl'] as $mas){$empl= $mas['emplmin'];}} 
 	if(isset($_SESSION['kolvo'])){
 	$s=$_SESSION['kolvo'];}
-$sum=$s*($comp+$monitor+$SLTT+$SLTC)+$wp+$$empl;
+$sum=$s*($comp+$monitor+$SLTT+$SLTC)+$wp+$empl;
 $sum2=$sum*1.6;
 	
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
