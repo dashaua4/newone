@@ -12,10 +12,10 @@ include('function.php');
    
 <body>
 	
-	
+	    <div class="row">
    <div class="header">
  	<h1>Бізнес Ідея</h1>
-    <div class="row">
+
             <label  >
                 Шаблони (3)
             </label>
@@ -29,7 +29,7 @@ include('function.php');
               		</select>
   
     	 </form> 
-    </div>
+   
 </div>
 	
  <?php 
@@ -292,6 +292,6 @@ echo  "<h1> В день повинна бути виручка не менше "
 <p>Річний дохід не менше ". $sum2 ."  грн.</p></h1>";
 ?></div>
 </div>
-
+ </div>
  </body>
 </html>
