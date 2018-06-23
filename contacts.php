@@ -1,5 +1,5 @@
 <?php
-include('b_function.php');?>
+include('function.php');?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
