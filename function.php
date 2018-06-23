@@ -185,7 +185,7 @@ $date2=mysqli_fetch_array($result2);
 return $kol*($date["price"]+$date1["price"])+$date2["price"];    
 mysqli_close($conn);
 }
-function PerfMax($table,$kol)
+function PerfMin($table,$kol)
 {
 $servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
 $username = "mysqldbuser@diplomwork-mysqldbserver";	
