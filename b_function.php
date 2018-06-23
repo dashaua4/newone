@@ -108,8 +108,8 @@
            </td>
         </tr>
 <?php
-	$SLTT=SelectT('Tables');
-	$SLTMT=SelectTMAX('Tables');
+	/* $SLTT=SelectT('Tables');
+	$SLTMT=SelectTMAX('Tables');*/
 ?>
         <tr>
                 <td><h3> Меблі </h3>
@@ -119,8 +119,8 @@
                 <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<?/* echo $SLTMT;*/?>" type="text"></td>
            	 </tr> 
 <?php
-	$SLTC=SelectT('Chairs');
-	$SLTMC=SelectTMAX('Chairs');				
+	/* $SLTC=SelectT('Chairs');
+	$SLTMC=SelectTMAX('Chairs');*/				
 ?>
 		<tr>
                 <td>Стілець <span class="currency"></span></td>
@@ -128,8 +128,8 @@
              <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<?/* echo $SLTMC;*/?>" type="text"></td>
             	</tr>
 			<?php
-	$SLM=SelectT('Locker');
-	$SLMN=SelectTMAX('Locker');				
+	/* $SLM=SelectT('Locker');
+	$SLMN=SelectTMAX('Locker');*/				
 		?>
 		<tr>
                 <td>Шафи <span class="currency"></span></td>
