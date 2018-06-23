@@ -113,8 +113,8 @@ include('function.php');
 			if(isset($_SESSION['kolvo'])){
 	$vl=$_SESSION['kolvo'];}	
 			
-	$SP=SelectT('Periphery',$vl);
-	$SPM=SelectTMAX('Periphery',$vl);
+	$SP=PerfMin('Periphery',$vl);
+	$SPM=PerfMax('Periphery',$vl);
 			?>
 	     <tr>
                 <td>Переферія <span class="currency"></span></td>
