@@ -148,12 +148,16 @@ include('function.php');
 	
 		<?php
 	 $P=PerMin('Employees');
-	$Pm=PerMax('Employees');				
+	$array=	PerMax('Employees');	
+	foreach ($array as $vle)
+	{
+		echo $vle;
+	}
 	?>
 		<tr>
                 <td>Персонал </td>
                 <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $P; ?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<? echo $Pm; ?>" type="text">
+             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<? //echo $Pm; ?>" type="text">
 		<img src="info.png"  width="18" height="18" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/></td>
             </tr>
 	</td>   
