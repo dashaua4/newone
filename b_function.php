@@ -149,10 +149,9 @@ include('function.php');
 		<?php
 	 $P=PerMin('Employees');
 	$array=	PerMax('Employees');	
-	foreach ($array as $vle)
-	{
-		echo $vle;
-	}
+	
+		echo $array;
+	
 	?>
 		<tr>
                 <td>Персонал </td>
