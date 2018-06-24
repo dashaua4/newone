@@ -170,8 +170,10 @@ include('function.php');
 >
 		<tr>
                 <td>Персонал </td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $P; ?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<? //echo $Pm; ?>" type="text">
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? if(isset($_SESSION['empl']))
+		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmin']; }} ?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<? if(isset($_SESSION['empl']))
+		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmax']; }} ?>" type="text">
 		<img src="info.png"  width="18" height="18" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/></td>
             </tr>
 	</td>   
@@ -181,17 +183,7 @@ include('function.php');
 	<tr>
 		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
 		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' >Оренда</td>
-	</tr>
-	
-	//function foo(id) { 
-	//document.getElementById("txt").disabled = id=='r2' ? false : true; 
-	//document.getElementById("txt1").disabled = id=='r2' ? false : true;
-	//document.getElementById("txt2").disabled = id=='r2' ? false : true;
-	//document.getElementById("txt3").disabled = id=='r2' ? false : true;
-	
- 	
-
-	
+	</tr>	
  <tr>
                 <td><h3> Оренда приміщення </h3>
 
