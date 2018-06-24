@@ -166,8 +166,6 @@ include('function.php');
 	
 	?>
 
-
->
 		<tr>
                 <td>Персонал </td>
                 <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? if(isset($_SESSION['empl']))
