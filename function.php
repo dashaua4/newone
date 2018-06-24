@@ -138,13 +138,14 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql ="SELECT SUM(MAX(salary)) as salary FROM $table GROUP BY position ";
+$sql ="SELECT MAX(salary) as salary FROM $table GROUP BY position ";
 
 $result = mysqli_query($conn, $sql);
-	
+$sql2="SELECT SUM($result) as salary FROM $table ";	
 $date=mysqli_fetch_array($result);
-
-	return $date["salary"];    
+$result2 = mysqli_query($conn, $sql2);
+$date2=mysqli_fetch_array($result2);	
+	return $date2["salary"];    
 mysqli_close($conn);
 }
 ?>
