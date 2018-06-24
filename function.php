@@ -190,6 +190,39 @@ mysqli_close($conn);
 	return $date['salary']+$date2['salary']+$date3['salary']+($kol*$date4['salary']);
 }
 
+function PerfMin($table)
+{
+// Create connection
+$conn = mysqli_connect("diplomwork-mysqldbserver.mysql.database.azure.com", "mysqldbuser@diplomwork-mysqldbserver", "Alexandr11", "mysqldatabase");
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql ="SELECT MIN(price) as price FROM $table WHERE position='мишка'";
+$result = mysqli_query($conn, $sql);	
+$date=mysqli_fetch_array($result);  
+mysqli_close($conn);
+	$conn = mysqli_connect("diplomwork-mysqldbserver.mysql.database.azure.com", "mysqldbuser@diplomwork-mysqldbserver", "Alexandr11", "mysqldatabase");
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql2 ="SELECT MIN(price) as price FROM $table WHERE position='клавіатура'";
+$result2 = mysqli_query($conn, $sql2);
+$date2=mysqli_fetch_array($result2);  
+mysqli_close($conn);
+	$conn = mysqli_connect("diplomwork-mysqldbserver.mysql.database.azure.com", "mysqldbuser@diplomwork-mysqldbserver", "Alexandr11", "mysqldatabase");
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql3 ="SELECT MIN(price) as price FROM $table WHERE position='МФУ'";
+$result3 = mysqli_query($conn, $sql3);
+$date3=mysqli_fetch_array($result3);  
+mysqli_close($conn);
+	
+	return $date['price']+$date2['price']+$date3['price'];
+}
 
 function PerfMax($table)
 {
