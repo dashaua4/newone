@@ -8,7 +8,7 @@
  </head>
 
 <body>
-<img src="https://zaochnik.ru/blog/wp-content/uploads/2016/09/1.png" align="middle>
+<img src="1.png" align="middle>
 </body>
 </html>
 
