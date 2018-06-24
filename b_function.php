@@ -103,8 +103,16 @@ include('function.php');
 		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmin']; }} ?>"  type="text"></td>
                  <td><input class="max" name="data[comp]" placeholder="0.0" value="<? if(isset($_SESSION['tn']))
 		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmax']; }}?>" type="text"></td>
-            </tr>	
-		
+            </tr>
+		<?php
+		$SP=PerfMin('Periphery');
+		$SPM=PerfMax('Periphery');			
+		?>	
+		 <tr>
+                <td>Переферія <span class="currency"></span></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $SP;?>" type="text"></td>
+                <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SPM;?>" type="text"></td>
+           	 </tr> 
            </td>
         </tr>
 <?php
