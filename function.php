@@ -191,7 +191,7 @@ mysqli_close($conn);
 }
 
 
-function PerfMax($table,$kol,$empl)
+function PerfMax($table)
 {
 // Create connection
 $conn = mysqli_connect("diplomwork-mysqldbserver.mysql.database.azure.com", "mysqldbuser@diplomwork-mysqldbserver", "Alexandr11", "mysqldatabase");
