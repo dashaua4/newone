@@ -138,7 +138,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql ="SELECT MAX(salary) as salary FROM $table WHERE position='Директор'";
+$sql ="SELECT MAX(salary) as salary FROM $table GROUP BY position ";
 
 $result = mysqli_query($conn, $sql);
 	
