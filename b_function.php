@@ -146,14 +146,28 @@ include('function.php');
  				  <p>Введіть кількість співробітників*<input name="chet" value="" type="text" onblur="this.form.submit()"></td>
 			</p></form>
 	
-		<?php
-	$emp="'Робітник'";
-	 $P=PerMin('Employees');
-	$array=	PerMax('Employees',3,$emp);	
+		<?php 
 	
-		echo $array;
+	if(isset($_POST['chet']))
+	{
+	$kol=$_POST['chet'];
+	$_SESSION['kolvo']=$kol;
+	if(isset($_SESSION['per'])){
+	$v=$_SESSION['per'];}
+	if($v==1){$emp="'Дизайнер'";if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
+	else if($v==2){$emp="'ІТ Розробник'";if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
+	else if($v==3){$emp="'Робітник'";if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}}
+	
+	$PSL=PerMin('Employees',(int)$kol,$emp);
+	$PSLM=PerMax('Employees',(int)$kol,$emp);
+	 if($_SESSION['counter']>=1)
+	{unset($_SESSION['empl']); $_SESSION['counter']=0;
+	$_SESSION['empl'][]=array('emplmin'=>$PSL, 'emplmax'=> $PSLM);}
 	
 	?>
+
+
+>
 		<tr>
                 <td>Персонал </td>
                 <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $P; ?>" type="text"></td>
