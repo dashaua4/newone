@@ -128,36 +128,23 @@ mysqli_close($conn);
 }
 function PerMax($table)
 {
-$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
-$username = "mysqldbuser@diplomwork-mysqldbserver";	
-$password = "Alexandr11";
-$dbname = "mysqldatabase";
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect("diplomwork-mysqldbserver.mysql.database.azure.com", "mysqldbuser@diplomwork-mysqldbserver", "Alexandr11", "mysqldatabase");
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $sql ="SELECT MAX(salary) as salary FROM $table WHERE position='Директор'";
-
-$result = mysqli_query($conn, $sql);
-	
+$result = mysqli_query($conn, $sql);	
 $date=mysqli_fetch_array($result);  
 mysqli_close($conn);
-	$servername = "diplomwork-mysqldbserver.mysql.database.azure.com";
-$username = "mysqldbuser@diplomwork-mysqldbserver";	
-$password = "Alexandr11";
-$dbname = "mysqldatabase";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+	$conn = mysqli_connect("diplomwork-mysqldbserver.mysql.database.azure.com", "mysqldbuser@diplomwork-mysqldbserver", "Alexandr11", "mysqldatabase");
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $sql2 ="SELECT MAX(salary) as salary FROM $table WHERE position='Менеджер'";
-
 $result2 = mysqli_query($conn, $sql2);
-	
 $date2=mysqli_fetch_array($result2);  
 mysqli_close($conn);
 	return $date['salary']+$date2['salary'];
