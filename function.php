@@ -143,7 +143,7 @@ mysqli_close($conn);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql2 ="SELECT MIN(salary) as salary FROM $table WHERE position='Менеджер'";
+$sql2 ="SELECT MAX(salary) as salary FROM $table WHERE position='Менеджер'";
 $result2 = mysqli_query($conn, $sql2);
 $date2=mysqli_fetch_array($result2);  
 mysqli_close($conn);
