@@ -8,7 +8,7 @@
  </head>
 
 <body>
-<img scr="img3.jpg">	
+<img src="img3.jpg">	
 <div class="test">
 
     Бізнес план - план створення або розвитку підприємства.
