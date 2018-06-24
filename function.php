@@ -146,7 +146,7 @@ $date=mysqli_fetch_array($result);
 	$sql2="SELECT SUM($date) as salary FROM $table ";
 $result2 = mysqli_query($conn, $sql2);
 $date2=mysqli_fetch_array($result2);	
-	return $date2["salary"];    
+	echo $date2["salary"];    
 mysqli_close($conn);
 }
 ?>
