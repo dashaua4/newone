@@ -165,6 +165,6 @@ $sql4 ="SELECT MAX(salary) as salary FROM $table WHERE position=$empl";
 $result4 = mysqli_query($conn, $sql4);
 $date4=mysqli_fetch_array($result4);  
 mysqli_close($conn);
-	return $date['salary']+$date2['salary']+$date3['salary']+($kol*$date3['salary']);
+	return $date['salary']+$date2['salary']+$date3['salary']+($kol*$date4['salary']);
 }
 ?>
