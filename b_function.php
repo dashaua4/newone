@@ -278,7 +278,7 @@ include('function.php');
 		{foreach ($_SESSION['empl'] as $mas){$empl= $mas['emplmin'];}} 
 	if(isset($_SESSION['kolvo'])){
 	$s=$_SESSION['kolvo'];}
-$sum=$s*($comp+$monitor+$SLTT+$SLTC+$SLM)+$wp+$empl;
+$sum=$s*($comp+$monitor+$SLTT+$SLTC+$SLM)+$wp+$empl+$SP+$SAM;
 $sum2=$sum*1.6;
 	
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
