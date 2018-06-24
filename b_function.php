@@ -146,13 +146,14 @@ include('function.php');
  				  <p>Введіть кількість співробітників*<input name="chet" value="" type="text" onblur="this.form.submit()"></td>
 			</p></form>
 	
-	
+		<?php
+	 $P=PerMin('Employees');
+	$Pm=PerMax('Employees');				
+	?>
 		<tr>
                 <td>Персонал </td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<?if(isset($_SESSION['empl']))
-		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmin']; }} ?>" type="text"></td>
-             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<? if(isset($_SESSION['empl']))
-		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmax']; }} ?>" type="text">
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $P; ?>" type="text"></td>
+             <td><input class="max" name="data[furniture]" placeholder="0.0" value="<? echo $Pm; ?>" type="text">
 		<img src="info.png"  width="18" height="18" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/></td>
             </tr>
 	</td>   
