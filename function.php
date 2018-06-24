@@ -141,8 +141,9 @@ if (!$conn) {
 $sql ="SELECT MAX(salary) as salary FROM $table GROUP BY position ";
 
 $result = mysqli_query($conn, $sql);
-$sql2="SELECT SUM($result) as salary FROM $table ";	
+	
 $date=mysqli_fetch_array($result);
+	$sql2="SELECT SUM($date) as salary FROM $table ";
 $result2 = mysqli_query($conn, $sql2);
 $date2=mysqli_fetch_array($result2);	
 	return $date2["salary"];    
