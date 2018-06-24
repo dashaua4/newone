@@ -264,7 +264,21 @@ include('function.php');
                 <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SAMX;?>" type="text"></td>
            	 </tr>
 		</td>
-</tr>
+	</tr>
+<?php
+if(isset($_SESSION['kolvo'])){
+	$sm=$_SESSION['kolvo'];}
+$kom=($sm*140)+($sm*2*14)+3*50;
+?>
+        <tr>
+               <td><h3> Комунальні послуги </h3>
+	   	 <tr>
+               <td>Вода,світло,кварплата <span class="currency"></span></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $kom;?>" type="text"></td>
+                
+           	 </tr>
+		</td>
+	</tr>
 </table>
 <div>	
 	<?php
@@ -278,7 +292,7 @@ include('function.php');
 		{foreach ($_SESSION['empl'] as $mas){$empl= $mas['emplmin'];}} 
 	if(isset($_SESSION['kolvo'])){
 	$s=$_SESSION['kolvo'];}
-$sum=$s*($comp+$monitor+$SLTT+$SLTC+$SLM)+$wp+$empl+$SP+$SAM;
+$sum=$s*($comp+$monitor+$SLTT+$SLTC+$SLM)+$wp+$empl+$SP+$SAM+$kom;
 $sum2=$sum*1.6;
 	
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
