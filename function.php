@@ -198,7 +198,7 @@ $conn = mysqli_connect("diplomwork-mysqldbserver.mysql.database.azure.com", "mys
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql ="SELECT MIN(price) as price FROM $table WHERE position='мишка'";
+$sql ="SELECT MIN(price) as price FROM $table WHERE index='мишка'";
 $result = mysqli_query($conn, $sql);	
 $date=mysqli_fetch_array($result);  
 mysqli_close($conn);
@@ -207,7 +207,7 @@ mysqli_close($conn);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql2 ="SELECT MIN(price) as price FROM $table WHERE position='клавіатура'";
+$sql2 ="SELECT MIN(price) as price FROM $table WHERE index='клавіатура'";
 $result2 = mysqli_query($conn, $sql2);
 $date2=mysqli_fetch_array($result2);  
 mysqli_close($conn);
@@ -216,7 +216,7 @@ mysqli_close($conn);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql3 ="SELECT MIN(price) as price FROM $table WHERE position='МФУ'";
+$sql3 ="SELECT MIN(price) as price FROM $table WHERE index='МФУ'";
 $result3 = mysqli_query($conn, $sql3);
 $date3=mysqli_fetch_array($result3);  
 mysqli_close($conn);
@@ -232,7 +232,7 @@ $conn = mysqli_connect("diplomwork-mysqldbserver.mysql.database.azure.com", "mys
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql ="SELECT MAX(price) as price FROM $table WHERE position='мишка'";
+$sql ="SELECT MAX(price) as price FROM $table WHERE index='мишка'";
 $result = mysqli_query($conn, $sql);	
 $date=mysqli_fetch_array($result);  
 mysqli_close($conn);
@@ -241,7 +241,7 @@ mysqli_close($conn);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql2 ="SELECT MAX(price) as price FROM $table WHERE position='клавіатура'";
+$sql2 ="SELECT MAX(price) as price FROM $table WHERE index='клавіатура'";
 $result2 = mysqli_query($conn, $sql2);
 $date2=mysqli_fetch_array($result2);  
 mysqli_close($conn);
@@ -250,7 +250,7 @@ mysqli_close($conn);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$sql3 ="SELECT MAX(price) as price FROM $table WHERE position='МФУ'";
+$sql3 ="SELECT MAX(price) as price FROM $table WHERE index='МФУ'";
 $result3 = mysqli_query($conn, $sql3);
 $date3=mysqli_fetch_array($result3);  
 mysqli_close($conn);
