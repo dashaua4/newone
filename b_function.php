@@ -147,8 +147,9 @@ include('function.php');
 			</p></form>
 	
 		<?php
+	$emp="'Робітник'";
 	 $P=PerMin('Employees');
-	$array=	PerMax('Employees',3,'Робітник');	
+	$array=	PerMax('Employees',3,$emp);	
 	
 		echo $array;
 	
