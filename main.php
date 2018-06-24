@@ -5,7 +5,7 @@
   <title>Business Plan</title>
    <link href="style.css" rel="stylesheet" />
  </head>
- <frameset rows="20%,75%,5%" bordercolor="grey" border="0" >
+ <frameset rows="15%,80%,5%" bordercolor="grey" border="0" >
   <frameset>
     <frame src="menu.php" name="menu" frameborder="1" scrolling="no" noresize></frame>
 	</frameset>
