@@ -1,5 +1,35 @@
  <?php
-include('curl_query.php');
+// Создать новый объект COM для приложения MS Word
+$word=new COM("word.application") or die("Couldn't start Word!");
+
+// Активизировать окно MS Word
+$word->visible = 1;
+
+// Открыть пустой документ. 
+$word->Documents->Add();
+
+// Перебрать записи из таблицы адресов
+while($row = mysql_fetch_array($result));
+
+  $last_name = "URA";
+  $first_name = "PASHA";
+  $tel = 12;
+  $email = "asds";
+
+  // Вывести данные таблицы в открытый документ Word.
+  $word->Selection->Typetext("$last_name. $first_name\n"); 
+  $word->Selection->Typetext("tel. $tel\n"): 
+  $word->Selection->Typetext("email. $email:\n");
+
+endwhile;
+
+// Запросить у пользователя имя документа.
+$word->Documents[l]->Save;
+
+// Выйти из MS Word
+$word->Quit();
+
+/*include('curl_query.php');
 include('simple_html_dom.php');
 include('main.php');
 include('function.php');
@@ -30,5 +60,5 @@ $n=$tobd['name'];
 //echo $tobd[name].'-'.$tobd[price].'-'.$tobd[diagonal].'='.$tobd[id_site].'<br>';
 	//Insert('Monitor',$tobd);
 }
-
+*/
 ?>
