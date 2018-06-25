@@ -2,7 +2,7 @@
 include('curl_query.php');
 include('simple_html_dom.php');
 
-	require 'vendor/autoload.php';
+	require 'index.php';
 
 	use PHPStamp\Templator;
 	use PHPStamp\Document\WordDocument;
