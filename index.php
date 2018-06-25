@@ -1,23 +1,23 @@
  <?php
-// Создать новый объект COM для приложения MS Word
-$word=new COM("word.application") or die("Couldn't start Word!");
+// запускаем word
+$word = new COM("word.application") or die("Unable to instantiate Word");
+echo "Loaded Word, version {$word->Version}\n";
 
-// Активизировать окно MS Word
-$word->visible = 1;
+//делаем его активным окном
+$word->Visible = 1;
 
-// Открыть пустой документ. 
+//открываем пустой документ
 $word->Documents->Add();
 
-// Перебрать записи из таблицы адресов
+//Что то с ним делаем
+$word->Selection->TypeText("This is a test...");
+$word->Documents[1]->SaveAs("Useless test.doc");
 
-
-
-
-// Запросить у пользователя имя документа.
-$word->Documents[l]->Save;
-
-// Выйти из MS Word
+//закрываем word
 $word->Quit();
+
+//высвобождаем ресурсы объекта
+$word = null;
 
 /*include('curl_query.php');
 include('simple_html_dom.php');
