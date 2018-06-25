@@ -61,13 +61,30 @@ include('function.php');
                     <h3>Обладнання</h3>
  	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" name="comp" value=" <? if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmin'];}}?>" type="text" placeholder="0.0"></td>
+                <td><input class="min" placeholder="0.0" name="comp" value=" <? if(isset($_SESSION['mas']))
+		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmin'];}}?>" type="text" ></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmax'];}} ?>" type="text" placeholder="0.0"></td>
             </tr>
 	    <tr>
-		    <td>
+		 <td>Монітори <span class="currency"></span></td>    
+ <?php 
+	$mon='Monitor';
+	if(isset($_POST['monitor']))
+	{
+	$val = $_POST['monitor'];
+	$diagonal=$val;
+	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
+	$SMT=SMT($mon,$diagonal);
+	$SMTM=SMTM($mon,$diagonal);
+	 if($_SESSION['counter']>=1)
+	{unset($_SESSION['tn']); $_SESSION['counter']=0;
+	$_SESSION['tn'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);}
+ ?>
+	   
+	    </tr>
+	     <tr>
+                    <td>
                     <form method="post">
 			    <p>Виберіть діагональ
             <select name="monitor"  onchange="this.form.submit()" >
@@ -82,23 +99,7 @@ include('function.php');
 		    		
                     </select></p>
 		 </form>
- <?php 
-	$mon='Monitor';
-	if(isset($_POST['monitor']))
-	{
-	$val = $_POST['monitor'];
-	$diagonal=$val;
-	if (!isset($_SESSION['counter'])) $_SESSION['counter']=0;$_SESSION['counter']++;}
-	$SMT=SMT($mon,$diagonal);
-	$SMTM=SMTM($mon,$diagonal);
-	 if($_SESSION['counter']>=1)
-	{unset($_SESSION['tn']); $_SESSION['counter']=0;
-	$_SESSION['tn'][]=array('monmin'=>$SMT, 'monmax'=> $SMTM);}
- ?>
-	    </td>
-	    </tr>
-	     <tr>
-                <td>Монітори <span class="currency"></span></td>
+			     </td>
                 <td><input class="min" name="data[comp]" placeholder="0.0"  value="<? if(isset($_SESSION['tn']))
 		{foreach ($_SESSION['tn'] as $mas){echo  $mas['monmin']; }} ?>"  type="text"></td>
                  <td><input class="max" name="data[comp]" placeholder="0.0" value="<? if(isset($_SESSION['tn']))
@@ -175,23 +176,23 @@ include('function.php');
 	?>
 
 		<tr>
-                <td>Персонал </td>
+                <td>Сума заробітньої плати персоналу </td>
                 <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? if(isset($_SESSION['empl']))
 		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmin']; }} ?>" type="text"></td>
              <td><input class="max" name="data[furniture]" placeholder="0.0" value="<? if(isset($_SESSION['empl']))
 		{foreach ($_SESSION['empl'] as $mas){echo  $mas['emplmax']; }} ?>" type="text">
-		<img src="info.png"  width="18" height="18" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер,робітик."/></td>
+		<img src="info.png"  width="18" height="18" title="Мінімальний набір працівників:Директор,менеджер,бухгалтер."/></td>
             </tr>
 	</td>   
         </tr>
 	
-		
+	 <tr>
+                <td><h3> Оренда приміщення </h3>	
 	<tr>
 		 <td><input  type="radio" id='r1' onclick='foo(this.id);'  value='1' >Власне</td>
 		 <td><input  type="radio" id='r2' onclick='foo(this.id);'  value='2' >Оренда</td>
 	</tr>	
- <tr>
-                <td><h3> Оренда приміщення </h3>
+
 
 			     <tr><td> <form method="post"> 
 				       <p>Виберіть район
@@ -274,7 +275,9 @@ $kom=($sm*140)+($sm*2*14)+3*50;
                <td><h3> Комунальні послуги </h3>
 	   	 <tr>
                <td>Вода,світло,кварплата <span class="currency"></span></td>
-                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $kom;?>" type="text"></td>
+                <td><input class="min" name="data[furniture]" placeholder="0.0" value="<? echo $kom;?>" type="text">
+			<img src="info.png"  width="18" height="18" title="Вода(2m/люд.);кварплата(3грн/m))."/></td>
+          </td>
                 
            	 </tr>
 		</td>
