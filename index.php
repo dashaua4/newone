@@ -9,7 +9,7 @@ $word->visible = 1;
 $word->Documents->Add();
 
 // Перебрать записи из таблицы адресов
-while($row = mysql_fetch_array($result));
+
 
   $last_name = "URA";
   $first_name = "PASHA";
@@ -21,7 +21,7 @@ while($row = mysql_fetch_array($result));
   $word->Selection->Typetext("tel. $tel\n"): 
   $word->Selection->Typetext("email. $email:\n");
 
-endwhile;
+
 
 // Запросить у пользователя имя документа.
 $word->Documents[l]->Save;
