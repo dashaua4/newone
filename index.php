@@ -11,16 +11,6 @@ $word->Documents->Add();
 // Перебрать записи из таблицы адресов
 
 
-  $last_name = "URA";
-  $first_name = "PASHA";
-  $tel = 12;
-  $email = "asds";
-
-  // Вывести данные таблицы в открытый документ Word.
-  $word->Selection->Typetext("$last_name. $first_name\n"); 
-  $word->Selection->Typetext("tel. $tel\n"): 
-  $word->Selection->Typetext("email. $email:\n");
-
 
 
 // Запросить у пользователя имя документа.
