@@ -1,7 +1,7 @@
  <?php
 include('curl_query.php');
 include('simple_html_dom.php');
-<?php
+
 	require 'vendor/autoload.php';
 
 	use PHPStamp\Templator;
