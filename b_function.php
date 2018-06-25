@@ -61,8 +61,8 @@ include('function.php');
                     <h3>Обладнання</h3>
  	    <tr>
                 <td>Комп'ютери <span class="currency"></span></td>
-                <td><input class="min" placeholder="0.0" name="comp" value=" <? if(isset($_SESSION['mas']))
-		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmin'];}}?>" type="text" ></td>
+                 <td><input class="min" name="data[comp]" placeholder="0.0"  value="<? if(isset($_SESSION['mas']))
+		{foreach ($_SESSION['mas'] as $mas){echo  $mas['compmin']; }} ?>"  type="text"></td>
                  <td><input class="max" name="data[comp]" value="<? if(isset($_SESSION['mas']))
 		{foreach ($_SESSION['mas'] as $mas){echo $mas['compmax'];}} ?>" type="text" placeholder="0.0"></td>
             </tr>
@@ -128,7 +128,7 @@ include('function.php');
                 <td><input class="max" name="data[furniture]"  placeholder="0.0" value="<? echo $SLTMT;?>" type="text"></td>
            	 </tr> 
 <?php
-			$SLTC=SelectT('Chairs');
+	$SLTC=SelectT('Chairs');
 	$SLTMC=SelectTMAX('Chairs');			
 ?>
 		<tr>
@@ -299,7 +299,7 @@ $sum=$s*($comp+$monitor+$SLTT+$SLTC+$SLM)+$wp+$empl+$SP+$SAM+$kom;
 $sum2=$sum*1.6;
 	
 echo "<h1>Постійні витрати складають ".$sum." грн.</h1>";
-echo  "<h1> В день повинна бути виручка не менше ". (int)$sum2/365 ." грн. 
+echo  "<h1> В день повинна бути виручка не менше ". round($sum2/365)." грн. 
 <p>Річний дохід не менше ". $sum2 ."  грн.</p></h1>";
 ?></div>
 </div>
