@@ -50,7 +50,7 @@ include('function.php');
 <div class="main">
 	
 <table>
-	<h3>Стартовий капітал</h3>
+	<h3>Стартові інвестиції</h3>
 	<tr>
 		<th></th>
 		<th>Мінімальна вартість</th>
